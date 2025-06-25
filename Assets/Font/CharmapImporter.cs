@@ -11,13 +11,13 @@ public class CharmapImporter : ScriptedImporter
     public override void OnImportAsset(AssetImportContext ctx)
     {
         Charmap charmap = ScriptableObject.CreateInstance<Charmap>();
-        charmap.map = new Dictionary<string, char>();
+        charmap.map = new();
 
         StreamReader reader = new StreamReader(ctx.assetPath);
         while (!reader.EndOfStream)
         {
             string line = reader.ReadLine();
-            charmap.map.Add(line[..^1], line[^1]);
+            charmap.map.Add(new() {key = line[..^2], value = line[^2..]});
         }
 
         ctx.AddObjectToAsset("MainAsset", charmap);
