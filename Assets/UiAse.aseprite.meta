@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: ca635e5796a7f834290694f537ad0aad
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 1
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638864804837524956
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 384
+      height: 216
+    spriteID: 015d0d087fe68774f99d9b26fd0ab18c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: TimerButton
+    originalName: 
+    pivot: {x: 4.44, y: -22.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 211
+      width: 25
+      height: 9
+    spriteID: 19f9fbb628324144bb77988c730110b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 211}
+  - name: ExitButton
+    originalName: 
+    pivot: {x: -19.777779, y: -22.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 429
+      y: 211
+      width: 9
+      height: 9
+    spriteID: 11ce00a26389b5844897b1534b25dcca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 429, y: 211}
+  - name: SuliButton
+    originalName: 
+    pivot: {x: -18.555555, y: -22.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 446
+      y: 211
+      width: 9
+      height: 9
+    spriteID: b3e7b641400dff54eb2c16eda303f61e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 446, y: 211}
+  - name: LiliButton
+    originalName: 
+    pivot: {x: -18.555555, y: -22.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 463
+      y: 211
+      width: 9
+      height: 9
+    spriteID: 25c3d291a2440ee4da10b0ba06ad800c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 463, y: 211}
+  - name: AnteButton
+    originalName: 
+    pivot: {x: -17.333334, y: -22.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 211
+      width: 9
+      height: 9
+    spriteID: 44a15e90d729dac46b5bd5946d5034db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 480, y: 211}
+  - name: TextBack
+    originalName: 
+    pivot: {x: -1.3625002, y: -0.027027028}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 4
+      width: 80
+      height: 111
+    spriteID: 108e2588cc9a3594fa307d4923f7f8c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 4}
+  - name: CamBack
+    originalName: 
+    pivot: {x: -1.3625002, y: -1.475}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 123
+      width: 80
+      height: 80
+    spriteID: 0049c3340c534be45aade97c4e43e9f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 123}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -2071362532
+    name: Outline
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Outline
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 384
+        height: 216
+      spriteId: 015d0d087fe68774f99d9b26fd0ab18c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -99914180
+    name: TimerButton
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: TimerButton
+      frameIndex: 0
+      cellRect:
+        x: 81
+        y: 203
+        width: 25
+        height: 9
+      spriteId: 19f9fbb628324144bb77988c730110b1
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 1553049140
+    name: ExitButton
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ExitButton
+      frameIndex: 0
+      cellRect:
+        x: 370
+        y: 203
+        width: 9
+        height: 9
+      spriteId: 11ce00a26389b5844897b1534b25dcca
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: -950072994
+    name: SuliButton
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: SuliButton
+      frameIndex: 0
+      cellRect:
+        x: 359
+        y: 203
+        width: 9
+        height: 9
+      spriteId: b3e7b641400dff54eb2c16eda303f61e
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 448083602
+    name: LiliButton
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: LiliButton
+      frameIndex: 0
+      cellRect:
+        x: 359
+        y: 203
+        width: 9
+        height: 9
+      spriteId: 25c3d291a2440ee4da10b0ba06ad800c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: -775959245
+    name: AnteButton
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: AnteButton
+      frameIndex: 0
+      cellRect:
+        x: 348
+        y: 203
+        width: 9
+        height: 9
+      spriteId: 44a15e90d729dac46b5bd5946d5034db
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -1028568576
+    name: TextBack
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: TextBack
+      frameIndex: 0
+      cellRect:
+        x: 301
+        y: 3
+        width: 80
+        height: 111
+      spriteId: 108e2588cc9a3594fa307d4923f7f8c9
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: -1493419339
+    name: CamBack
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: CamBack
+      frameIndex: 0
+      cellRect:
+        x: 301
+        y: 118
+        width: 80
+        height: 80
+      spriteId: 0049c3340c534be45aade97c4e43e9f7
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 384, y: 216}
