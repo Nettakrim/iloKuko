@@ -1,0 +1,26 @@
+def/ win
+toki/ wawa!
+end/
+
+def/ lose
+toki/ ike a
+end/
+
+wile/ 1   a    jelo,waso
+wile/ 0.5 a    walo
+wile/ 1   nasa laso
+
+def/ #item
+test/
+2 a    call/ win
+1 a    toki/ sama lili
+1 nasa toki/ nasa a!
+0 a    call/ lose
+end/
+next/ wow
+end/
+
+toki/ ilo Kuko o! mi wile e ijo jelo
+wait/ 5
+
+toki/ seme la ona li wile e tenpo suli?
