@@ -56,12 +56,12 @@ Material:
     - _ColorDepth: 16
     - _EnableExternalAlpha: 0
     - _NoiseAmplitude: 0
-    - _NoiseOffset: 0.5
+    - _NoiseOffset: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _NoiseScale: {r: 8.66, g: -0.91, b: 0, a: 0}
+    - _NoiseScale: {r: 8.66, g: 0.1, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1854940170948155075
