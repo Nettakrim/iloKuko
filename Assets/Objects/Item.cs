@@ -8,15 +8,22 @@ public class Item : MonoBehaviour
     [SerializeField] private Nimi nimi;
 
     private SpriteRenderer spriteRenderer;
+    private Collider2D bounds;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        bounds = GetComponent<Collider2D>();
     }
 
     public SpriteRenderer GetSpriteRenderer()
     {
         return spriteRenderer;
+    }
+
+    public Bounds GetBounds()
+    {
+        return bounds.bounds;
     }
 
     #if UNITY_EDITOR

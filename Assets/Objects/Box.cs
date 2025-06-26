@@ -17,6 +17,8 @@ public class Box : MonoBehaviour
     [SerializeField] private float forgivenessRadius;
     [SerializeField] private LayerMask layerMask;
 
+    [SerializeField] private BoxCollider2D boxBounds;
+
     private void Start()
     {
         previousHolds = new List<Item>(transform.childCount);
@@ -49,11 +51,17 @@ public class Box : MonoBehaviour
 
         if (held)
         {
-            held.transform.position = dragOffset + mousePos;
+            held.transform.localPosition = dragOffset + mousePos;
 
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 Jostle(mousePos, Vector3.one);
+
+                Bounds heldBounds = held.GetBounds();
+                Vector2 max = boxBounds.offset + boxBounds.size/2 - (Vector2)heldBounds.extents/2;
+                Vector2 min = boxBounds.offset - boxBounds.size/2 + (Vector2)heldBounds.extents/2;
+                held.transform.localPosition = new Vector3(Mathf.Clamp(held.transform.localPosition.x, min.x, max.x), Mathf.Clamp(held.transform.localPosition.y, min.y, max.y), 0);
+
                 held = null;
             }
         }
@@ -68,7 +76,7 @@ public class Box : MonoBehaviour
 
             if (held)
             {
-                dragOffset = held.transform.position - mousePos;
+                dragOffset = held.transform.localPosition - mousePos;
 
                 previousHolds.Remove(held);
                 previousHolds.Add(held);
@@ -88,7 +96,7 @@ public class Box : MonoBehaviour
         {
             Item hitItem = hit.transform.GetComponent<Item>();
 
-            if (!top || hitItem.GetSpriteRenderer().sortingOrder > top.GetSpriteRenderer().sortingOrder)
+            if (hitItem && (!top || hitItem.GetSpriteRenderer().sortingOrder > top.GetSpriteRenderer().sortingOrder))
             {
                 top = hitItem;
             }
