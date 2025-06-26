@@ -166,7 +166,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 429
+      x: 448
       y: 211
       width: 9
       height: 9
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 429, y: 211}
+    uvTransform: {x: 448, y: 211}
   - name: SuliButton
     originalName: 
     pivot: {x: -18.555555, y: -22.555555}
@@ -186,7 +186,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 446
+      x: 465
       y: 211
       width: 9
       height: 9
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 446, y: 211}
+    uvTransform: {x: 465, y: 211}
   - name: LiliButton
     originalName: 
     pivot: {x: -18.555555, y: -22.555555}
@@ -206,7 +206,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 463
+      x: 482
       y: 211
       width: 9
       height: 9
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 463, y: 211}
+    uvTransform: {x: 482, y: 211}
   - name: AnteButton
     originalName: 
     pivot: {x: -17.333334, y: -22.555555}
@@ -226,7 +226,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 480
+      x: 499
       y: 211
       width: 9
       height: 9
@@ -238,7 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 480, y: 211}
+    uvTransform: {x: 499, y: 211}
   - name: TextBack
     originalName: 
     pivot: {x: -1.3625002, y: -0.027027028}
@@ -279,6 +279,46 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 396, y: 123}
+  - name: Recording
+    originalName: 
+    pivot: {x: -16.09091, y: -20.88889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 429
+      y: 211
+      width: 11
+      height: 9
+    spriteID: db231fc076229a349af7f0b163444ddc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 429, y: 211}
+  - name: QuitUi1
+    originalName: 
+    pivot: {x: 0.9565217, y: -1.6538461}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 228
+      width: 92
+      height: 52
+    spriteID: 1b650b9fcef9dd748adba2871b0d5aec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 228}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -415,6 +455,40 @@ ScriptedImporter:
         width: 80
         height: 80
       spriteId: 0049c3340c534be45aade97c4e43e9f7
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -5445819
+    name: Recording
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Recording
+      frameIndex: 0
+      cellRect:
+        x: 369
+        y: 188
+        width: 11
+        height: 9
+      spriteId: db231fc076229a349af7f0b163444ddc
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: -849823749
+    name: QuitUi1
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: QuitUi1
+      frameIndex: 0
+      cellRect:
+        x: 104
+        y: 86
+        width: 92
+        height: 52
+      spriteId: 1b650b9fcef9dd748adba2871b0d5aec
     linkedCells: []
     parentIndex: -1
   platformSettings:
