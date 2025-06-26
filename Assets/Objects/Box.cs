@@ -38,22 +38,8 @@ public class Box : MonoBehaviour
 
     private void Update()
     {
-        Vector2 mouse = Input.mousePosition;
-        mouse /= new Vector2(Screen.width, Screen.height);
-        mouse -= new Vector2(0.5f, 0.5f);
-        mouse *= new Vector2(384, 216);
-
-        float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
-        if (aspect > 1)
-        {
-            mouse.x *= aspect;
-        }
-        else if (aspect < 1)
-        {
-            mouse.y /= aspect;
-        }
-
-        Vector3 mousePos = mouse;
+        Vector3 mousePos = GetMousePos();
+        mousePos = new Vector3(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y), 0);
 
         if (held)
         {
@@ -90,6 +76,26 @@ public class Box : MonoBehaviour
                 Jostle(mousePos, heldScale);
             }
         }
+    }
+
+    private Vector2 GetMousePos()
+    {
+        Vector2 mouse = Input.mousePosition;
+        mouse /= new Vector2(Screen.width, Screen.height);
+        mouse -= new Vector2(0.5f, 0.5f);
+        mouse *= new Vector2(384, 216);
+
+        float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
+        if (aspect > 1)
+        {
+            mouse.x *= aspect;
+        }
+        else if (aspect < 1)
+        {
+            mouse.y /= aspect;
+        }
+
+        return mouse;
     }
 
     private Item RaycastItems(Vector3 pos, float radius)
