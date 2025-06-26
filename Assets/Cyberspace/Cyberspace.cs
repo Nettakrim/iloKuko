@@ -38,6 +38,11 @@ public class Cyberspace : MonoBehaviour
 
         material = screen.material;
         SetTransitionAnimation(0);
+
+        foreach (Info info in infos)
+        {
+            info.SetActive(false);
+        }
     }
 
     private void Update()
@@ -167,31 +172,43 @@ public class Cyberspace : MonoBehaviour
     [System.Serializable]
     private class Info
     {
-        public Sprite sprite;
-        public Color color;
-        public GameObject box;
+        [SerializeField] private Sprite sprite;
+        [SerializeField] private Color color;
+        [SerializeField] private GameObject box;
 
         public void SetActive(bool active)
         {
             box.SetActive(active);
+        }
+
+        public Sprite GetSprite()
+        {
+            return sprite;
+        }
+
+        public Color GetColor()
+        {
+            return color;
         }
     }
 
     [System.Serializable]
     private class Graphic
     {
-        public SpriteRenderer a;
-        public SpriteRenderer b;
-        public SpriteRenderer c;
+        [SerializeField] private SpriteRenderer a;
+        [SerializeField] private SpriteRenderer b;
+        [SerializeField] private SpriteRenderer c;
 
         public void Set(Info info)
         {
-            a.sprite = info.sprite;
-            b.sprite = info.sprite;
-            c.sprite = info.sprite;
-            a.color = info.color;
-            b.color = info.color;
-            c.color = info.color;
+            Sprite sprite = info.GetSprite();
+            Color color = info.GetColor();
+            a.sprite = sprite;
+            b.sprite = sprite;
+            c.sprite = sprite;
+            a.color = color;
+            b.color = color;
+            c.color = color;
         }
     }
 
