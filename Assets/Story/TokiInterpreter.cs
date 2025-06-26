@@ -2,6 +2,56 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class TokiInterpreter : MonoBehaviour
+{
+    [SerializeField] private Toki[] searches;
+
+    void Start()
+    {
+        SetInterpreter(searches[0].name);
+    }
+
+    private Interpreter current;
+
+    public void SetInterpreter(string name)
+    {
+        current = null;
+        foreach (Toki toki in searches)
+        {
+            if (toki.name == name)
+            {
+                current = new Interpreter(toki)
+                {
+                    onMessage = OnMessage,
+                    onDestination = OnDestination
+                };
+                break;
+            }
+        }
+
+        if (current == null)
+        {
+            Debug.LogError("Couldn't find .toki " + name);
+            return;
+        }
+        Debug.Log("Starting .toki " + name);
+    }
+
+    private void Update()
+    {
+        current?.Run();
+    }
+
+    private void OnMessage(string message) {
+        Debug.Log("says: " + message);
+    }
+
+    private void OnDestination(string destination) {
+        SetInterpreter(destination);
+    }
+}
 
 public class Interpreter
 {
@@ -11,6 +61,9 @@ public class Interpreter
     private readonly Dictionary<string, float> values;
     private readonly List<WileExpression> wile;
 
+    public UnityAction<string> onMessage;
+    public UnityAction<string> onDestination;
+
     private float resumeAt = -1;
 
     public Interpreter(Toki toki)
@@ -18,6 +71,7 @@ public class Interpreter
         this.toki = toki;
         queue = new List<Expression>(toki.expressions.Length);
         functions = new();
+        values = new();
         wile = new();
 
         foreach (Expression.Wrapper expression in toki.expressions)
@@ -26,8 +80,9 @@ public class Interpreter
         }
     }
 
-    public void Update() {
-        if (resumeAt > Time.time)
+    public void Run()
+    {
+        if (resumeAt < Time.time)
         {
             resumeAt = -1;
         }
@@ -36,7 +91,7 @@ public class Interpreter
         {
             Expression current = queue[0];
             queue.RemoveAt(0);
-            current.Step(this);
+            current.Run(this);
         }
     }
 
@@ -74,8 +129,13 @@ public class Interpreter
         functions.Add(name, expressions);
     }
 
-    public void CallFunction(string name)
+    public void CallFunction(string name, bool clearQueue)
     {
+        if (clearQueue)
+        {
+            queue.Clear();
+        }
+
         List<Expression> function = functions[name];
         if (function == null)
         {
@@ -93,13 +153,13 @@ public class Interpreter
 
     public void DisplayMessage(string message)
     {
-        Debug.Log(toki + " says: " + message);
+        onMessage.Invoke(message);
     }
 
     public void Next(string destination)
     {
-        Debug.Log(toki + " finished, with a target of " + destination);
         queue.Clear();
+        onDestination.Invoke(destination);
     }
 
     public void Suspend(float duration)

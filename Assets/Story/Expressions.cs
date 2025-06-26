@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Expression
 {
-    public abstract void Step(Interpreter interpreter);
+    public abstract void Run(Interpreter interpreter);
 
     protected abstract void ParseExpression(Reader reader, string args);
 
@@ -83,7 +83,7 @@ public class DefExpression : MultiLineExpression
     [SerializeField] private string name;
     [SerializeField] private List<Wrapper> expressions = new();
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         interpreter.DefineFunction(name, expressions);
     }
@@ -104,9 +104,9 @@ public class CallExpression : Expression
 {
     [SerializeField] private string function;
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
-        interpreter.CallFunction(function);
+        interpreter.CallFunction(function, false);
     }
 
     protected override void ParseExpression(Reader reader, string args)
@@ -121,7 +121,7 @@ public class SetExpression : Expression
     [SerializeField] private float value;
     [SerializeField] private string group;
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         interpreter.SetValue(group, value);
     }
@@ -139,7 +139,7 @@ public class TestExpression : MultiLineExpression
 {
     [SerializeField] private List<TestData> testDatas = new();
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         foreach (TestData testData in testDatas)
         {
@@ -203,7 +203,7 @@ public class TokiExpression : Expression
 {
     [SerializeField] private string message;
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         interpreter.DisplayMessage(message);
     }
@@ -221,7 +221,7 @@ public class WileExpression : Expression
     [SerializeField] private string group;
     [SerializeField] private string[] nimi;
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         interpreter.AddWile(this);
     }
@@ -266,7 +266,7 @@ public class WaitExpression : Expression
 {
     [SerializeField] private float duration;
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         interpreter.Suspend(duration);
     }
@@ -282,7 +282,7 @@ public class NextExpression : Expression
 {
     [SerializeField] private string destination;
 
-    public override void Step(Interpreter interpreter)
+    public override void Run(Interpreter interpreter)
     {
         interpreter.Next(destination);
     }
