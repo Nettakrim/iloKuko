@@ -102,11 +102,14 @@ public class Cyberspace : MonoBehaviour
         {
             state = State.Entering;
             transitionedAt = Time.time;
+            infos[(target + 1) % 5].SetActive(true);
+            cam.enabled = false;
         }
         else if (state == State.Box && inCyberspace)
         {
             state = State.Exiting;
             transitionedAt = Time.time;
+            cam.enabled = true;
         }
 
         if (state == State.Entering)
@@ -125,6 +128,7 @@ public class Cyberspace : MonoBehaviour
             if (t >= 1)
             {
                 state = State.Cyberspace;
+                infos[(target + 1) % 5].SetActive(false);
             }
         }
     }
@@ -133,16 +137,13 @@ public class Cyberspace : MonoBehaviour
     {
         if (state == State.Cyberspace && inCyberspace)
         {
-            infos[(target + 1) % 5].SetActive(false);
             target += direction;
-            infos[(target + 1) % 5].SetActive(true);
         }
     }
 
     public void ToggleCyberspace()
     {
         inCyberspace = !inCyberspace;
-        cam.enabled = inCyberspace;
     }
 
     public float GetTransitionTime()

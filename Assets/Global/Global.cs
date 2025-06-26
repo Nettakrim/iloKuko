@@ -34,7 +34,6 @@ public class Global : MonoBehaviour
             if (map.ContainsKey(word))
             {
                 s += map[word];
-                Debug.Log(word + " : " + map[word]);
             }
             else
             {
