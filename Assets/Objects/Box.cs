@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Box : MonoBehaviour
@@ -19,6 +20,11 @@ public class Box : MonoBehaviour
 
     [SerializeField] private BoxCollider2D boxBounds;
 
+    #if UNITY_EDITOR
+    [SerializeField] private Material imageMaterial;
+    [SerializeField] private bool generateMissingItems;
+    #endif
+
     private void Start()
     {
         previousHolds = new List<Item>(transform.childCount);
@@ -36,7 +42,7 @@ public class Box : MonoBehaviour
         mouse /= new Vector2(Screen.width, Screen.height);
         mouse -= new Vector2(0.5f, 0.5f);
         mouse *= new Vector2(384, 216);
-        
+
         float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
         if (aspect > 1)
         {
@@ -57,10 +63,8 @@ public class Box : MonoBehaviour
             {
                 Jostle(mousePos, Vector3.one);
 
-                Bounds heldBounds = held.GetBounds();
-                Vector2 max = boxBounds.offset + boxBounds.size/2 - (Vector2)heldBounds.extents/2;
-                Vector2 min = boxBounds.offset - boxBounds.size/2 + (Vector2)heldBounds.extents/2;
-                held.transform.localPosition = new Vector3(Mathf.Clamp(held.transform.localPosition.x, min.x, max.x), Mathf.Clamp(held.transform.localPosition.y, min.y, max.y), 0);
+                Vector4 bounds = GetBounds(held.GetBounds());
+                held.transform.localPosition = new Vector3(Mathf.Clamp(held.transform.localPosition.x, bounds.x, bounds.z), Mathf.Clamp(held.transform.localPosition.y, bounds.y, bounds.w), 0);
 
                 held = null;
             }
@@ -127,4 +131,63 @@ public class Box : MonoBehaviour
     {
         held = null;
     }
+
+    private Vector4 GetBounds(Bounds bounds) {
+        Vector2 min = boxBounds.offset - boxBounds.size / 2 + (Vector2)bounds.extents / 2;
+        Vector2 max = boxBounds.offset + boxBounds.size / 2 - (Vector2)bounds.extents / 2;
+        return new Vector4(min.x, min.y, max.x, max.y);
+    }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (!generateMissingItems)
+        {
+            return;
+        }
+
+        generateMissingItems = false;
+
+        EditorApplication.delayCall += () =>
+        {
+            string folder = "Assets/Objects/" + name.ToLower();
+            string[] assets = AssetDatabase.FindAssets("t:Nimi a:assets", new[] { folder });
+
+            foreach (string s in assets)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(s);
+                Nimi nimi = (Nimi)AssetDatabase.LoadAssetAtPath(path, typeof(Nimi));
+                if (HasImage(nimi.name))
+                {
+                    continue;
+                }
+
+                GameObject obj = new GameObject(nimi.name);
+                obj.transform.SetParent(transform);
+                obj.layer = gameObject.layer;
+                obj.AddComponent<SpriteRenderer>().sharedMaterial = imageMaterial;
+
+                Item item = obj.AddComponent<Item>();
+                item.SetNimi(nimi);
+
+                Vector4 bounds = GetBounds(item.GetComponent<Collider2D>().bounds);
+                obj.transform.SetLocalPositionAndRotation(new Vector3(Random.Range(bounds.x, bounds.z), Random.Range(bounds.y, bounds.w), 0), Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            }
+        };
+
+        EditorUtility.SetDirty(gameObject);
+    }
+
+    private bool HasImage(string name)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.name == name)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    #endif
 }

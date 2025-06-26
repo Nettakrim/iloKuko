@@ -10,6 +10,10 @@ public class Item : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D bounds;
 
+    #if UNITY_EDITOR
+    [SerializeField] private bool updateSprite;
+    #endif
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,21 +33,34 @@ public class Item : MonoBehaviour
     #if UNITY_EDITOR
     void OnValidate()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer.sprite != nimi.sprite)
+        if (nimi == null)
         {
-            EditorApplication.delayCall += () =>
-            {
-                transform.name = nimi.name;
-                spriteRenderer.sprite = nimi.sprite;
-
-                DestroyImmediate(GetComponent<PolygonCollider2D>());
-                PolygonCollider2D collider2D = gameObject.AddComponent<PolygonCollider2D>();
-                collider2D.pathCount = 1;
-
-                EditorUtility.SetDirty(gameObject);
-            };
+            return;
         }
+
+        if (updateSprite || GetComponent<SpriteRenderer>().sprite != nimi.sprite)
+        {
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        updateSprite = false;
+    }
+
+    public void SetNimi(Nimi nimi)
+    {
+        this.nimi = nimi;
+        UpdateSprite();
+    }
+
+    private void UpdateSprite()
+    {
+        transform.name = nimi.name;
+        GetComponent<SpriteRenderer>().sprite = nimi.sprite;
+
+        DestroyImmediate(GetComponent<PolygonCollider2D>());
+        PolygonCollider2D collider2D = gameObject.AddComponent<PolygonCollider2D>();
+        collider2D.pathCount = 1;
+
+        EditorUtility.SetDirty(gameObject);
     }
     #endif
 }
