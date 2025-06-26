@@ -15,6 +15,7 @@ public class Box : MonoBehaviour
     [SerializeField] private float jostleAmount;
 
     [SerializeField] private float forgivenessRadius;
+    [SerializeField] private LayerMask layerMask;
 
     private void Start()
     {
@@ -29,7 +30,22 @@ public class Box : MonoBehaviour
 
     private void Update()
     {
-        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mouse = Input.mousePosition;
+        mouse /= new Vector2(Screen.width, Screen.height);
+        mouse -= new Vector2(0.5f, 0.5f);
+        mouse *= new Vector2(384, 216);
+        
+        float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
+        if (aspect > 1)
+        {
+            mouse.x *= aspect;
+        }
+        else if (aspect < 1)
+        {
+            mouse.y /= aspect;
+        }
+
+        Vector3 mousePos = mouse;
 
         if (held)
         {
@@ -51,23 +67,23 @@ public class Box : MonoBehaviour
             }
 
             if (held)
-                {
-                    dragOffset = held.transform.position - mousePos;
+            {
+                dragOffset = held.transform.position - mousePos;
 
-                    previousHolds.Remove(held);
-                    previousHolds.Add(held);
+                previousHolds.Remove(held);
+                previousHolds.Add(held);
 
-                    UpdateObjectOrder();
+                UpdateObjectOrder();
 
-                    Jostle(mousePos, heldScale);
-                }
+                Jostle(mousePos, heldScale);
+            }
         }
     }
 
     private Item RaycastItems(Vector3 pos, float radius)
     {
         Item top = null;
-        RaycastHit2D[] hits = radius == 0 ? Physics2D.RaycastAll(pos, Vector2.zero, 15) : Physics2D.CircleCastAll(pos, radius, Vector2.zero, 15);
+        RaycastHit2D[] hits = radius == 0 ? Physics2D.RaycastAll(pos, Vector2.up, 0.1f, layerMask) : Physics2D.CircleCastAll(pos, radius, Vector2.up, 0.1f, layerMask);
         foreach (RaycastHit2D hit in hits)
         {
             Item hitItem = hit.transform.GetComponent<Item>();

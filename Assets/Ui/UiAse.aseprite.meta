@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 0
@@ -87,7 +87,7 @@ ScriptedImporter:
     importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 0
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638865264884705890
+  platformSettingsDirtyTick: 638865548789107979
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Back1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -141,7 +141,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Outline
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -161,7 +161,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 228}
   - name: TimerButton
     originalName: 
-    pivot: {x: 4.44, y: -22.555555}
+    pivot: {x: 4.44, y: -10.555555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -181,7 +181,7 @@ ScriptedImporter:
     uvTransform: {x: 396, y: 211}
   - name: ExitButton
     originalName: 
-    pivot: {x: -19.777779, y: -22.555555}
+    pivot: {x: -19.777779, y: -10.555555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -201,7 +201,7 @@ ScriptedImporter:
     uvTransform: {x: 448, y: 211}
   - name: SuliButton
     originalName: 
-    pivot: {x: -18.555555, y: -22.555555}
+    pivot: {x: -18.555555, y: -10.555555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -221,7 +221,7 @@ ScriptedImporter:
     uvTransform: {x: 465, y: 211}
   - name: LiliButton
     originalName: 
-    pivot: {x: -18.555555, y: -22.555555}
+    pivot: {x: -18.555555, y: -10.555555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -241,7 +241,7 @@ ScriptedImporter:
     uvTransform: {x: 482, y: 211}
   - name: AnteButton
     originalName: 
-    pivot: {x: -17.333334, y: -22.555555}
+    pivot: {x: -17.333334, y: -10.555555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -261,7 +261,7 @@ ScriptedImporter:
     uvTransform: {x: 499, y: 211}
   - name: TextBack
     originalName: 
-    pivot: {x: -1.3625002, y: -0.027027028}
+    pivot: {x: -1.3625002, y: 0.945946}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -281,7 +281,7 @@ ScriptedImporter:
     uvTransform: {x: 396, y: 4}
   - name: CamBack
     originalName: 
-    pivot: {x: -1.3625002, y: -1.475}
+    pivot: {x: -1.3625002, y: -0.12500001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -301,7 +301,7 @@ ScriptedImporter:
     uvTransform: {x: 396, y: 123}
   - name: Recording
     originalName: 
-    pivot: {x: -16.09091, y: -20.88889}
+    pivot: {x: -16.09091, y: -8.888889}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -321,7 +321,7 @@ ScriptedImporter:
     uvTransform: {x: 429, y: 211}
   - name: QuitUi1
     originalName: 
-    pivot: {x: 0.9565217, y: -1.6538461}
+    pivot: {x: 0.9565217, y: 0.42307693}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -341,7 +341,7 @@ ScriptedImporter:
     uvTransform: {x: 396, y: 228}
   - name: VinnyCOPYME
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
