@@ -25,6 +25,8 @@ public class Box : MonoBehaviour
     [SerializeField] private bool generateMissingItems;
     #endif
 
+    [SerializeField] private float rotateSpeed;
+
     private void Start()
     {
         previousHolds = new List<Item>(transform.childCount);
@@ -43,6 +45,14 @@ public class Box : MonoBehaviour
 
         if (held)
         {
+            float scroll = Input.mouseScrollDelta.y;
+            if (scroll != 0)
+            {
+                Quaternion rotation = Quaternion.Euler(0, 0, scroll * rotateSpeed);
+                held.transform.localRotation *= rotation;
+                dragOffset = rotation * dragOffset;
+            }
+
             held.transform.localPosition = dragOffset + mousePos;
 
             if (Input.GetKeyUp(KeyCode.Mouse0))
