@@ -18,6 +18,13 @@ public class Item : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         bounds = GetComponent<Collider2D>();
+
+        #if UNITY_EDITOR
+        if (nimi.sprite.pixelsPerUnit == 100)
+        {
+            Debug.LogWarning("Sprite " + nimi.sprite + "hasnt been set up");
+        }
+        #endif
     }
 
     public SpriteRenderer GetSpriteRenderer()
@@ -61,6 +68,11 @@ public class Item : MonoBehaviour
         collider2D.pathCount = 1;
 
         EditorUtility.SetDirty(gameObject);
+
+        if (nimi.sprite.pixelsPerUnit == 100)
+        {
+            Debug.LogWarning("Sprite " + nimi.sprite + "hasnt been set up");
+        }
     }
     #endif
 }

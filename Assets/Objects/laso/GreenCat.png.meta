@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ddc5d0b4d939abf479b7bb13988667e0
+guid: cd8a4f416d013da449e471d84e56caa1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1482166820241233236
-    second: OrnageShell_0
+      213: -2219251040074439695
+    second: GreenCat_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 16
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OrnageShell_0
+      name: GreenCat_0
       rect:
         serializedVersion: 2
-        x: 678
-        y: 201
-        width: 667
-        height: 788
+        x: 602
+        y: 271
+        width: 705
+        height: 759
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: caaa6ad31294e6be0800000000000000
-      internalID: -1482166820241233236
+      spriteID: 1f362f8efe2a331e0800000000000000
+      internalID: -2219251040074439695
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OrnageShell_0: -1482166820241233236
+      GreenCat_0: -2219251040074439695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
