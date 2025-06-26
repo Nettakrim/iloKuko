@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Object : MonoBehaviour
+public class Item : MonoBehaviour
 {
     [SerializeField] private Nimi nimi;
 

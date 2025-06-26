@@ -6,21 +6,28 @@ public class Box : MonoBehaviour
 {
     [SerializeField] private Camera cam;
 
-    private Object held;
+    private Item held;
     private Vector3 dragOffset;
 
-    [SerializeField] private int maxOrder;
-    private List<Object> previousHolds;
+    private List<Item> previousHolds;
 
     [SerializeField] private Vector3 heldScale;
     [SerializeField] private float jostleAmount;
 
-    void Start()
+    [SerializeField] private float forgivenessRadius;
+
+    private void Start()
     {
-        previousHolds = new List<Object>(maxOrder);
+        previousHolds = new List<Item>(transform.childCount);
+        foreach (Transform child in transform)
+        {
+            previousHolds.Add(child.GetComponent<Item>());
+        }
+        previousHolds.Reverse();
+        UpdateObjectOrder();
     }
 
-    void Update()
+    private void Update()
     {
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
@@ -36,32 +43,53 @@ public class Box : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            RaycastHit2D hit2D = Physics2D.Raycast(mousePos, Vector3.forward, 15);
-            if (hit2D)
+            held = RaycastItems(mousePos, 0);
+
+            if (!held)
             {
-                held = hit2D.collider.GetComponent<Object>();
-                dragOffset = hit2D.transform.position - mousePos;
-
-                previousHolds.Remove(held);
-
-                if (previousHolds.Count >= maxOrder)
-                {
-                    previousHolds[0].GetSpriteRenderer().sortingOrder = 0;
-                    previousHolds.RemoveAt(0);
-                }
-
-                previousHolds.Add(held);
-                for (int i = 0; i < previousHolds.Count; i++)
-                {
-                    previousHolds[i].GetSpriteRenderer().sortingOrder = i + 1;
-                }
-
-                Jostle(mousePos, heldScale);
+                held = RaycastItems(mousePos, forgivenessRadius);
             }
+
+            if (held)
+                {
+                    dragOffset = held.transform.position - mousePos;
+
+                    previousHolds.Remove(held);
+                    previousHolds.Add(held);
+
+                    UpdateObjectOrder();
+
+                    Jostle(mousePos, heldScale);
+                }
         }
     }
 
-    public void Jostle(Vector3 mousePos, Vector3 scale)
+    private Item RaycastItems(Vector3 pos, float radius)
+    {
+        Item top = null;
+        RaycastHit2D[] hits = radius == 0 ? Physics2D.RaycastAll(pos, Vector2.zero, 15) : Physics2D.CircleCastAll(pos, radius, Vector2.zero, 15);
+        foreach (RaycastHit2D hit in hits)
+        {
+            Item hitItem = hit.transform.GetComponent<Item>();
+
+            if (!top || hitItem.GetSpriteRenderer().sortingOrder > top.GetSpriteRenderer().sortingOrder)
+            {
+                top = hitItem;
+            }
+        }
+
+        return top;
+    }
+
+    private void UpdateObjectOrder()
+    {
+        for (int i = 0; i < previousHolds.Count; i++)
+        {
+            previousHolds[i].GetSpriteRenderer().sortingOrder = i + 1;
+        }
+    }
+
+    private void Jostle(Vector3 mousePos, Vector3 scale)
     {
         Quaternion rotation = Quaternion.Euler(0, 0, Random.Range(-jostleAmount, jostleAmount));
         dragOffset = rotation * new Vector3(dragOffset.x * scale.x / held.transform.localScale.x, dragOffset.y * scale.y / held.transform.localScale.y, dragOffset.z);
@@ -71,7 +99,7 @@ public class Box : MonoBehaviour
         held.transform.localPosition = dragOffset + mousePos;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         held = null;
     }

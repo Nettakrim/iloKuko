@@ -597,9 +597,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 937777692}
-  maxOrder: 128
   heldScale: {x: 1.2, y: 1.2, z: 1}
   jostleAmount: 10
+  forgivenessRadius: 4
 --- !u!1 &287621969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,9 +1254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 937777692}
-  maxOrder: 128
   heldScale: {x: 1.2, y: 1.2, z: 1}
   jostleAmount: 10
+  forgivenessRadius: 4
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,9 +2445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 937777692}
-  maxOrder: 128
   heldScale: {x: 1.2, y: 1.2, z: 1}
   jostleAmount: 10
+  forgivenessRadius: 4
 --- !u!1 &1098165634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,9 +4537,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 937777692}
-  maxOrder: 128
   heldScale: {x: 1.2, y: 1.2, z: 1}
   jostleAmount: 10
+  forgivenessRadius: 4
 --- !u!1 &1841923726
 GameObject:
   m_ObjectHideFlags: 0
@@ -5095,9 +5095,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 937777692}
-  maxOrder: 128
   heldScale: {x: 1.2, y: 1.2, z: 1}
   jostleAmount: 10
+  forgivenessRadius: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
