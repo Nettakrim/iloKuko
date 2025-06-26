@@ -1,3 +1,16 @@
 {
-	"name": "iloKuko.Story"
+    "name": "iloKuko.Story",
+    "rootNamespace": "",
+    "references": [
+        "GUID:995da8ac34673fa448257d46fe4e3ed5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

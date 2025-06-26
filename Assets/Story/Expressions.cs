@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq.Expressions;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Expression
 {
+    public abstract void Step(Interpreter interpreter);
+
     protected abstract void ParseExpression(Reader reader, string args);
 
     public static Expression ParseReader(Reader reader)
@@ -14,8 +16,9 @@ public abstract class Expression
 
         Expression expression = parts[0] switch
         {
-            "def" => new DefExpression(),
+            "def"  => new DefExpression(),
             "call" => new CallExpression(),
+            "set"  => new SetExpression(),
             "test" => new TestExpression(),
             "toki" => new TokiExpression(),
             "wile" => new WileExpression(),
@@ -26,7 +29,7 @@ public abstract class Expression
 
         if (expression == null)
         {
-            Debug.LogWarning("Couldnt parse line "+reader.GetLine());
+            Debug.LogWarning("Couldnt parse line " + reader.GetLine());
             return null;
         }
 
@@ -35,14 +38,17 @@ public abstract class Expression
     }
 
     [System.Serializable]
-    public class Wrapper {
+    public class Wrapper
+    {
         [SerializeReference] public Expression expression;
 
-        public Wrapper(Expression expression) {
+        public Wrapper(Expression expression)
+        {
             this.expression = expression;
         }
 
-        public static implicit operator Wrapper(Expression expression) {
+        public static implicit operator Wrapper(Expression expression)
+        {
             return new Wrapper(expression);
         }
     }
@@ -77,6 +83,11 @@ public class DefExpression : MultiLineExpression
     [SerializeField] private string name;
     [SerializeField] private List<Wrapper> expressions = new();
 
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.DefineFunction(name, expressions);
+    }
+
     protected override void ParseArgs(string args)
     {
         name = args;
@@ -93,9 +104,33 @@ public class CallExpression : Expression
 {
     [SerializeField] private string function;
 
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.CallFunction(function);
+    }
+
     protected override void ParseExpression(Reader reader, string args)
     {
         function = args;
+    }
+}
+
+[System.Serializable]
+public class SetExpression : Expression
+{
+    [SerializeField] private float value;
+    [SerializeField] private string group;
+
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.SetValue(group, value);
+    }
+
+    protected override void ParseExpression(Reader reader, string args)
+    {
+        int i = args.IndexOf(' ');
+        value = float.Parse(args[..i], CultureInfo.InvariantCulture);
+        group = args[i..].TrimStart();
     }
 }
 
@@ -104,6 +139,18 @@ public class TestExpression : MultiLineExpression
 {
     [SerializeField] private List<TestData> testDatas = new();
 
+    public override void Step(Interpreter interpreter)
+    {
+        foreach (TestData testData in testDatas)
+        {
+            if (testData.Passes(interpreter))
+            {
+                testData.Run(interpreter);
+                return;
+            }
+        }
+    }
+
     protected override void ParseArgs(string args)
     {
 
@@ -111,28 +158,43 @@ public class TestExpression : MultiLineExpression
 
     protected override void ParseLine(Reader reader)
     {
-        TestData testData = new TestData();
-
         string s = reader.GetLine();
         int i = s.IndexOf(' ');
-        testData.amount = float.Parse(s[..i], CultureInfo.InvariantCulture);
+        float amount = float.Parse(s[..i], CultureInfo.InvariantCulture);
 
         s = s[i..].TrimStart();
         i = s.IndexOf(' ');
-        testData.group = s[..i];
+        string group = s[..i];
 
         reader.SetLine(s[i..].TrimStart());
-        testData.expression = ParseReader(reader);
+        Expression expression = ParseReader(reader);
 
-        testDatas.Add(testData);
+        testDatas.Add(new TestData(amount, group, expression));
     }
 
     [System.Serializable]
     public class TestData
     {
-        public float amount;
-        public string group;
-        [SerializeReference] public Expression expression;
+        public TestData(float amount, string group, Expression expression)
+        {
+            this.amount = amount;
+            this.group = group;
+            this.expression = expression;
+        }
+
+        [SerializeField] private float amount;
+        [SerializeField] private string group;
+        [SerializeReference] private Expression expression;
+
+        public bool Passes(Interpreter interpreter)
+        {
+            return interpreter.GetValue(group) - 0.01f >= amount;
+        }
+
+        public void Run(Interpreter interpreter)
+        {
+            interpreter.CallExpression(expression);
+        }
     }
 }
 
@@ -140,6 +202,11 @@ public class TestExpression : MultiLineExpression
 public class TokiExpression : Expression
 {
     [SerializeField] private string message;
+
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.DisplayMessage(message);
+    }
 
     protected override void ParseExpression(Reader reader, string args)
     {
@@ -150,9 +217,14 @@ public class TokiExpression : Expression
 [System.Serializable]
 public class WileExpression : Expression
 {
-    public float multiplier;
-    public string group;
-    public string[] nimi;
+    [SerializeField] private float multiplier;
+    [SerializeField] private string group;
+    [SerializeField] private string[] nimi;
+
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.AddWile(this);
+    }
 
     protected override void ParseExpression(Reader reader, string args)
     {
@@ -165,12 +237,39 @@ public class WileExpression : Expression
 
         nimi = args[i..].TrimStart().Split(new char[] { ' ', ',' });
     }
+
+    public (string, float) GetScore(Nimi nimi)
+    {
+        float total = 0;
+        foreach (string suli in nimi.suli)
+        {
+            if (this.nimi.Contains(suli))
+            {
+                total += multiplier;
+            }
+        }
+
+        foreach (string lili in nimi.lili)
+        {
+            if (this.nimi.Contains(lili))
+            {
+                total += multiplier / 2f;
+            }
+        }
+
+        return (group, total);
+    }
 }
 
 [System.Serializable]
 public class WaitExpression : Expression
 {
-    public float duration;
+    [SerializeField] private float duration;
+
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.Suspend(duration);
+    }
 
     protected override void ParseExpression(Reader reader, string args)
     {
@@ -182,6 +281,11 @@ public class WaitExpression : Expression
 public class NextExpression : Expression
 {
     [SerializeField] private string destination;
+
+    public override void Step(Interpreter interpreter)
+    {
+        interpreter.Next(destination);
+    }
 
     protected override void ParseExpression(Reader reader, string args)
     {
