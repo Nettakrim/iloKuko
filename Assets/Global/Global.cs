@@ -47,4 +47,24 @@ public class Global : MonoBehaviour
     {
         return b + (a - b) * Mathf.Exp(-decay * Time.deltaTime);
     }
+
+    public static Vector2 GetMousePos()
+    {
+        Vector2 mouse = Input.mousePosition;
+        mouse /= new Vector2(Screen.width, Screen.height);
+        mouse -= new Vector2(0.5f, 0.5f);
+        mouse *= new Vector2(384, 216);
+
+        float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
+        if (aspect > 1)
+        {
+            mouse.x *= aspect;
+        }
+        else if (aspect < 1)
+        {
+            mouse.y /= aspect;
+        }
+
+        return mouse;
+    }
 }

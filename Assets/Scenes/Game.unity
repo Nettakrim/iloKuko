@@ -12112,8 +12112,8 @@ MonoBehaviour:
   doors: {fileID: 1313451583}
   floor: {fileID: 701837668}
   top: {fileID: 758363872}
-  speed: 8
-  angleStep: 30
+  speed: 4
+  angleStep: 22.5
   screen: {fileID: 1368765583}
   transitionCurve:
     serializedVersion: 2
@@ -12140,7 +12140,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   transitionDuration: 1
+  transitionSteps: 16
   cam: {fileID: 183162694}
+  boxBounds: {fileID: 481350330}
+  tiltThreshold: 0.21
+  untiltThreshold: 0.2
+  tilt: 1
 --- !u!1 &1495016984
 GameObject:
   m_ObjectHideFlags: 0

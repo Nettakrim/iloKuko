@@ -29,6 +29,12 @@ public class Cyberspace : MonoBehaviour
 
     [SerializeField] private Camera cam;
 
+    [SerializeField] private BoxCollider2D boxBounds;
+    [SerializeField] private float tiltThreshold;
+    [SerializeField] private float untiltThreshold;
+    [SerializeField] private float tilt;
+    private bool tilted;
+
     private void Start()
     {
         target = 15;
@@ -46,6 +52,8 @@ public class Cyberspace : MonoBehaviour
 
     private void Update()
     {
+        UpdateHover();
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             Cycle(-1);
@@ -63,10 +71,52 @@ public class Cyberspace : MonoBehaviour
         UpdateTransition();
     }
 
+    private void UpdateHover()
+    {
+        if (state != State.Cyberspace)
+        {
+            return;
+        }
+
+        Vector2 mousePos = Global.GetMousePos();
+        if (!boxBounds.OverlapPoint(mousePos))
+        {
+            return;
+        }
+
+        float viewPort = (mousePos.x - boxBounds.offset.x) / boxBounds.size.x;
+
+        if (!tilted && Mathf.Abs(viewPort) > tiltThreshold)
+        {
+            tilted = true;
+        }
+        else if (tilted && Mathf.Abs(viewPort) < untiltThreshold)
+        {
+            tilted = false;
+        }
+
+        if (tilted)
+        {
+            cam.transform.localRotation = Quaternion.Euler(0, viewPort > 0 ? tilt : -tilt, 0);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Cycle(viewPort > 0 ? 1 : -1);
+            }
+        }
+        else
+        {
+            cam.transform.localRotation = Quaternion.identity;
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                ToggleCyberspace();
+            }
+        }
+    }
+
     private void UpdateRotation()
     {
         float prev = current;
-        current = Global.ExpDecay(current, target, speed);
+        current = Mathf.MoveTowards(current, target, speed*Time.deltaTime);
 
         int c = Mathf.FloorToInt(current);
         if (c != Mathf.FloorToInt(prev))
@@ -86,7 +136,8 @@ public class Cyberspace : MonoBehaviour
 
         }
 
-        doors.rotation = Quaternion.Euler(0, Mathf.Round((current % 1) * -90 / angleStep) * angleStep, 0);
+        float angle = Mathf.Round((current % 1) * -90 / angleStep) * angleStep;
+        doors.rotation = Quaternion.Euler(0, angle, 0);
         float r = Mathf.Floor(current) * -90;
         floor.localRotation = Quaternion.Euler(-90, r, 0);
         top.localRotation = Quaternion.Euler(90, r, 0);
