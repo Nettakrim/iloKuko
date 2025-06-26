@@ -55,7 +55,7 @@ Material:
     m_Floats:
     - _ColorDepth: 16
     - _EnableExternalAlpha: 0
-    - _NoiseAmplitude: 0
+    - _NoiseAmplitude: 1
     - _NoiseOffset: 1
     - _QueueControl: 0
     - _QueueOffset: 0

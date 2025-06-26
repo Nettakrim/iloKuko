@@ -1,40 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cyberspace : MonoBehaviour
 {
     [SerializeField] private Info[] infos;
     [SerializeField] private Graphic[] graphics;
 
-    [SerializeField] private Transform box;
+    [SerializeField] private Transform doors;
     [SerializeField] private Transform floor;
     [SerializeField] private Transform top;
-    
+
     private float current;
     private int target;
     [SerializeField] private float speed = 25;
 
     [SerializeField] private float angleStep;
 
+    [SerializeField] private RawImage screen;
+    private Material material;
+    [SerializeField] private AnimationCurve transitionCurve;
+    [SerializeField] private float transitionDuration;
+
+    private bool inCyberspace = true;
+    private State state = State.Cyberspace;
+    private float transitionedAt;
+
+    [SerializeField] private Camera cam;
+
     private void Start()
     {
         target = 15;
         current = target;
         SetImages(target);
+
+        material = screen.material;
+        SetTransitionAnimation(0);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            target--;
+            Cycle(-1);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            target++;
+            Cycle(1);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ToggleCyberspace();
         }
 
+        UpdateRotation();
+        UpdateTransition();
+    }
+
+    private void UpdateRotation()
+    {
         float prev = current;
         current = Global.ExpDecay(current, target, speed);
 
@@ -56,7 +82,7 @@ public class Cyberspace : MonoBehaviour
 
         }
 
-        box.rotation = Quaternion.Euler(0, Mathf.Round((current % 1) * -90/angleStep)*angleStep, 0);
+        doors.rotation = Quaternion.Euler(0, Mathf.Round((current % 1) * -90 / angleStep) * angleStep, 0);
         float r = Mathf.Floor(current) * -90;
         floor.localRotation = Quaternion.Euler(-90, r, 0);
         top.localRotation = Quaternion.Euler(90, r, 0);
@@ -70,13 +96,88 @@ public class Cyberspace : MonoBehaviour
         }
     }
 
+    private void UpdateTransition()
+    {
+        if (state == State.Cyberspace && !inCyberspace)
+        {
+            state = State.Entering;
+            transitionedAt = Time.time;
+        }
+        else if (state == State.Box && inCyberspace)
+        {
+            state = State.Exiting;
+            transitionedAt = Time.time;
+        }
 
+        if (state == State.Entering)
+        {
+            float t = GetTransitionTime();
+            SetTransitionAnimation(transitionCurve.Evaluate(t));
+            if (t >= 1)
+            {
+                state = State.Box;
+            }
+        }
+        if (state == State.Exiting)
+        {
+            float t = GetTransitionTime();
+            SetTransitionAnimation(-transitionCurve.Evaluate(1 - t));
+            if (t >= 1)
+            {
+                state = State.Cyberspace;
+                infos[(target+1) % 5].SetActive(false);
+            }
+        }
+    }
+
+    public void Cycle(int direction)
+    {
+        if (state == State.Cyberspace && inCyberspace)
+        {
+            target += direction;
+        }
+    }
+
+    public void ToggleCyberspace()
+    {
+        inCyberspace = !inCyberspace;
+        cam.enabled = inCyberspace;
+
+        if (!inCyberspace)
+        {
+            infos[(target+1) % 5].SetActive(true);
+        }
+    }
+
+    public float GetTransitionTime()
+    {
+        return (Time.time - transitionedAt) / transitionDuration;
+    }
+
+    public void SetTransitionAnimation(float t)
+    {
+        material.SetFloat("_NoiseAmplitude", t);
+    }
+
+    private enum State
+    {
+        Cyberspace,
+        Entering,
+        Box,
+        Exiting
+    }
 
     [System.Serializable]
     private class Info
     {
         public Sprite sprite;
         public Color color;
+        public GameObject box;
+
+        public void SetActive(bool active)
+        {
+            box.SetActive(active);
+        }
     }
 
     [System.Serializable]
@@ -96,4 +197,11 @@ public class Cyberspace : MonoBehaviour
             c.color = info.color;
         }
     }
+
+    #if UNITY_EDITOR
+    void OnDestroy()
+    {
+        SetTransitionAnimation(1);
+    }
+    #endif
 }
