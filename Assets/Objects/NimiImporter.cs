@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEditor.AssetImporters;
 using UnityEngine;
@@ -34,31 +33,28 @@ public class NimiImporter : ScriptedImporter
             return;
         }
 
-        List<string> suli = new List<string>();
-        List<string> lili = new List<string>();
-
-        bool start = true;
+        List<Nimi.Layer> words = new();
 
         StreamReader reader = new StreamReader(ctx.assetPath);
         while (!reader.EndOfStream)
         {
             string line = reader.ReadLine();
-            (start ? suli : lili).AddRange(line.Split(',', StringSplitOptions.RemoveEmptyEntries));
-            start = false;
+            words.Add(new Nimi.Layer(line.Split(',', StringSplitOptions.RemoveEmptyEntries)));
         }
 
         Nimi nimi = ScriptableObject.CreateInstance<Nimi>();
         nimi.sprite = sprite;
-        nimi.suli = suli.ToArray();
-        nimi.lili = lili.ToArray();
+        nimi.words = words.ToArray();
 
-        suli.AddRange(lili);
         Charmap charmap = (Charmap)AssetDatabase.LoadAssetAtPath("Assets/Global/ucsur.charmap", typeof(Charmap));
-        foreach (string s in suli)
+        foreach (Nimi.Layer list in words)
         {
-            if (!charmap.ContainsKey(s))
+            foreach (string word in list)
             {
-                Debug.LogWarning(".nimi " + ctx.assetPath + " uses unknown nimi " + s);
+                if (!charmap.ContainsKey(word))
+                {
+                    Debug.LogWarning(".nimi " + ctx.assetPath + " uses unknown nimi " + word);
+                }
             }
         }
 

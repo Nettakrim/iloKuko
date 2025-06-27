@@ -7,7 +7,7 @@ public class Charmap : ScriptableObject
     public List<Dict> map;
 
     [System.Serializable]
-    public struct Dict
+    public class Dict
     {
         public string key;
         public string value;

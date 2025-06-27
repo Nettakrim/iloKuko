@@ -67,7 +67,6 @@ public class Interpreter
 {
     private static readonly Dictionary<string, float> globalValues = new();
 
-    private readonly Toki toki;
     private readonly Stack<Expression> stack;
     private readonly Dictionary<string, List<Expression>> functions;
     private readonly Dictionary<string, float> values;
@@ -80,7 +79,6 @@ public class Interpreter
 
     public Interpreter(Toki toki)
     {
-        this.toki = toki;
         stack = new Stack<Expression>(toki.expressions.Length);
         functions = new();
         values = new();

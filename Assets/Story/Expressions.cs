@@ -241,22 +241,18 @@ public class WileExpression : Expression
     public (string, float) GetScore(Nimi nimi)
     {
         float total = 0;
-        foreach (string suli in nimi.suli)
+
+        for (int i = 0; i < nimi.words.Length; i++)
         {
-            if (this.nimi.Contains(suli))
+            foreach (string word in nimi.words[i])
             {
-                total += multiplier;
+                if (this.nimi.Contains(word))
+                {
+                    total += multiplier / (i + 1);
+                }
             }
         }
-
-        foreach (string lili in nimi.lili)
-        {
-            if (this.nimi.Contains(lili))
-            {
-                total += multiplier / 2f;
-            }
-        }
-
+        
         return (group, total);
     }
 }
