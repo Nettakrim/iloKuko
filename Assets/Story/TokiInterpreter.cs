@@ -56,7 +56,7 @@ public class TokiInterpreter : MonoBehaviour
 public class Interpreter
 {
     private readonly Toki toki;
-    private readonly List<Expression> queue;
+    private readonly Stack<Expression> stack;
     private readonly Dictionary<string, List<Expression>> functions;
     private readonly Dictionary<string, float> values;
     private readonly List<WileExpression> wile;
@@ -69,14 +69,14 @@ public class Interpreter
     public Interpreter(Toki toki)
     {
         this.toki = toki;
-        queue = new List<Expression>(toki.expressions.Length);
+        stack = new Stack<Expression>(toki.expressions.Length);
         functions = new();
         values = new();
         wile = new();
 
-        foreach (Expression.Wrapper expression in toki.expressions)
+        for (int i = toki.expressions.Length - 1; i > 0; i--)
         {
-            queue.Add(expression.expression);
+            stack.Push(toki.expressions[i].expression);
         }
     }
 
@@ -87,11 +87,9 @@ public class Interpreter
             resumeAt = -1;
         }
 
-        while (queue.Count > 0 && resumeAt < 0)
+        while (stack.Count > 0 && resumeAt < 0)
         {
-            Expression current = queue[0];
-            queue.RemoveAt(0);
-            current.Run(this);
+            stack.Pop().Run(this);
         }
     }
 
@@ -122,18 +120,19 @@ public class Interpreter
     public void DefineFunction(string name, List<Expression.Wrapper> wrappers)
     {
         List<Expression> expressions = new(wrappers.Count);
-        foreach (Expression.Wrapper expression in toki.expressions)
+        foreach (Expression.Wrapper expression in wrappers)
         {
-            expressions.Add(expression.expression);
+            //store functions in reverse so they can be added to the stack easily
+            expressions.Insert(0, expression.expression);
         }
-        functions.Add(name, expressions);
+        functions[name] = expressions;
     }
 
-    public void CallFunction(string name, bool clearQueue)
+    public void CallFunction(string name, bool clearStack)
     {
-        if (clearQueue)
+        if (clearStack)
         {
-            queue.Clear();
+            stack.Clear();
         }
 
         List<Expression> function = functions[name];
@@ -142,13 +141,16 @@ public class Interpreter
             return;
         }
 
-        queue.InsertRange(0, function);
+        foreach (Expression expression in function)
+        {
+            stack.Push(expression);
+        }
         resumeAt = -1;
     }
 
     public void CallExpression(Expression expression)
     {
-        queue.Insert(0, expression);
+        stack.Push(expression);
     }
 
     public void DisplayMessage(string message)
@@ -158,7 +160,7 @@ public class Interpreter
 
     public void Next(string destination)
     {
-        queue.Clear();
+        stack.Clear();
         onDestination.Invoke(destination);
     }
 

@@ -16,7 +16,7 @@ public class Reader
         while (!reader.EndOfStream)
         {
             current = reader.ReadLine();
-            if (!string.IsNullOrWhiteSpace(current))
+            if (!string.IsNullOrWhiteSpace(current) && !(current[0] == '#'))
             {
                 current = current.TrimStart();
                 return true;
