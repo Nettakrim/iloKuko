@@ -28,7 +28,13 @@ public class Global : MonoBehaviour
 
     public string ConvertToSitelenPona(string lasina)
     {
-        string s = "";
+        string replace = "?!.";
+        foreach (char c in replace) {
+            //TODO: replace with interpunct character
+            lasina = lasina.Replace(c+" ", " @ ").Replace(c+"", "");
+        }
+
+        string s = ""; 
         foreach (string word in lasina.Split(' '))
         {
             if (map.ContainsKey(word))
@@ -37,7 +43,8 @@ public class Global : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Missing conversion key " + word);
+                //TODO: replace with cartouche
+                s += "["+word+"]";
             }
         }
         return s;

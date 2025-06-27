@@ -8,6 +8,9 @@ public class TokiInterpreter : MonoBehaviour
 {
     [SerializeField] private Toki[] searches;
 
+    [SerializeField] private SitelenPona messagePrefab;
+    [SerializeField] private Transform messageParent;
+
     void Start()
     {
         SetInterpreter(searches[0].name);
@@ -45,7 +48,7 @@ public class TokiInterpreter : MonoBehaviour
     }
 
     private void OnMessage(string message) {
-        Debug.Log("says: " + message);
+        Instantiate(messagePrefab, messageParent).SetMessage(message);
     }
 
     private void OnDestination(string destination) {
