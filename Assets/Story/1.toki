@@ -11,6 +11,7 @@ wile/ 0.5 a    walo
 wile/ 1   nasa laso
 
 set/ 131 test
+set/ 7 #global
 
 def/ #item
 test/

@@ -55,6 +55,8 @@ public class TokiInterpreter : MonoBehaviour
 
 public class Interpreter
 {
+    private static readonly Dictionary<string, float> globalValues = new();
+
     private readonly Toki toki;
     private readonly Stack<Expression> stack;
     private readonly Dictionary<string, List<Expression>> functions;
@@ -95,12 +97,12 @@ public class Interpreter
 
     public void SetValue(string group, float value)
     {
-        values[group] = value;
+        (group[0] == '#' ? globalValues : values)[group] = value;
     }
 
     public float GetValue(string group)
     {
-        return values[group];
+        return (group[0] == '#' ? globalValues : values)[group];
     }
 
     public void AddWile(WileExpression wileExpression)
@@ -113,7 +115,7 @@ public class Interpreter
         foreach (WileExpression wileExpression in wile)
         {
             (string group, float value) = wileExpression.GetScore(nimi);
-            values[group] += value;
+            SetValue(group, GetValue(group)+value);
         }
     }
 
