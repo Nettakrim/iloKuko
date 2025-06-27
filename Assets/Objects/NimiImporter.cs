@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.AssetImporters;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class NimiImporter : ScriptedImporter
     {
 
         int lastFolder = ctx.assetPath.LastIndexOf('/');
-        string[] assets = AssetDatabase.FindAssets(ctx.assetPath[(lastFolder+1)..^5]+" t:Sprite a:assets", new[] {ctx.assetPath[..lastFolder] });
+        string[] assets = AssetDatabase.FindAssets(ctx.assetPath[(lastFolder + 1)..^5] + " t:Sprite a:assets", new[] { ctx.assetPath[..lastFolder] });
 
         Sprite sprite = null;
         foreach (string s in assets)
@@ -50,6 +51,16 @@ public class NimiImporter : ScriptedImporter
         nimi.sprite = sprite;
         nimi.suli = suli.ToArray();
         nimi.lili = lili.ToArray();
+
+        suli.AddRange(lili);
+        Charmap charmap = (Charmap)AssetDatabase.LoadAssetAtPath("Assets/Global/ucsur.charmap", typeof(Charmap));
+        foreach (string s in suli)
+        {
+            if (!charmap.ContainsKey(s))
+            {
+                Debug.LogWarning(".nimi " + ctx.assetPath + " uses unknown nimi " + s);
+            }
+        }
 
         ctx.AddObjectToAsset("MainAsset", nimi);
         ctx.SetMainObject(nimi);

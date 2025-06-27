@@ -12,4 +12,18 @@ public class Charmap : ScriptableObject
         public string key;
         public string value;
     }
+
+    #if UNITY_EDITOR
+    public bool ContainsKey(string key)
+    {
+        foreach (Dict dict in map)
+        {
+            if (dict.key == key)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    #endif
 }
