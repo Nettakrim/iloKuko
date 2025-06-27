@@ -30,8 +30,7 @@ public class Global : MonoBehaviour
     {
         string replace = "?!.";
         foreach (char c in replace) {
-            //TODO: replace with interpunct character
-            lasina = lasina.Replace(c+" ", " @ ").Replace(c+"", "");
+            lasina = lasina.Replace(c+" ", " \n ").Replace(c+"", "");
         }
 
         string s = ""; 
@@ -41,10 +40,18 @@ public class Global : MonoBehaviour
             {
                 s += map[word];
             }
+            else if (word == "\n")
+            {
+                s += "\n";
+            }
             else
             {
-                //TODO: replace with cartouche
-                s += "["+word+"]";
+                s += "󱦐";
+                foreach (char c in word)
+                {
+                    s += c + "󱦒";
+                }
+                s += "󱦑";
             }
         }
         return s;
