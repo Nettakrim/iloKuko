@@ -14,6 +14,7 @@ public class TokiInterpreter : MonoBehaviour
     void Start()
     {
         SetInterpreter(searches[0].name);
+        Box.onSubmit = OnSubmit;
     }
 
     private Interpreter current;
@@ -36,7 +37,7 @@ public class TokiInterpreter : MonoBehaviour
 
         if (current == null)
         {
-            Debug.LogError("Couldn't find .toki " + name);
+            Debug.LogWarning("Couldn't find .toki " + name);
             return;
         }
         Debug.Log("Starting .toki " + name);
@@ -53,6 +54,12 @@ public class TokiInterpreter : MonoBehaviour
 
     private void OnDestination(string destination) {
         SetInterpreter(destination);
+    }
+
+    private void OnSubmit(Nimi nimi)
+    {
+        current.SetValueFromWile(nimi);
+        current.CallFunction("#item", true);
     }
 }
 
@@ -100,12 +107,19 @@ public class Interpreter
 
     public void SetValue(string group, float value)
     {
-        (group[0] == '#' ? globalValues : values)[group] = value;
+        GetValueDictionary(group)[group] = value;
     }
 
     public float GetValue(string group)
     {
-        return (group[0] == '#' ? globalValues : values)[group];
+        Dictionary<string, float> dictionary = GetValueDictionary(group);
+        dictionary.TryGetValue(group, out float f);
+        return f;
+    }
+
+    private Dictionary<string, float> GetValueDictionary(string group)
+    {
+        return group[0] == '#' ? globalValues : values;
     }
 
     public void AddWile(WileExpression wileExpression)

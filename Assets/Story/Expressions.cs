@@ -188,7 +188,7 @@ public class TestExpression : MultiLineExpression
 
         public bool Passes(Interpreter interpreter)
         {
-            return interpreter.GetValue(group) - 0.01f >= amount;
+            return interpreter.GetValue(group) + 0.01f >= amount;
         }
 
         public void Run(Interpreter interpreter)

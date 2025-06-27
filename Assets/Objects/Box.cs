@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Box : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Box : MonoBehaviour
     #endif
 
     [SerializeField] private float rotateSpeed;
+
+    public static UnityAction<Nimi> onSubmit;
 
     private void Start()
     {
@@ -55,12 +58,21 @@ public class Box : MonoBehaviour
 
             held.transform.localPosition = dragOffset + mousePos;
 
+            bool submitting = mousePos.x > boxBounds.offset.x + boxBounds.size.x / 2f;
+
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 Jostle(mousePos, Vector3.one);
 
                 Vector4 bounds = GetBounds(held.GetBounds());
                 held.transform.localPosition = new Vector3(Mathf.Clamp(held.transform.localPosition.x, bounds.x, bounds.z), Mathf.Clamp(held.transform.localPosition.y, bounds.y, bounds.w), 0);
+
+                if (submitting)
+                {
+                    previousHolds.Remove(held);
+                    onSubmit.Invoke(held.GetNimi());
+                    Destroy(held.gameObject);
+                }
 
                 held = null;
             }

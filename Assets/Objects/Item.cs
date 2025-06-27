@@ -37,6 +37,11 @@ public class Item : MonoBehaviour
         return bounds.bounds;
     }
 
+    public Nimi GetNimi()
+    {
+        return nimi;
+    }
+
     #if UNITY_EDITOR
     void OnValidate()
     {
