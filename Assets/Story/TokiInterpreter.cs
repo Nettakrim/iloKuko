@@ -8,9 +8,6 @@ public class TokiInterpreter : MonoBehaviour
 {
     [SerializeField] private Toki[] searches;
 
-    [SerializeField] private SitelenPona messagePrefab;
-    [SerializeField] private Transform messageParent;
-
     void Start()
     {
         Box.onSubmit = OnSubmit;
@@ -50,8 +47,7 @@ public class TokiInterpreter : MonoBehaviour
 
     private void OnMessage(string message)
     {
-        Instantiate(messagePrefab, messageParent).SetMessage(message);
-        TextManager.UpdateLayout();
+        TextManager.CreateMessage(message);
     }
 
     private void OnDestination(string destination) {
@@ -138,7 +134,7 @@ public class Interpreter
         foreach (WileExpression wileExpression in wile)
         {
             (string group, float value) = wileExpression.GetScore(nimi);
-            SetValue(group, GetValue(group)+value);
+            SetValue(group, GetValue(group) + value);
         }
     }
 

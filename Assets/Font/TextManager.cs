@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,8 @@ public class TextManager : MonoBehaviour
 {
     public static bool useSitelenPona { get; private set; }
 
-    [SerializeField] private RectTransform layout;
+    [SerializeField] private RectTransform messageParent;
+    [SerializeField] private SitelenPona messagePrefab;
 
     private float scroll = -1f;
     private bool scrollEnabled = false;
@@ -17,9 +19,21 @@ public class TextManager : MonoBehaviour
 
     private static bool refreshLayout;
 
+    private static TextManager instance;
+
+    [SerializeField] private Creature[] creatures;
+
+    [Serializable]
+    private class Creature
+    {
+        public string name;
+        public Sprite sprite;
+    }
+
     void Start()
     {
-        height = (layout.parent as RectTransform).sizeDelta.y;
+        instance = this;
+        height = (messageParent.parent as RectTransform).sizeDelta.y;
     }
 
     void Update()
@@ -35,10 +49,10 @@ public class TextManager : MonoBehaviour
         if (refreshLayout)
         {
             refreshLayout = false;
-            LayoutRebuilder.ForceRebuildLayoutImmediate(layout);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(messageParent);
         }
 
-        float over = layout.sizeDelta.y - height;
+        float over = messageParent.sizeDelta.y - height;
 
         if (scrollEnabled)
         {
@@ -46,7 +60,7 @@ public class TextManager : MonoBehaviour
             {
                 SetLayoutAnchor(1f);
                 scrollEnabled = false;
-                layout.anchoredPosition = new Vector2(0, 0);
+                messageParent.anchoredPosition = new Vector2(0, 0);
                 scroll = -1f;
                 return;
             }
@@ -64,7 +78,7 @@ public class TextManager : MonoBehaviour
                 if (delta > 0)
                 {
                     SetLayoutAnchor(1f);
-                    scroll = Mathf.Floor(over/scrollSpeed)*scrollSpeed;
+                    scroll = Mathf.Floor(over / scrollSpeed) * scrollSpeed;
                 }
                 else
                 {
@@ -73,7 +87,7 @@ public class TextManager : MonoBehaviour
             }
 
             scroll = Mathf.Clamp(scroll - delta, 0f, over);
-            layout.anchoredPosition = new Vector2(0, scroll);
+            messageParent.anchoredPosition = new Vector2(0, scroll);
 
             if (scroll > over - scrollSpeed)
             {
@@ -82,7 +96,7 @@ public class TextManager : MonoBehaviour
 
             if (scroll == -1)
             {
-                layout.anchoredPosition = new Vector2(0, 0);
+                messageParent.anchoredPosition = new Vector2(0, 0);
                 SetLayoutAnchor(0f);
             }
         }
@@ -95,9 +109,9 @@ public class TextManager : MonoBehaviour
 
     void SetLayoutAnchor(float to)
     {
-        layout.pivot = new Vector2(0.5f, to);
-        layout.anchorMin = new Vector2(0f, to);
-        layout.anchorMax = new Vector2(1f, to);
+        messageParent.pivot = new Vector2(0.5f, to);
+        messageParent.anchorMin = new Vector2(0f, to);
+        messageParent.anchorMax = new Vector2(1f, to);
     }
 
     public void ToggleSitelenPona()
@@ -109,5 +123,31 @@ public class TextManager : MonoBehaviour
     public static void UpdateLayout()
     {
         refreshLayout = true;
+    }
+
+    public static void CreateMessage(string message)
+    {
+        int i = message.IndexOf(']');
+        string name = message[1..i];
+        Sprite sprite = null;
+
+        foreach (Creature creature in instance.creatures)
+        {
+            if (creature.name == name)
+            {
+                sprite = creature.sprite;
+                break;
+            }
+        }
+
+        SitelenPona sitelenPona = Instantiate(instance.messagePrefab, instance.messageParent);
+        sitelenPona.SetMessage(message[(i + 1)..]);
+        sitelenPona.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        UpdateLayout();
+
+        if (sprite == null)
+        {
+            Debug.Log("Couldnt find character " + name);
+        }
     }
 }

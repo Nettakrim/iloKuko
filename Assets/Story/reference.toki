@@ -1,9 +1,9 @@
 def/ win
-toki/ wawa!
+toki/ [waso] wawa!
 end/
 
 def/ lose
-toki/ ike a
+toki/ [waso] ike a
 end/
 
 wile/ 1   a    jelo,waso
@@ -16,22 +16,22 @@ set/ 7 #global
 def/ #item
 test/
 2 a    call/ win
-1 a    toki/ sama lili
-1 nasa toki/ nasa a!
+1 a    toki/ [waso] sama lili
+1 nasa toki/ [waso] nasa a!
 0 a    call/ lose
 end/
-toki/ seme
+toki/ [waso] seme
 next/ wow
 end/
 
 #def/ test
-toki/ ilo Kuko o! mi wile e ijo jelo
+toki/ [kuko] ilo Kuko o! mi wile e ijo jelo
 wait/ 5
 
-toki/ seme la ona li wile e tenpo suli?
+toki/ [waso] seme la ona li wile e tenpo suli?
 wait/ 20
 
-toki/ suli a!
+toki/ [soweli] suli a!
 #end/
 
 #call/ test
