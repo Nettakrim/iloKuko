@@ -14,7 +14,8 @@ public class NimiImporter : ScriptedImporter
     {
 
         int lastFolder = ctx.assetPath.LastIndexOf('/');
-        string[] assets = AssetDatabase.FindAssets(ctx.assetPath[(lastFolder + 1)..^5] + " t:Sprite a:assets", new[] { ctx.assetPath[..lastFolder] });
+        string name = ctx.assetPath[(lastFolder + 1)..^5];
+        string[] assets = AssetDatabase.FindAssets(name + " t:Sprite a:assets", new[] { ctx.assetPath[..lastFolder] });
 
         Sprite sprite = null;
         foreach (string s in assets)
@@ -46,6 +47,10 @@ public class NimiImporter : ScriptedImporter
         nimi.sprite = sprite;
         nimi.words = words.ToArray();
 
+        bool hasColor = false;
+        string targetColor = ctx.assetPath[..^(6+name.Length)];
+        targetColor = targetColor[(targetColor.LastIndexOf('/')+1)..];
+
         Charmap charmap = (Charmap)AssetDatabase.LoadAssetAtPath("Assets/Global/ucsur.charmap", typeof(Charmap));
         foreach (Nimi.Layer list in words)
         {
@@ -55,8 +60,16 @@ public class NimiImporter : ScriptedImporter
                 {
                     Debug.LogWarning(".nimi " + ctx.assetPath + " uses unknown nimi " + word);
                 }
+
+                hasColor |= word == targetColor;
             }
         }
+
+        if (!hasColor)
+        {
+            Debug.LogWarning(".nimi " + ctx.assetPath + " doesnt have color " + targetColor);
+        }
+
 
         ctx.AddObjectToAsset("MainAsset", nimi);
         ctx.SetMainObject(nimi);
