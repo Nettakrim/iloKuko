@@ -48,8 +48,10 @@ public class TokiInterpreter : MonoBehaviour
         current?.Run();
     }
 
-    private void OnMessage(string message) {
+    private void OnMessage(string message)
+    {
         Instantiate(messagePrefab, messageParent).SetMessage(message);
+        TextManager.UpdateLayout();
     }
 
     private void OnDestination(string destination) {
@@ -58,8 +60,8 @@ public class TokiInterpreter : MonoBehaviour
 
     private void OnSubmit(Nimi nimi)
     {
-        current.SetValueFromWile(nimi);
-        current.CallFunction("#item", true);
+        current?.SetValueFromWile(nimi);
+        current?.CallFunction("#item", true);
     }
 }
 

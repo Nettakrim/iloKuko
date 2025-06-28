@@ -1,30 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    public static bool useSitelenPona;
+    public static bool useSitelenPona { get; private set; }
 
     [SerializeField] private RectTransform layout;
 
-    private float scroll = 0f;
+    private float scroll = -1f;
     private bool scrollEnabled = false;
     [SerializeField] private float scrollSpeed;
 
     private float height;
-    private float lastSize;
+
+    private static bool refreshLayout;
 
     void Start()
     {
         height = (layout.parent as RectTransform).sizeDelta.y;
     }
 
-    void LateUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            useSitelenPona = !useSitelenPona;
+            ToggleSitelenPona();
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (refreshLayout)
+        {
+            refreshLayout = false;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(layout);
         }
 
         float over = layout.sizeDelta.y - height;
@@ -36,25 +47,50 @@ public class TextManager : MonoBehaviour
                 SetLayoutAnchor(1f);
                 scrollEnabled = false;
                 layout.anchoredPosition = new Vector2(0, 0);
-                scroll = 0f;
+                scroll = -1f;
                 return;
             }
 
-            if (scroll != 0 && (over != lastSize))
+            float y = Input.mouseScrollDelta.y;
+            if (y == 0 && scroll <= over)
             {
-                scroll += over - lastSize;
+                return;
             }
 
-            scroll = Mathf.Clamp(scroll + Input.mouseScrollDelta.y * scrollSpeed, 0f, over);
-            layout.anchoredPosition = new Vector2(0, -scroll);
+            float delta = y * scrollSpeed;
+
+            if (scroll == -1)
+            {
+                if (delta > 0)
+                {
+                    SetLayoutAnchor(1f);
+                    scroll = over;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            scroll = Mathf.Clamp(scroll - delta, 0f, over);
+            layout.anchoredPosition = new Vector2(0, scroll);
+
+            if (scroll >= over)
+            {
+                scroll = -1;
+            }
+
+            if (scroll == -1)
+            {
+                layout.anchoredPosition = new Vector2(0, 0);
+                SetLayoutAnchor(0f);
+            }
         }
         else if (over > 0f)
         {
             SetLayoutAnchor(0f);
             scrollEnabled = true;
         }
-
-        lastSize = over;
     }
 
     void SetLayoutAnchor(float to)
@@ -62,5 +98,16 @@ public class TextManager : MonoBehaviour
         layout.pivot = new Vector2(0.5f, to);
         layout.anchorMin = new Vector2(0f, to);
         layout.anchorMax = new Vector2(1f, to);
+    }
+
+    public void ToggleSitelenPona()
+    {
+        useSitelenPona = !useSitelenPona;
+        UpdateLayout();
+    }
+
+    public static void UpdateLayout()
+    {
+        refreshLayout = true;
     }
 }
