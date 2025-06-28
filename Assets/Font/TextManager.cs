@@ -64,7 +64,7 @@ public class TextManager : MonoBehaviour
                 if (delta > 0)
                 {
                     SetLayoutAnchor(1f);
-                    scroll = over;
+                    scroll = Mathf.Floor(over/scrollSpeed)*scrollSpeed;
                 }
                 else
                 {
@@ -75,7 +75,7 @@ public class TextManager : MonoBehaviour
             scroll = Mathf.Clamp(scroll - delta, 0f, over);
             layout.anchoredPosition = new Vector2(0, scroll);
 
-            if (scroll >= over)
+            if (scroll > over - scrollSpeed)
             {
                 scroll = -1;
             }
