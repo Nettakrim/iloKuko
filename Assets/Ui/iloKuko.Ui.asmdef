@@ -1,3 +1,16 @@
 {
-	"name": "iloKuko.Ui"
+    "name": "iloKuko.Ui",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c5c41b2bd5f137d439dc0a3424d107b2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

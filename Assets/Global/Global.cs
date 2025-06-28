@@ -10,6 +10,8 @@ public class Global : MonoBehaviour
 
     private readonly Dictionary<string, string> map = new();
 
+    private static Vector2 mousePos;
+
     void Awake()
     {
         if (instance)
@@ -26,14 +28,33 @@ public class Global : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        mousePos = Input.mousePosition;
+        mousePos /= new Vector2(Screen.width, Screen.height);
+        mousePos -= new Vector2(0.5f, 0.5f);
+        mousePos *= new Vector2(384, 216);
+
+        float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
+        if (aspect > 1)
+        {
+            mousePos.x *= aspect;
+        }
+        else if (aspect < 1)
+        {
+            mousePos.y /= aspect;
+        }
+    }
+
     public string ConvertToSitelenPona(string lasina)
     {
         string replace = "?!.";
-        foreach (char c in replace) {
-            lasina = lasina.Replace(c+" ", " \n ").Replace(c+"", "");
+        foreach (char c in replace)
+        {
+            lasina = lasina.Replace(c + " ", " \n ").Replace(c + "", "");
         }
 
-        string s = ""; 
+        string s = "";
         foreach (string word in lasina.Split(' '))
         {
             if (map.ContainsKey(word))
@@ -64,21 +85,6 @@ public class Global : MonoBehaviour
 
     public static Vector2 GetMousePos()
     {
-        Vector2 mouse = Input.mousePosition;
-        mouse /= new Vector2(Screen.width, Screen.height);
-        mouse -= new Vector2(0.5f, 0.5f);
-        mouse *= new Vector2(384, 216);
-
-        float aspect = (Screen.width / (float)Screen.height) / (16f / 9f);
-        if (aspect > 1)
-        {
-            mouse.x *= aspect;
-        }
-        else if (aspect < 1)
-        {
-            mouse.y /= aspect;
-        }
-
-        return mouse;
+        return mousePos;
     }
 }
