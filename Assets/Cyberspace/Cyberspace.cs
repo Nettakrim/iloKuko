@@ -73,7 +73,7 @@ public class Cyberspace : MonoBehaviour
 
     private void UpdateHover()
     {
-        if (state != State.Cyberspace)
+        if (state != State.Cyberspace && state != State.Exiting)
         {
             return;
         }
