@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
-    public Image fullscreen;
-    public Sprite[] fullscreenSprites;
+    [SerializeField] private Image fullscreen;
+    [SerializeField] private Sprite[] fullscreenSprites;
 
-    public GameObject mainMenu;
-    public GameObject cyberspace;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject cyberspace;
+    
+    [SerializeField] private TokiInterpreter interpreter;
 
     void Start()
     {
@@ -38,12 +40,15 @@ public class GameSettings : MonoBehaviour
 
     public void LoadTutorial()
     {
-        Debug.LogError("TODO!!!!");
+        mainMenu.SetActive(false);
+        cyberspace.SetActive(true);
+        interpreter.SetInterpreter("tutorial");
     }
 
     public void LoadMain()
     {
         mainMenu.SetActive(false);
         cyberspace.SetActive(true);
+        interpreter.SetInterpreter("start");
     }
 }

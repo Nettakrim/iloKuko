@@ -13,7 +13,6 @@ public class TokiInterpreter : MonoBehaviour
 
     void Start()
     {
-        SetInterpreter(searches[0].name);
         Box.onSubmit = OnSubmit;
     }
 
@@ -41,6 +40,7 @@ public class TokiInterpreter : MonoBehaviour
             return;
         }
         Debug.Log("Starting .toki " + name);
+        //current.Run();
     }
 
     private void Update()
@@ -92,7 +92,7 @@ public class Interpreter
         values = new();
         wile = new();
 
-        for (int i = toki.expressions.Length - 1; i > 0; i--)
+        for (int i = toki.expressions.Length - 1; i >= 0; i--)
         {
             stack.Push(toki.expressions[i].expression);
         }
