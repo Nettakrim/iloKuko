@@ -52,7 +52,7 @@ public class TextManager : MonoBehaviour
             }
 
             float y = Input.mouseScrollDelta.y;
-            if ((y == 0 && scroll <= over) || !Global.MouseOver(transform as RectTransform))
+            if ((y == 0 && scroll <= over) || !Global.MouseOver(transform as RectTransform, true))
             {
                 return;
             }

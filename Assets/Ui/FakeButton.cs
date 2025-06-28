@@ -1,45 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class FakeButton : MonoBehaviour
+public class FakeButton : PonaButton
 {
-    [SerializeField] private bool hideWebgl;
-
-    private Image image;
+    private Graphic graphic;
 
     [SerializeField] private Color hover;
     [SerializeField] private Color press;
 
-    public UnityEvent onPress;
-
     void Start()
     {
-        image = GetComponent<Image>();
-
-        #if UNITY_WEBGL
-        if (hideWebgl) {
-            Destroy(gameObject);
-        }
-        #endif
+        graphic = GetComponent<Graphic>();
     }
 
-
-    void Update()
+    protected override void UpdateButton(int state)
     {
-        if (Global.MouseOver(transform as RectTransform))
-        {
-            image.color = Input.GetKey(KeyCode.Mouse0) ? press : hover;
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                onPress.Invoke();
-            }
-        }
-        else
-        {
-            image.color = Color.white;
-        }
+        graphic.color = state == 0 ? Color.white : (state == 1 ? hover : press);
     }
 }

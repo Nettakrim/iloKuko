@@ -12,6 +12,8 @@ public class Global : MonoBehaviour
 
     private static Vector2 mousePos;
 
+    public static bool isHolding;
+
     void Awake()
     {
         if (instance)
@@ -53,6 +55,7 @@ public class Global : MonoBehaviour
         {
             lasina = lasina.Replace(c + " ", " \n ").Replace(c + "", "");
         }
+        lasina = lasina.Replace(", ", " 󱦜 ");
 
         string s = "";
         foreach (string word in lasina.Split(' '))
@@ -61,9 +64,9 @@ public class Global : MonoBehaviour
             {
                 s += map[word];
             }
-            else if (word == "\n")
+            else if (word == "\n" || word == ">" || word == "󱦜")
             {
-                s += "\n";
+                s += word;
             }
             else
             {
@@ -75,7 +78,7 @@ public class Global : MonoBehaviour
                 s += "󱦑";
             }
         }
-        return s;
+        return s.Replace(">",">  ");
     }
 
     public static float ExpDecay(float a, float b, float decay)
@@ -88,8 +91,12 @@ public class Global : MonoBehaviour
         return mousePos;
     }
 
-    public static bool MouseOver(RectTransform rectTransform)
+    public static bool MouseOver(RectTransform rectTransform, bool ignoreWhenHolding)
     {
+        if (ignoreWhenHolding && isHolding)
+        {
+            return false;
+        }
         return mousePos.x >= rectTransform.position.x && mousePos.y >= rectTransform.position.y && mousePos.x <= rectTransform.position.x + rectTransform.sizeDelta.x && mousePos.y <= rectTransform.position.y + rectTransform.sizeDelta.y;
     }
 }

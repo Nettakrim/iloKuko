@@ -167,7 +167,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 396
-      y: 211
+      y: 432
       width: 25
       height: 9
     spriteID: 27ec4b2bda2bfab41b6a25524ccf3fac
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 211}
+    uvTransform: {x: 396, y: 432}
   - name: ExitButton
     originalName: 
     pivot: {x: -19.777779, y: -10.555555}
@@ -186,8 +186,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 448
-      y: 211
+      x: 496
+      y: 316
       width: 9
       height: 9
     spriteID: cfad87824b6ccb84f8b07c65449bd622
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 448, y: 211}
+    uvTransform: {x: 496, y: 316}
   - name: SuliButton
     originalName: 
     pivot: {x: -18.555555, y: -10.555555}
@@ -206,8 +206,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 465
-      y: 211
+      x: 496
+      y: 333
       width: 9
       height: 9
     spriteID: b66c7351d4e50704ab106a2b33c0781d
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 465, y: 211}
+    uvTransform: {x: 496, y: 333}
   - name: LiliButton
     originalName: 
     pivot: {x: -18.555555, y: -10.555555}
@@ -226,8 +226,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 482
-      y: 211
+      x: 496
+      y: 350
       width: 9
       height: 9
     spriteID: 0b41b355549a84e4ea964d91f1f5e70a
@@ -238,107 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 482, y: 211}
-  - name: AnteButton
-    originalName: 
-    pivot: {x: -17.333334, y: -10.555555}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 499
-      y: 211
-      width: 9
-      height: 9
-    spriteID: c75293ec3605ea642bc0dc6c3869dafa
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 499, y: 211}
-  - name: TextBack
-    originalName: 
-    pivot: {x: -1.3625002, y: 0.945946}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 396
-      y: 4
-      width: 80
-      height: 111
-    spriteID: 06f1afb797e019b4dbcb468f9d18b117
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 396, y: 4}
-  - name: CamBack
-    originalName: 
-    pivot: {x: -1.3625002, y: -0.12500001}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 396
-      y: 123
-      width: 80
-      height: 80
-    spriteID: 68987a1ffed4de14d9f65d18a5e514af
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 396, y: 123}
-  - name: Recording
-    originalName: 
-    pivot: {x: -16.09091, y: -8.888889}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 429
-      y: 211
-      width: 11
-      height: 9
-    spriteID: 68ec9995586ff8846a2974e60b154e1b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 429, y: 211}
-  - name: QuitUi1
-    originalName: 
-    pivot: {x: 0.9565217, y: 0.42307693}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 396
-      y: 228
-      width: 92
-      height: 52
-    spriteID: ad4d62de55f76d048badc38547bbfef2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 396, y: 228}
+    uvTransform: {x: 496, y: 350}
   - name: VinnyCOPYME
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -359,6 +259,246 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 452}
+  - name: ButtonJelo
+    originalName: 
+    pivot: {x: 1.3673469, y: 2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 376
+      width: 49
+      height: 48
+    spriteID: 4818d81dbf765ea4eb4545d7dd05b621
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 376}
+  - name: ButtonLaso
+    originalName: 
+    pivot: {x: 1.3673469, y: 2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 453
+      y: 376
+      width: 49
+      height: 48
+    spriteID: de7346e7d79635d43a07bdc7ca389cb0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 453, y: 376}
+  - name: ButtonLoje
+    originalName: 
+    pivot: {x: 1.3673469, y: 2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 452
+      width: 49
+      height: 48
+    spriteID: 8046b866d2a9ed54bb0b88a7b2e4ca05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 452}
+  - name: ButtonPimeja
+    originalName: 
+    pivot: {x: 1.3673469, y: 2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 508
+      width: 49
+      height: 48
+    spriteID: ab231dd841a5c7f44b6063a13d0dee7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 508}
+  - name: ButtonWalo
+    originalName: 
+    pivot: {x: 1.3673469, y: 2.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 564
+      width: 49
+      height: 48
+    spriteID: d1a5f3ce1c67aff49a2fd6fc1552ae61
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 564}
+  - name: AnteButton
+    originalName: 
+    pivot: {x: -17.333334, y: -10.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 453
+      y: 432
+      width: 9
+      height: 9
+    spriteID: d9b5366acfd433f4ea3f096d6e363ed2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 453, y: 432}
+  - name: TextBack
+    originalName: 
+    pivot: {x: -1.3625002, y: 0.945946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 4
+      width: 80
+      height: 111
+    spriteID: 06afce01bd4d0dc42990aedecb180588
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 4}
+  - name: CamBack
+    originalName: 
+    pivot: {x: -1.3625002, y: -0.12500001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 228
+      width: 80
+      height: 80
+    spriteID: 99971ca1cb325c044baa4d694549c01f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 228}
+  - name: Recording
+    originalName: 
+    pivot: {x: -16.09091, y: -8.888889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 429
+      y: 432
+      width: 11
+      height: 9
+    spriteID: 774860b6de1e8f14eb6129df16f2012a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 429, y: 432}
+  - name: QuitUi1
+    originalName: 
+    pivot: {x: 0.9565217, y: 0.42307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 316
+      width: 92
+      height: 52
+    spriteID: 651fa26aac4c6f84bbef134ea5aea24c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 316}
+  - name: DropOffSP
+    originalName: 
+    pivot: {x: -0.28048772, y: -0.111111164}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 123
+      width: 82
+      height: 81
+    spriteID: 9753a1a3d2dd13046b6645813d84d4f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 123}
+  - name: KukoLogo
+    originalName: 
+    pivot: {x: -18.333332, y: 0.44444418}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 470
+      y: 432
+      width: 6
+      height: 9
+    spriteID: a4a1bd61b231b184a85e5f60e1d930a4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 470, y: 432}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -463,91 +603,6 @@ ScriptedImporter:
       spriteId: 0b41b355549a84e4ea964d91f1f5e70a
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 7
-    guid: -775959247
-    name: AnteButton
-    layerFlags: 1
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: AnteButton
-      frameIndex: 0
-      cellRect:
-        x: 348
-        y: 203
-        width: 9
-        height: 9
-      spriteId: c75293ec3605ea642bc0dc6c3869dafa
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 8
-    guid: -1028568562
-    name: TextBack
-    layerFlags: 1
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: TextBack
-      frameIndex: 0
-      cellRect:
-        x: 301
-        y: 3
-        width: 80
-        height: 111
-      spriteId: 06f1afb797e019b4dbcb468f9d18b117
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 9
-    guid: -1493419333
-    name: CamBack
-    layerFlags: 1
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: CamBack
-      frameIndex: 0
-      cellRect:
-        x: 301
-        y: 118
-        width: 80
-        height: 80
-      spriteId: 68987a1ffed4de14d9f65d18a5e514af
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 10
-    guid: -5445817
-    name: Recording
-    layerFlags: 1
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Recording
-      frameIndex: 0
-      cellRect:
-        x: 369
-        y: 188
-        width: 11
-        height: 9
-      spriteId: 68ec9995586ff8846a2974e60b154e1b
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 11
-    guid: -849823751
-    name: QuitUi1
-    layerFlags: 0
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: QuitUi1
-      frameIndex: 0
-      cellRect:
-        x: 104
-        y: 86
-        width: 92
-        height: 52
-      spriteId: ad4d62de55f76d048badc38547bbfef2
-    linkedCells: []
-    parentIndex: -1
   - layerIndex: 1
     guid: -1170528218
     name: VinnyCOPYME
@@ -563,6 +618,219 @@ ScriptedImporter:
         width: 384
         height: 216
       spriteId: 3afa94f354ff26a47bfd5a651b1adae8
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: 2099243103
+    name: Buttonz
+    layerFlags: 32
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -267896070
+    name: ButtonJelo
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ButtonJelo
+      frameIndex: 0
+      cellRect:
+        x: 125
+        y: 9
+        width: 49
+        height: 48
+      spriteId: 4818d81dbf765ea4eb4545d7dd05b621
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 9
+    guid: -785214974
+    name: ButtonLaso
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ButtonLaso
+      frameIndex: 0
+      cellRect:
+        x: 125
+        y: 9
+        width: 49
+        height: 48
+      spriteId: de7346e7d79635d43a07bdc7ca389cb0
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 10
+    guid: 870784760
+    name: ButtonLoje
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ButtonLoje
+      frameIndex: 0
+      cellRect:
+        x: 125
+        y: 9
+        width: 49
+        height: 48
+      spriteId: 8046b866d2a9ed54bb0b88a7b2e4ca05
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 11
+    guid: -1632264451
+    name: ButtonPimeja
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ButtonPimeja
+      frameIndex: 0
+      cellRect:
+        x: 125
+        y: 9
+        width: 49
+        height: 48
+      spriteId: ab231dd841a5c7f44b6063a13d0dee7b
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 12
+    guid: -785251501
+    name: ButtonWalo
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ButtonWalo
+      frameIndex: 0
+      cellRect:
+        x: 125
+        y: 9
+        width: 49
+        height: 48
+      spriteId: d1a5f3ce1c67aff49a2fd6fc1552ae61
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 13
+    guid: -775959237
+    name: AnteButton
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: AnteButton
+      frameIndex: 0
+      cellRect:
+        x: 348
+        y: 203
+        width: 9
+        height: 9
+      spriteId: d9b5366acfd433f4ea3f096d6e363ed2
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 14
+    guid: -1028568568
+    name: TextBack
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: TextBack
+      frameIndex: 0
+      cellRect:
+        x: 301
+        y: 3
+        width: 80
+        height: 111
+      spriteId: 06afce01bd4d0dc42990aedecb180588
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 15
+    guid: -1493419331
+    name: CamBack
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: CamBack
+      frameIndex: 0
+      cellRect:
+        x: 301
+        y: 118
+        width: 80
+        height: 80
+      spriteId: 99971ca1cb325c044baa4d694549c01f
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 16
+    guid: -5445795
+    name: Recording
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Recording
+      frameIndex: 0
+      cellRect:
+        x: 369
+        y: 188
+        width: 11
+        height: 9
+      spriteId: 774860b6de1e8f14eb6129df16f2012a
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 17
+    guid: -849823773
+    name: QuitUi1
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: QuitUi1
+      frameIndex: 0
+      cellRect:
+        x: 104
+        y: 86
+        width: 92
+        height: 52
+      spriteId: 651fa26aac4c6f84bbef134ea5aea24c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 18
+    guid: 1415804431
+    name: DropOffSP
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: DropOffSP
+      frameIndex: 0
+      cellRect:
+        x: 215
+        y: 117
+        width: 82
+        height: 81
+      spriteId: 9753a1a3d2dd13046b6645813d84d4f4
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 19
+    guid: 753279558
+    name: KukoLogo
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: KukoLogo
+      frameIndex: 0
+      cellRect:
+        x: 302
+        y: 104
+        width: 6
+        height: 9
+      spriteId: a4a1bd61b231b184a85e5f60e1d930a4
     linkedCells: []
     parentIndex: -1
   platformSettings:

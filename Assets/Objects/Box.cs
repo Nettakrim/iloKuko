@@ -98,6 +98,8 @@ public class Box : MonoBehaviour
                 Jostle(mousePos, heldScale);
             }
         }
+
+        Global.isHolding = held;
     }
 
     private Item RaycastItems(Vector3 pos, float radius)

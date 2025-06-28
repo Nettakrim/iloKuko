@@ -35,6 +35,8 @@ public class Cyberspace : MonoBehaviour
     [SerializeField] private float tilt;
     private bool tilted;
 
+    [SerializeField] private Image button;
+
     private void Start()
     {
         target = 15;
@@ -46,8 +48,9 @@ public class Cyberspace : MonoBehaviour
 
         foreach (Info info in infos)
         {
-            info.SetActive(false);
+            info.SetActive(false, null);
         }
+        button.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -64,7 +67,7 @@ public class Cyberspace : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            ToggleCyberspace();
+            SetCyberspace(!inCyberspace);
         }
 
         UpdateRotation();
@@ -108,7 +111,7 @@ public class Cyberspace : MonoBehaviour
             cam.transform.localRotation = Quaternion.identity;
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                ToggleCyberspace();
+                SetCyberspace(!inCyberspace);
             }
         }
     }
@@ -157,7 +160,8 @@ public class Cyberspace : MonoBehaviour
         {
             state = State.Entering;
             transitionedAt = Time.time;
-            infos[(target + 1) % 5].SetActive(true);
+            infos[(target + 1) % 5].SetActive(true, button);
+            button.gameObject.SetActive(true);
             cam.enabled = false;
         }
         else if (state == State.Box && inCyberspace)
@@ -183,7 +187,8 @@ public class Cyberspace : MonoBehaviour
             if (t >= 1)
             {
                 state = State.Cyberspace;
-                infos[(target + 1) % 5].SetActive(false);
+                infos[(target + 1) % 5].SetActive(false, null);
+                button.gameObject.SetActive(false);
             }
         }
     }
@@ -196,9 +201,9 @@ public class Cyberspace : MonoBehaviour
         }
     }
 
-    public void ToggleCyberspace()
+    public void SetCyberspace(bool to)
     {
-        inCyberspace = !inCyberspace;
+        inCyberspace = to;
     }
 
     public float GetTransitionTime()
@@ -225,10 +230,15 @@ public class Cyberspace : MonoBehaviour
         [SerializeField] private Sprite sprite;
         [SerializeField] private Color color;
         [SerializeField] private GameObject box;
+        [SerializeField] private Sprite button;
 
-        public void SetActive(bool active)
+        public void SetActive(bool active, Image image)
         {
             box.SetActive(active);
+            if (active)
+            {
+                image.sprite = button;
+            }
         }
 
         public Sprite GetSprite()
