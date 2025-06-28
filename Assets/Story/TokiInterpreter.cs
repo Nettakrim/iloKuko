@@ -60,8 +60,14 @@ public class TokiInterpreter : MonoBehaviour
 
     private void OnSubmit(Nimi nimi)
     {
-        current?.SetValueFromWile(nimi);
-        current?.CallFunction("#item", true);
+        if (current == null)
+        {
+            Debug.LogWarning("Item submitted but no .toki is running");
+            return;
+        }
+        
+        current.SetValueFromWile(nimi);
+        current.CallFunction("#item", true);
     }
 }
 
