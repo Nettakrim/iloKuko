@@ -479,7 +479,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 396, y: 123}
-  - name: KukoLogo
+  - name: KukoIcon
     originalName: 
     pivot: {x: -18.333332, y: 0.44444418}
     alignment: 9
@@ -490,7 +490,7 @@ ScriptedImporter:
       y: 432
       width: 6
       height: 9
-    spriteID: a4a1bd61b231b184a85e5f60e1d930a4
+    spriteID: 5441bda7c33aef54b8b4598ea10325c9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -499,6 +499,46 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 470, y: 432}
+  - name: WasoIcon
+    originalName: 
+    pivot: {x: -20, y: 0.44444418}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 484
+      y: 432
+      width: 6
+      height: 9
+    spriteID: 5775ec737d9076a489f0f67762f3b390
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 484, y: 432}
+  - name: SoweliIcon
+    originalName: 
+    pivot: {x: -21.333332, y: 0.44444418}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 498
+      y: 432
+      width: 6
+      height: 9
+    spriteID: 7aedd37a77c68964db8af0270965cb6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 498, y: 432}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -817,20 +857,54 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   - layerIndex: 19
-    guid: 753279558
-    name: KukoLogo
+    guid: -954842198
+    name: KukoIcon
     layerFlags: 1
     layerType: 0
     blendMode: 0
     cells:
-    - name: KukoLogo
+    - name: KukoIcon
       frameIndex: 0
       cellRect:
         x: 302
         y: 104
         width: 6
         height: 9
-      spriteId: a4a1bd61b231b184a85e5f60e1d930a4
+      spriteId: 5441bda7c33aef54b8b4598ea10325c9
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 20
+    guid: -2119827083
+    name: WasoIcon
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: WasoIcon
+      frameIndex: 0
+      cellRect:
+        x: 312
+        y: 104
+        width: 6
+        height: 9
+      spriteId: 5775ec737d9076a489f0f67762f3b390
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 21
+    guid: 611546031
+    name: SoweliIcon
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: SoweliIcon
+      frameIndex: 0
+      cellRect:
+        x: 320
+        y: 104
+        width: 6
+        height: 9
+      spriteId: 7aedd37a77c68964db8af0270965cb6c
     linkedCells: []
     parentIndex: -1
   platformSettings:

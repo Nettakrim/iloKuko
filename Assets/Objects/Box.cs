@@ -28,6 +28,7 @@ public class Box : MonoBehaviour
 
     [SerializeField] private float rotateSpeed;
 
+    [SerializeField] private DropOff dropOff;
     public static UnityAction<Nimi> onSubmit;
 
     private void Start()
@@ -58,8 +59,6 @@ public class Box : MonoBehaviour
 
             held.transform.localPosition = dragOffset + mousePos;
 
-            bool submitting = mousePos.x > boxBounds.offset.x + boxBounds.size.x / 2f;
-
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 Jostle(mousePos, Vector3.one);
@@ -67,11 +66,14 @@ public class Box : MonoBehaviour
                 Vector4 bounds = GetBounds(held.GetBounds());
                 held.transform.localPosition = new Vector3(Mathf.Clamp(held.transform.localPosition.x, bounds.x, bounds.z), Mathf.Clamp(held.transform.localPosition.y, bounds.y, bounds.w), 0);
 
-                if (submitting)
+                if (dropOff.IsHovered(mousePos))
                 {
                     previousHolds.Remove(held);
-                    onSubmit.Invoke(held.GetNimi());
-                    Destroy(held.gameObject);
+                    Nimi nimi = held.GetNimi();
+                    dropOff.Submit(held.gameObject, delegate
+                    {
+                        onSubmit.Invoke(nimi);
+                    });
                 }
 
                 held = null;
@@ -100,6 +102,7 @@ public class Box : MonoBehaviour
         }
 
         Global.isHolding = held;
+        dropOff.SetOpen(Global.isHolding);
     }
 
     private Item RaycastItems(Vector3 pos, float radius)
@@ -108,6 +111,11 @@ public class Box : MonoBehaviour
         RaycastHit2D[] hits = radius == 0 ? Physics2D.RaycastAll(pos, Vector2.up, 0.1f, layerMask) : Physics2D.CircleCastAll(pos, radius, Vector2.up, 0.1f, layerMask);
         foreach (RaycastHit2D hit in hits)
         {
+            if (hit.transform.parent != transform)
+            {
+                continue;
+            }
+
             Item hitItem = hit.transform.GetComponent<Item>();
 
             if (hitItem && (!top || hitItem.GetSpriteRenderer().sortingOrder > top.GetSpriteRenderer().sortingOrder))
@@ -124,6 +132,11 @@ public class Box : MonoBehaviour
         for (int i = 0; i < previousHolds.Count; i++)
         {
             previousHolds[i].GetSpriteRenderer().sortingOrder = i + 1;
+        }
+
+        if (held)
+        {
+            held.GetSpriteRenderer().sortingOrder = 254;
         }
     }
 
