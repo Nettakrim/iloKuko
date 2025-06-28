@@ -87,4 +87,9 @@ public class Global : MonoBehaviour
     {
         return mousePos;
     }
+
+    public static bool MouseOver(RectTransform rectTransform)
+    {
+        return mousePos.x >= rectTransform.position.x && mousePos.y >= rectTransform.position.y && mousePos.x <= rectTransform.position.x + rectTransform.sizeDelta.x && mousePos.y <= rectTransform.position.y + rectTransform.sizeDelta.y;
+    }
 }

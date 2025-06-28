@@ -29,9 +29,7 @@ public class FakeButton : MonoBehaviour
 
     void Update()
     {
-        Vector2 mousePos = Global.GetMousePos();
-        RectTransform rectTransform = transform as RectTransform;
-        if (mousePos.x >= rectTransform.position.x && mousePos.y >= rectTransform.position.y && mousePos.x <= rectTransform.position.x + rectTransform.sizeDelta.x && mousePos.y <= rectTransform.position.y + rectTransform.sizeDelta.y)
+        if (Global.MouseOver(transform as RectTransform))
         {
             image.color = Input.GetKey(KeyCode.Mouse0) ? press : hover;
             if (Input.GetKeyUp(KeyCode.Mouse0))
