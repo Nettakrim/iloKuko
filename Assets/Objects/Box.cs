@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,16 +22,17 @@ public class Box : MonoBehaviour
 
     [SerializeField] private BoxCollider2D boxBounds;
 
-    #if UNITY_EDITOR
-    [SerializeField] private Material imageMaterial;
-    [SerializeField] private bool generateMissingItems;
-    #endif
-
     [SerializeField] private float rotateSpeed;
 
     [SerializeField] private DropOff dropOff;
     public static System.Func<Nimi,bool> onSubmit;
     public static UnityAction onAccept;
+
+    #if UNITY_EDITOR
+    [SerializeField] private Material imageMaterial;
+    [SerializeField] private string searchNimi;
+    [SerializeField] private bool generateMissingItems;
+    #endif
 
     private void Start()
     {
@@ -104,6 +106,29 @@ public class Box : MonoBehaviour
 
         Global.isHolding = held;
         dropOff.SetOpen(Global.isHolding);
+
+        #if UNITY_EDITOR
+        foreach (Item item in previousHolds)
+        {
+            SpriteRenderer spriteRenderer = item.GetSpriteRenderer();
+            item.GetSpriteRenderer().material.SetColor("_OutlineColor", Color.white);
+            
+            if (!string.IsNullOrWhiteSpace(searchNimi))
+            {
+                item.GetSpriteRenderer().material.SetColor("_OutlineColor", Color.black);
+                Color color = Color.green;
+                foreach (Nimi.Layer layer in item.GetNimi().words)
+                {
+                    if (layer.Contains(searchNimi))
+                    {
+                        item.GetSpriteRenderer().material.SetColor("_OutlineColor", color);
+                        break;
+                    }
+                    color = new Color(color.g, color.b, color.r, color.a);
+                }
+            }
+        }
+        #endif
     }
 
     public bool OnSubmit(Item item)
