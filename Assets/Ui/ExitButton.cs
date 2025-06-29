@@ -16,6 +16,6 @@ public class ExitButton : FakeButton
 
     protected override bool IsMouseOver()
     {
-        return (Global.GetMousePos() - ((Vector2)transform.parent.position)).sqrMagnitude < radiusSquared;
+        return Global.ignoreMask == 0 && (Global.GetMousePos() - ((Vector2)transform.parent.position)).sqrMagnitude < radiusSquared;
     }
 }

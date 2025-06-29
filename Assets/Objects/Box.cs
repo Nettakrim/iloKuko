@@ -82,7 +82,7 @@ public class Box : MonoBehaviour
                 held = null;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && (Global.ignoreMask & 2) == 0)
         {
             held = RaycastItems(mousePos, 0);
 
@@ -104,8 +104,8 @@ public class Box : MonoBehaviour
             }
         }
 
-        Global.isHolding = held;
-        dropOff.SetOpen(Global.isHolding);
+        Global.ignoreMask = (Global.ignoreMask & (~1)) | (held ? 1 : 0);
+        dropOff.SetOpen(held);
 
         #if UNITY_EDITOR
         foreach (Item item in previousHolds)

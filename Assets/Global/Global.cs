@@ -12,7 +12,7 @@ public class Global : MonoBehaviour
 
     private static Vector2 mousePos;
 
-    public static bool isHolding;
+    public static int ignoreMask;
 
     void Awake()
     {
@@ -96,9 +96,9 @@ public class Global : MonoBehaviour
         return mousePos;
     }
 
-    public static bool MouseOver(RectTransform rectTransform, bool ignoreWhenHolding)
+    public static bool MouseOver(RectTransform rectTransform, int mask)
     {
-        if (ignoreWhenHolding && isHolding)
+        if ((ignoreMask & mask) > 0)
         {
             return false;
         }

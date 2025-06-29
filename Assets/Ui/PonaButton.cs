@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public abstract class PonaButton : MonoBehaviour
 {
     [SerializeField] private bool hideWebgl;
-    [SerializeField] private bool ignoreWhenHolding = true;
+    [SerializeField] private int ignoreMask = 3;
 
     public UnityEvent onPress;
 
@@ -51,7 +51,7 @@ public abstract class PonaButton : MonoBehaviour
 
     protected virtual bool IsMouseOver()
     {
-        return Global.MouseOver(transform as RectTransform, ignoreWhenHolding);
+        return Global.MouseOver(transform as RectTransform, ignoreMask);
     }
 
     protected abstract void UpdateButton(int state);

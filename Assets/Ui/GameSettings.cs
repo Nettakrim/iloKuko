@@ -88,6 +88,8 @@ public class GameSettings : MonoBehaviour
     public void ToggleQuitPrompt()
     {
         quitPrompt.SetActive(!quitPrompt.activeSelf);
+        Global.ignoreMask = (Global.ignoreMask & (~2)) | (quitPrompt.activeSelf ? 2 : 0);
+        Time.timeScale = quitPrompt.activeSelf ? 0 : 1;
     }
 
     public void LoadTutorial()

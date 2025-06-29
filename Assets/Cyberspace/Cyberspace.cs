@@ -63,7 +63,7 @@ public class Cyberspace : MonoBehaviour
     {
         UpdateHover();
 
-        if (lockInput)
+        if (lockInput || Global.ignoreMask > 0)
         {
             return;
         }
@@ -121,7 +121,7 @@ public class Cyberspace : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) || lockInput)
+        if (Input.GetKeyUp(KeyCode.Mouse0) || lockInput || Global.ignoreMask > 0)
         {
             mouseAction = -1;
         }
