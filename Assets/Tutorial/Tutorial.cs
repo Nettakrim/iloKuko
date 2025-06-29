@@ -20,6 +20,7 @@ public class Tutorial : MonoBehaviour
     void OnEnable()
     {
         cyberspace.LockInput(true);
+        Box.onAccept = Accept;
     }
 
     void LateUpdate()
@@ -36,10 +37,14 @@ public class Tutorial : MonoBehaviour
         {
             Advance();
         }
+        else if (stage == Stage.Weka && state == Cyberspace.State.Cyberspace)
+        {
+            Advance();
+        }
 
         wrongBox.SetActive(false);
 
-        if (stage >= Stage.Poki && (current != 0 || state != Cyberspace.State.Box))
+        if (stage >= Stage.Poki && stage < Stage.Weka && (current != 0 || state != Cyberspace.State.Box))
         {
             for (int i = 0; i < stages.Length; i++)
             {
@@ -61,6 +66,11 @@ public class Tutorial : MonoBehaviour
         {
             stages[i].SetActive(i == (int)stage);
         }
+
+        if (stage == Stage.Weka && state == Cyberspace.State.Exiting)
+        {
+            stages[5].SetActive(false);
+        }
     }
 
     public void Advance()
@@ -80,12 +90,24 @@ public class Tutorial : MonoBehaviour
 
         if (stage == Stage.Kute)
         {
-            tokiInterpreter.CallFunction("#1", true);
+            tokiInterpreter.CallFunction("#1");
         }
 
         if (stage == Stage.Soweli)
         {
-            tokiInterpreter.CallFunction("#2", true);
+            tokiInterpreter.CallFunction("#2");
+        }
+
+        if (stage == Stage.Pana)
+        {
+            tokiInterpreter.CallFunction("#3");
+        }
+    }
+
+    public void Accept() {
+        if (stage == Stage.Pana)
+        {
+            Advance();
         }
     }
 

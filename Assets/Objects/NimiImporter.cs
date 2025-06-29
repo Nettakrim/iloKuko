@@ -65,11 +65,13 @@ public class NimiImporter : ScriptedImporter
             }
         }
 
-        if (!hasColor)
+        if (words.Count == 0)
+        {
+            Debug.LogWarning(".nimi " + ctx.assetPath + " doesnt have any entries");
+        } else if (!hasColor)
         {
             Debug.LogWarning(".nimi " + ctx.assetPath + " doesnt have color " + targetColor);
         }
-
 
         ctx.AddObjectToAsset("MainAsset", nimi);
         ctx.SetMainObject(nimi);

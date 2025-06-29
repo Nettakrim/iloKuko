@@ -7,8 +7,8 @@ public class DropOff : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D bounds;
 
-    private UnityAction onSubmit;
-    private GameObject item = null;
+    private Item item = null;
+    private Box box = null;
 
     private bool open;
     private float current;
@@ -22,32 +22,44 @@ public class DropOff : MonoBehaviour
         inPos = transform.position.x;
         target -= inPos;
         float offset = target % rounding;
-        target += offset+rounding;
+        target += offset + rounding;
         inPos += offset;
     }
 
     void Update()
     {
         current = Mathf.MoveTowards(current, open ? target : 0, Time.deltaTime * speed);
-        if (item && current == 0)
+        if (item)
         {
-            onSubmit.Invoke();
-            Destroy(item);
+            if (current == 0)
+            {
+                box.OnSubmit(item);
+                if (!open)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+            if (current == target)
+            {
+                item.transform.SetParent(box.transform);
+                box.ItemRejected(item);
+                item = null;
+            }
         }
-        transform.position = new Vector3(inPos + Mathf.Floor(current/rounding)*rounding, transform.position.y, transform.position.z);
+        transform.position = new Vector3(inPos + Mathf.Floor(current / rounding) * rounding, transform.position.y, transform.position.z);
     }
 
-    public void Submit(GameObject item, UnityAction onSubmit)
+    public void Submit(Item item, Box box)
     {
-        this.onSubmit = onSubmit;
         this.item = item;
+        this.box = box;
         item.transform.parent = transform;
         open = false;
     }
 
     public bool IsHovered(Vector2 mousePos)
     {
-        if (!open)
+        if (!open || item)
         {
             return false;
         }
@@ -63,5 +75,10 @@ public class DropOff : MonoBehaviour
             return;
         }
         open = to;
+    }
+
+    public void Reject()
+    {
+        open = true;
     }
 }

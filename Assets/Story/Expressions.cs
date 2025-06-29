@@ -24,6 +24,7 @@ public abstract class Expression
             "wile" => new WileExpression(),
             "wait" => new WaitExpression(),
             "next" => new NextExpression(),
+            "reject" => new RejectExpression(),
             _ => null
         };
 
@@ -106,7 +107,7 @@ public class CallExpression : Expression
 
     public override void Run(Interpreter interpreter)
     {
-        interpreter.CallFunction(function, false);
+        interpreter.CallFunction(function);
     }
 
     protected override void ParseExpression(Reader reader, string args)
@@ -286,5 +287,19 @@ public class NextExpression : Expression
     protected override void ParseExpression(Reader reader, string args)
     {
         destination = args;
+    }
+}
+
+[System.Serializable]
+public class RejectExpression : Expression
+{
+    public override void Run(Interpreter interpreter)
+    {
+        interpreter.Reject();
+    }
+
+    protected override void ParseExpression(Reader reader, string args)
+    {
+
     }
 }

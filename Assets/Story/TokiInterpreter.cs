@@ -37,7 +37,6 @@ public class TokiInterpreter : MonoBehaviour
             return;
         }
         Debug.Log("Starting .toki " + name);
-        //current.Run();
     }
 
     private void Update()
@@ -55,21 +54,36 @@ public class TokiInterpreter : MonoBehaviour
         SetInterpreter(destination);
     }
 
-    private void OnSubmit(Nimi nimi)
+    private bool OnSubmit(Nimi nimi)
     {
         if (current == null)
         {
             Debug.LogWarning("Item submitted but no .toki is running");
-            return;
+            return false;
         }
 
-        current.SetValueFromWile(nimi);
-        current.CallFunction("#item", true);
+        Interpreter previous = current;
+
+        current.rejected = false;
+        current.SetValueFromWile(nimi, 1);
+        current.CallFunction("#item");
+        current?.Run();
+
+        // changed due to next/, doesnt matter if its rejected
+        if (current != previous)
+        {
+            return false;
+        }
+
+        // undo value change
+        current.SetValueFromWile(nimi, -1);
+
+        return current.rejected;
     }
 
-    public void CallFunction(string name, bool clearQueue)
+    public void CallFunction(string name)
     {
-        current?.CallFunction(name, clearQueue);
+        current?.CallFunction(name);
     }
 }
 
@@ -84,6 +98,8 @@ public class Interpreter
 
     public UnityAction<string> onMessage;
     public UnityAction<string> onDestination;
+
+    public bool rejected = false;
 
     private float resumeAt = -1;
 
@@ -135,12 +151,12 @@ public class Interpreter
         wile.Add(wileExpression);
     }
 
-    public void SetValueFromWile(Nimi nimi)
+    public void SetValueFromWile(Nimi nimi, float multiplier)
     {
         foreach (WileExpression wileExpression in wile)
         {
             (string group, float value) = wileExpression.GetScore(nimi);
-            SetValue(group, GetValue(group) + value);
+            SetValue(group, GetValue(group) + (multiplier * value));
         }
     }
 
@@ -155,13 +171,8 @@ public class Interpreter
         functions[name] = expressions;
     }
 
-    public void CallFunction(string name, bool clearStack)
+    public void CallFunction(string name)
     {
-        if (clearStack)
-        {
-            stack.Clear();
-        }
-
         if (!functions.TryGetValue(name, out List<Expression> function))
         {
             Debug.LogWarning("Couldnt find function " + name);
@@ -194,5 +205,10 @@ public class Interpreter
     public void Suspend(float duration)
     {
         resumeAt = Time.time + duration;
+    }
+
+    public void Reject()
+    {
+        rejected = true;
     }
 }

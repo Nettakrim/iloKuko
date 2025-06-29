@@ -1,0 +1,34 @@
+wile/ 1 color laso
+wile/ 1 creature soweli,waso,kala,akesi,pipi,jan
+
+toki/ [kuko] ilo Kuko o! mi wile e ijo laso!
+
+def/ #1
+    toki/ [waso] mu~
+end/
+
+def/ #2
+    toki/ [waso] mi olin a e soweli
+end/
+
+def/ #3
+    set/ -1 allow
+end/
+
+def/ accept
+    toki/ [waso] a! ni li wawa!
+    set/ 0 allow
+end/
+
+def/ #item
+    test/
+        0 allow reject/
+        -1 allow test/
+            1 color test/
+                1 creature call/ accept
+                0 creature reject/
+                end/
+            0 color reject/
+        end/
+    end/
+end/

@@ -29,7 +29,8 @@ public class Box : MonoBehaviour
     [SerializeField] private float rotateSpeed;
 
     [SerializeField] private DropOff dropOff;
-    public static UnityAction<Nimi> onSubmit;
+    public static System.Func<Nimi,bool> onSubmit;
+    public static UnityAction onAccept;
 
     private void Start()
     {
@@ -69,11 +70,7 @@ public class Box : MonoBehaviour
                 if (dropOff.IsHovered(mousePos))
                 {
                     previousHolds.Remove(held);
-                    Nimi nimi = held.GetNimi();
-                    dropOff.Submit(held.gameObject, delegate
-                    {
-                        onSubmit.Invoke(nimi);
-                    });
+                    dropOff.Submit(held, this);
                 }
                 else
                 {
@@ -107,6 +104,24 @@ public class Box : MonoBehaviour
 
         Global.isHolding = held;
         dropOff.SetOpen(Global.isHolding);
+    }
+
+    public bool OnSubmit(Item item)
+    {
+        if (onSubmit.Invoke(item.GetNimi()))
+        {
+            dropOff.Reject();
+            return true;
+        }
+
+        onAccept?.Invoke();
+        return false;
+    }
+
+    public void ItemRejected(Item item)
+    {
+        previousHolds.Add(item);
+        UpdateObjectOrder();
     }
 
     private Item RaycastItems(Vector3 pos, float radius)

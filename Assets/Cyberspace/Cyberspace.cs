@@ -55,6 +55,8 @@ public class Cyberspace : MonoBehaviour
             info.SetActive(false, null);
         }
         button.gameObject.SetActive(false);
+
+        UpdateRotation();
     }
 
     private void Update()
