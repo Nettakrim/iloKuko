@@ -50,7 +50,8 @@ public class TokiInterpreter : MonoBehaviour
         TextManager.CreateMessage(message);
     }
 
-    private void OnDestination(string destination) {
+    private void OnDestination(string destination)
+    {
         SetInterpreter(destination);
     }
 
@@ -61,9 +62,14 @@ public class TokiInterpreter : MonoBehaviour
             Debug.LogWarning("Item submitted but no .toki is running");
             return;
         }
-        
+
         current.SetValueFromWile(nimi);
         current.CallFunction("#item", true);
+    }
+
+    public void CallFunction(string name, bool clearQueue)
+    {
+        current?.CallFunction(name, clearQueue);
     }
 }
 

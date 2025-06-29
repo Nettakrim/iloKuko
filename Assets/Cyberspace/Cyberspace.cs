@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,10 @@ public class Cyberspace : MonoBehaviour
     [SerializeField] private float tilt;
     private bool tilted;
 
+    private int mouseAction = -1;
+
     [SerializeField] private Image button;
+    private bool lockInput;
 
     private void Start()
     {
@@ -56,6 +60,11 @@ public class Cyberspace : MonoBehaviour
     private void Update()
     {
         UpdateHover();
+
+        if (lockInput)
+        {
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -101,7 +110,11 @@ public class Cyberspace : MonoBehaviour
         if (tilted)
         {
             cam.transform.localRotation = Quaternion.Euler(0, viewPort > 0 ? tilt : -tilt, 0);
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                mouseAction = viewPort > 0 ? 0 : 1;
+            }
+            if (Input.GetKeyUp(KeyCode.Mouse0) && mouseAction == (viewPort > 0 ? 0 : 1))
             {
                 Cycle(viewPort > 0 ? 1 : -1);
             }
@@ -109,10 +122,19 @@ public class Cyberspace : MonoBehaviour
         else
         {
             cam.transform.localRotation = Quaternion.identity;
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                mouseAction = 2;
+            }
+            if (Input.GetKeyUp(KeyCode.Mouse0) && mouseAction == 2)
             {
                 SetCyberspace(!inCyberspace);
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0) || lockInput)
+        {
+            mouseAction = -1;
         }
     }
 
@@ -216,12 +238,27 @@ public class Cyberspace : MonoBehaviour
         material.SetFloat("_NoiseAmplitude", t);
     }
 
-    private enum State
+    public enum State
     {
         Cyberspace,
         Entering,
         Box,
         Exiting
+    }
+
+    public int GetCurrentBox()
+    {
+        return target % 5;
+    }
+
+    public State GetState()
+    {
+        return state;
+    }
+
+    public void LockInput(bool locked)
+    {
+        lockInput = locked;
     }
 
     [System.Serializable]

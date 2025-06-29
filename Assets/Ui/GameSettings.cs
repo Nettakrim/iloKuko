@@ -10,6 +10,7 @@ public class GameSettings : MonoBehaviour
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject cyberspace;
+    [SerializeField] private GameObject tutorial;
     
     [SerializeField] private TokiInterpreter interpreter;
 
@@ -43,6 +44,8 @@ public class GameSettings : MonoBehaviour
         mainMenu.SetActive(false);
         cyberspace.SetActive(true);
         interpreter.SetInterpreter("tutorial");
+
+        tutorial.SetActive(true);
     }
 
     public void LoadMain()
@@ -50,5 +53,7 @@ public class GameSettings : MonoBehaviour
         mainMenu.SetActive(false);
         cyberspace.SetActive(true);
         interpreter.SetInterpreter("start");
+
+        Destroy(tutorial);
     }
 }

@@ -9,6 +9,8 @@ public abstract class PonaButton : MonoBehaviour
 
     public UnityEvent onPress;
 
+    private bool pressed;
+
     #if UNITY_WEBGL
     void Start()
     {
@@ -21,10 +23,16 @@ public abstract class PonaButton : MonoBehaviour
 
     void Update()
     {
+        bool up = Input.GetKeyUp(KeyCode.Mouse0);
+
         if (IsMouseOver())
         {
-            UpdateButton(Input.GetKey(KeyCode.Mouse0) ? 2 : 1);
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            UpdateButton((pressed && Input.GetKey(KeyCode.Mouse0)) ? 2 : 1);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                pressed = true;
+            }
+            if (up && pressed)
             {
                 onPress.Invoke();
             }
@@ -32,6 +40,11 @@ public abstract class PonaButton : MonoBehaviour
         else
         {
             UpdateButton(0);
+        }
+
+        if (up)
+        {
+            pressed = false;
         }
     }
 
