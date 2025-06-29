@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3ba441c35be89f47846c35c512a2294
+guid: ccd2b76ba77842a45bd64d01d798c5b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3132389780898256965
-    second: OrangeDice_0
+      213: 6732702265514479949
+    second: AnthroFrog_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OrangeDice_0
+      name: AnthroFrog_0
       rect:
         serializedVersion: 2
-        x: 867
-        y: 507
-        width: 248
-        height: 270
+        x: 776
+        y: 188
+        width: 482
+        height: 794
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb7ee7327148784d0800000000000000
-      internalID: -3132389780898256965
+      spriteID: d4155720a0d5f6d50800000000000000
+      internalID: 6732702265514479949
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OrangeDice_0: -3132389780898256965
+      AnthroFrog_0: 6732702265514479949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

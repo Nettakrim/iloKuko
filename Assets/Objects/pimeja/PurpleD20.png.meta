@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3ba441c35be89f47846c35c512a2294
+guid: 6b2d523540e2fe5439e4370e81c40ca0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3132389780898256965
-    second: OrangeDice_0
+      213: -5501430698327193925
+    second: PurpleD20_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OrangeDice_0
+      name: PurpleD20_0
       rect:
         serializedVersion: 2
-        x: 867
-        y: 507
-        width: 248
-        height: 270
+        x: 523
+        y: 205
+        width: 856
+        height: 865
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb7ee7327148784d0800000000000000
-      internalID: -3132389780898256965
+      spriteID: bb647cd7dedf6a3b0800000000000000
+      internalID: -5501430698327193925
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OrangeDice_0: -3132389780898256965
+      PurpleD20_0: -5501430698327193925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

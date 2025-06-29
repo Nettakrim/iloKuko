@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3ba441c35be89f47846c35c512a2294
+guid: 09563a2b2b9446644a8abdeaf056c7b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3132389780898256965
-    second: OrangeDice_0
+      213: 4444884355618386437
+    second: Harmonica_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OrangeDice_0
+      name: Harmonica_0
       rect:
         serializedVersion: 2
-        x: 867
-        y: 507
-        width: 248
-        height: 270
+        x: 133
+        y: 481
+        width: 1696
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb7ee7327148784d0800000000000000
-      internalID: -3132389780898256965
+      spriteID: 502335c75c66fad30800000000000000
+      internalID: 4444884355618386437
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OrangeDice_0: -3132389780898256965
+      Harmonica_0: 4444884355618386437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
