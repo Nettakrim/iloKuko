@@ -124,7 +124,7 @@ public class Box : MonoBehaviour
                         item.GetSpriteRenderer().material.SetColor("_OutlineColor", color);
                         break;
                     }
-                    color = new Color(color.g, color.b, color.r, color.a);
+                    color = color*0.5f + new Color(color.g, color.b, color.r, color.a);
                 }
             }
         }

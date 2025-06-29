@@ -73,11 +73,6 @@ public class TextManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            ToggleSitelenPona();
-        }
-
         float t;
         if (animationTime > 0)
         {

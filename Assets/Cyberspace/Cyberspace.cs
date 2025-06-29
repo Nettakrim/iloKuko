@@ -68,19 +68,6 @@ public class Cyberspace : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Cycle(-1);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Cycle(1);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            SetCyberspace(!inCyberspace);
-        }
-
         UpdateRotation();
         UpdateTransition();
     }
