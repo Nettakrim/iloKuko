@@ -156,9 +156,9 @@ public class Interpreter
             stack.Clear();
         }
 
-        List<Expression> function = functions[name];
-        if (function == null)
+        if (!functions.TryGetValue(name, out List<Expression> function))
         {
+            Debug.LogWarning("Couldnt find function " + name);
             return;
         }
 

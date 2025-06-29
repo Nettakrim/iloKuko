@@ -141,7 +141,7 @@ public class TextManager : MonoBehaviour
         }
 
         SitelenPona sitelenPona = Instantiate(instance.messagePrefab, instance.messageParent);
-        sitelenPona.SetMessage(message[(i + 1)..]);
+        sitelenPona.SetMessage(message[(i + 2)..], " ");
         sitelenPona.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
         UpdateLayout();
 

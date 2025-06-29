@@ -39,7 +39,7 @@ public class Cyberspace : MonoBehaviour
 
     private void Start()
     {
-        target = 15;
+        target = 17;
         current = target;
         SetImages(target);
 

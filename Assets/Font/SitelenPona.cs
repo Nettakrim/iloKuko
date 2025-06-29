@@ -24,10 +24,10 @@ public class SitelenPona : MonoBehaviour
         UpdateText();
     }
 
-    public void SetMessage(string message) {
+    public void SetMessage(string message, string start) {
         text = GetComponent<TextMeshProUGUI>();
-        lasina = message;
-        pona = Global.instance.ConvertToSitelenPona(lasina);
+        lasina = start + message;
+        pona = start + Global.instance.ConvertToSitelenPona(message);
         UpdateText();
     }
 

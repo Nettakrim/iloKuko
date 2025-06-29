@@ -143,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: toki a jan ale o sina seme
+  m_text: wawa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 729760b1a66ba7843b46daaf426c3671, type: 2}
   m_sharedMaterial: {fileID: -3582657800456039393, guid: 729760b1a66ba7843b46daaf426c3671, type: 2}

@@ -55,7 +55,7 @@ public class Global : MonoBehaviour
         {
             lasina = lasina.Replace(c + " ", " \n ").Replace(c + "", "");
         }
-        lasina = lasina.Replace(", ", " 󱦜 ");
+        lasina = lasina.Replace(", ", " 󱦜 ").Replace("~","");
 
         string s = "";
         foreach (string word in lasina.Split(' '))

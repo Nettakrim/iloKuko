@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Back1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.64285713, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 396
       y: 4
-      width: 384
-      height: 216
+      width: 294
+      height: 195
     spriteID: d903cf2357d61ff4e9d9b4facc83add7
     spriteBone: []
     spriteOutline: []
@@ -138,19 +138,39 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: Outline
+    uvTransform: {x: 396, y: 4}
+  - name: Back2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.64285713, y: 0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 698
+      y: 4
+      width: 294
+      height: 195
+    spriteID: c874293cb6e28a64fbb568763b405e54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 698, y: 4}
+  - name: Back3
+    originalName: 
+    pivot: {x: 0.64285713, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 228
-      width: 384
-      height: 216
-    spriteID: de2774c10e570df489d89c6185978860
+      width: 294
+      height: 195
+    spriteID: b53e311e9af432c4f895175f14c2974f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,18 +179,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 228}
-  - name: TimerButton
+  - name: Back4
     originalName: 
-    pivot: {x: 4.44, y: -10.555555}
+    pivot: {x: 0.64285713, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 432
-      width: 25
-      height: 9
-    spriteID: 27ec4b2bda2bfab41b6a25524ccf3fac
+      x: 306
+      y: 228
+      width: 294
+      height: 195
+    spriteID: e67b96740bb240144bb04d0ca0bb780e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +198,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 432}
-  - name: ExitButton
+    uvTransform: {x: 306, y: 228}
+  - name: Back5
     originalName: 
-    pivot: {x: -19.777779, y: -10.555555}
+    pivot: {x: 0.64285713, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 496
-      y: 316
-      width: 9
-      height: 9
-    spriteID: cfad87824b6ccb84f8b07c65449bd622
+      x: 608
+      y: 228
+      width: 294
+      height: 195
+    spriteID: c9e389562a6ce6a4fba00fae1684d964
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,19 +218,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 496, y: 316}
-  - name: SuliButton
+    uvTransform: {x: 608, y: 228}
+  - name: Back6
     originalName: 
-    pivot: {x: -18.555555, y: -10.555555}
+    pivot: {x: 0.64285713, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 496
-      y: 333
-      width: 9
-      height: 9
-    spriteID: b66c7351d4e50704ab106a2b33c0781d
+      x: 4
+      y: 431
+      width: 294
+      height: 195
+    spriteID: 27b6283fc5a60da4db0d78272b532e07
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,19 +238,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 496, y: 333}
-  - name: LiliButton
+    uvTransform: {x: 4, y: 431}
+  - name: Back7
     originalName: 
-    pivot: {x: -18.555555, y: -10.555555}
+    pivot: {x: 0.64285713, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 496
-      y: 350
-      width: 9
-      height: 9
-    spriteID: 0b41b355549a84e4ea964d91f1f5e70a
+      x: 306
+      y: 431
+      width: 294
+      height: 195
+    spriteID: 8ba387a9760c78d48be45604b3f4a9ec
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,8 +258,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 496, y: 350}
-  - name: VinnyCOPYME
+    uvTransform: {x: 306, y: 431}
+  - name: Vinny
+    originalName: 
+    pivot: {x: 0.64285713, y: 0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 431
+      width: 294
+      height: 195
+    spriteID: e452b669d1ce0de469c69db2c42a700b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 608, y: 431}
+  - name: Outline
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -247,10 +287,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 452
+      y: 4
       width: 384
       height: 216
-    spriteID: 3afa94f354ff26a47bfd5a651b1adae8
+    spriteID: cc78766696acafd42a77f9035160a6a0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,7 +298,87 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 452}
+    uvTransform: {x: 4, y: 4}
+  - name: TimerButton
+    originalName: 
+    pivot: {x: 4.44, y: -10.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 910
+      y: 407
+      width: 25
+      height: 9
+    spriteID: 6952ec0dfdd472f429065f4677988fa7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 910, y: 407}
+  - name: ExitButton
+    originalName: 
+    pivot: {x: -19.777779, y: -10.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1010
+      y: 347
+      width: 9
+      height: 9
+    spriteID: 15762b0f9347e75479b6f5fde46c1905
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1010, y: 347}
+  - name: SuliButton
+    originalName: 
+    pivot: {x: -18.555555, y: -10.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1010
+      y: 364
+      width: 9
+      height: 9
+    spriteID: 24b02542a5232ca40b4322ae4dd7ed9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1010, y: 364}
+  - name: LiliButton
+    originalName: 
+    pivot: {x: -18.555555, y: -10.555555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1010
+      y: 381
+      width: 9
+      height: 9
+    spriteID: 9dcb9a606ee99154288721158931c47a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1010, y: 381}
   - name: ButtonJelo
     originalName: 
     pivot: {x: 1.3673469, y: 2.0625}
@@ -266,11 +386,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 376
+      x: 910
+      y: 519
       width: 49
       height: 48
-    spriteID: 4818d81dbf765ea4eb4545d7dd05b621
+    spriteID: 9388659da4855d44eb0be13ad6488e1a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -278,7 +398,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 376}
+    uvTransform: {x: 910, y: 519}
   - name: ButtonLaso
     originalName: 
     pivot: {x: 1.3673469, y: 2.0625}
@@ -286,11 +406,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 453
-      y: 376
+      x: 967
+      y: 519
       width: 49
       height: 48
-    spriteID: de7346e7d79635d43a07bdc7ca389cb0
+    spriteID: 59739dc452a33ff4aba8e8e8041ee3e1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -298,7 +418,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 453, y: 376}
+    uvTransform: {x: 967, y: 519}
   - name: ButtonLoje
     originalName: 
     pivot: {x: 1.3673469, y: 2.0625}
@@ -306,11 +426,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 452
+      x: 910
+      y: 575
       width: 49
       height: 48
-    spriteID: 8046b866d2a9ed54bb0b88a7b2e4ca05
+    spriteID: 1bca0cdb5d9594b4d8ac5dc4c290cf80
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -318,7 +438,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 452}
+    uvTransform: {x: 910, y: 575}
   - name: ButtonPimeja
     originalName: 
     pivot: {x: 1.3673469, y: 2.0625}
@@ -326,11 +446,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 508
+      x: 967
+      y: 575
       width: 49
       height: 48
-    spriteID: ab231dd841a5c7f44b6063a13d0dee7b
+    spriteID: a73d157094235b04a837e544e45c3062
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -338,7 +458,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 508}
+    uvTransform: {x: 967, y: 575}
   - name: ButtonWalo
     originalName: 
     pivot: {x: 1.3673469, y: 2.0625}
@@ -346,11 +466,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 564
+      x: 4
+      y: 634
       width: 49
       height: 48
-    spriteID: d1a5f3ce1c67aff49a2fd6fc1552ae61
+    spriteID: 15d818db5e65f984a82cf3de9f092b9a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -358,7 +478,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 564}
+    uvTransform: {x: 4, y: 634}
   - name: AnteButton
     originalName: 
     pivot: {x: -17.333334, y: -10.555555}
@@ -366,11 +486,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 453
-      y: 432
+      x: 962
+      y: 407
       width: 9
       height: 9
-    spriteID: d9b5366acfd433f4ea3f096d6e363ed2
+    spriteID: c4d90b5c809c19940b07a2869df2208a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -378,7 +498,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 453, y: 432}
+    uvTransform: {x: 962, y: 407}
   - name: TextBack
     originalName: 
     pivot: {x: -1.3625002, y: 0.945946}
@@ -386,11 +506,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 4
+      x: 910
+      y: 228
       width: 80
       height: 111
-    spriteID: 06afce01bd4d0dc42990aedecb180588
+    spriteID: 770726f9944de1b488091695f184768c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -398,7 +518,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 4}
+    uvTransform: {x: 910, y: 228}
   - name: CamBack
     originalName: 
     pivot: {x: -1.3625002, y: -0.12500001}
@@ -406,11 +526,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 228
+      x: 910
+      y: 431
       width: 80
       height: 80
-    spriteID: 99971ca1cb325c044baa4d694549c01f
+    spriteID: a610b3ff7e5434743a660b844d9d2072
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -418,7 +538,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 228}
+    uvTransform: {x: 910, y: 431}
   - name: Recording
     originalName: 
     pivot: {x: -16.09091, y: -8.888889}
@@ -426,11 +546,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 429
-      y: 432
+      x: 943
+      y: 407
       width: 11
       height: 9
-    spriteID: 774860b6de1e8f14eb6129df16f2012a
+    spriteID: 1adbcf968318b8a41b9b105542b9c8ce
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -438,7 +558,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 429, y: 432}
+    uvTransform: {x: 943, y: 407}
   - name: QuitUi1
     originalName: 
     pivot: {x: 0.9565217, y: 0.42307693}
@@ -446,11 +566,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 396
-      y: 316
+      x: 910
+      y: 347
       width: 92
       height: 52
-    spriteID: 651fa26aac4c6f84bbef134ea5aea24c
+    spriteID: 3adabd24e07eeac4898fcbf65b06283e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -458,27 +578,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 396, y: 316}
-  - name: DropOffSP
-    originalName: 
-    pivot: {x: -0.28048772, y: -0.111111164}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 396
-      y: 123
-      width: 82
-      height: 81
-    spriteID: 9753a1a3d2dd13046b6645813d84d4f4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 396, y: 123}
+    uvTransform: {x: 910, y: 347}
   - name: KukoIcon
     originalName: 
     pivot: {x: -18.333332, y: 0.44444418}
@@ -486,11 +586,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 470
-      y: 432
+      x: 979
+      y: 407
       width: 6
       height: 9
-    spriteID: 5441bda7c33aef54b8b4598ea10325c9
+    spriteID: cf3fef040b9c1444c8e6dafa7ba71c7c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -498,7 +598,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 470, y: 432}
+    uvTransform: {x: 979, y: 407}
   - name: WasoIcon
     originalName: 
     pivot: {x: -20, y: 0.44444418}
@@ -506,11 +606,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 484
-      y: 432
+      x: 993
+      y: 407
       width: 6
       height: 9
-    spriteID: 5775ec737d9076a489f0f67762f3b390
+    spriteID: e8b7e3cefd501da4c87ee5126bfc8a25
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -518,7 +618,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 484, y: 432}
+    uvTransform: {x: 993, y: 407}
   - name: SoweliIcon
     originalName: 
     pivot: {x: -21.333332, y: 0.44444418}
@@ -526,11 +626,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 498
-      y: 432
+      x: 1007
+      y: 407
       width: 6
       height: 9
-    spriteID: 7aedd37a77c68964db8af0270965cb6c
+    spriteID: d0176ea10420fd14fa7196a87d8a5858
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -538,7 +638,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 498, y: 432}
+    uvTransform: {x: 1007, y: 407}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -551,15 +651,134 @@ ScriptedImporter:
     - name: Back1
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 384
-        height: 216
+        x: 3
+        y: 3
+        width: 294
+        height: 195
       spriteId: d903cf2357d61ff4e9d9b4facc83add7
     linkedCells: []
     parentIndex: -1
+  - layerIndex: 1
+    guid: 738192812
+    name: Back2
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back2
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: c874293cb6e28a64fbb568763b405e54
+    linkedCells: []
+    parentIndex: -1
   - layerIndex: 2
-    guid: -2071362530
+    guid: 738193208
+    name: Back3
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back3
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: b53e311e9af432c4f895175f14c2974f
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 738190428
+    name: Back4
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back4
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: e67b96740bb240144bb04d0ca0bb780e
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 738190824
+    name: Back5
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back5
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: c9e389562a6ce6a4fba00fae1684d964
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: 738191228
+    name: Back6
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back6
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: 27b6283fc5a60da4db0d78272b532e07
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: 738191616
+    name: Back7
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Back7
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: 8ba387a9760c78d48be45604b3f4a9ec
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: -1637165135
+    name: Vinny
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Vinny
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 294
+        height: 195
+      spriteId: e452b669d1ce0de469c69db2c42a700b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -2071362540
     name: Outline
     layerFlags: 1
     layerType: 0
@@ -572,11 +791,11 @@ ScriptedImporter:
         y: 0
         width: 384
         height: 216
-      spriteId: de2774c10e570df489d89c6185978860
+      spriteId: cc78766696acafd42a77f9035160a6a0
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 3
-    guid: -99914178
+  - layerIndex: 9
+    guid: -99914188
     name: TimerButton
     layerFlags: 1
     layerType: 0
@@ -589,11 +808,11 @@ ScriptedImporter:
         y: 203
         width: 25
         height: 9
-      spriteId: 27ec4b2bda2bfab41b6a25524ccf3fac
+      spriteId: 6952ec0dfdd472f429065f4677988fa7
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 4
-    guid: 1553049138
+  - layerIndex: 10
+    guid: 1553049148
     name: ExitButton
     layerFlags: 1
     layerType: 0
@@ -606,11 +825,11 @@ ScriptedImporter:
         y: 203
         width: 9
         height: 9
-      spriteId: cfad87824b6ccb84f8b07c65449bd622
+      spriteId: 15762b0f9347e75479b6f5fde46c1905
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 5
-    guid: -950073000
+  - layerIndex: 11
+    guid: -950073002
     name: SuliButton
     layerFlags: 1
     layerType: 0
@@ -623,11 +842,11 @@ ScriptedImporter:
         y: 203
         width: 9
         height: 9
-      spriteId: b66c7351d4e50704ab106a2b33c0781d
+      spriteId: 24b02542a5232ca40b4322ae4dd7ed9b
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 6
-    guid: 448083600
+  - layerIndex: 12
+    guid: 448083610
     name: LiliButton
     layerFlags: 1
     layerType: 0
@@ -640,28 +859,11 @@ ScriptedImporter:
         y: 203
         width: 9
         height: 9
-      spriteId: 0b41b355549a84e4ea964d91f1f5e70a
+      spriteId: 9dcb9a606ee99154288721158931c47a
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 1
-    guid: -1170528218
-    name: VinnyCOPYME
-    layerFlags: 0
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: VinnyCOPYME
-      frameIndex: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 384
-        height: 216
-      spriteId: 3afa94f354ff26a47bfd5a651b1adae8
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 7
-    guid: 2099243103
+  - layerIndex: 13
+    guid: 2099243093
     name: Buttonz
     layerFlags: 32
     layerType: 1
@@ -669,8 +871,8 @@ ScriptedImporter:
     cells: []
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 8
-    guid: -267896070
+  - layerIndex: 14
+    guid: -267896068
     name: ButtonJelo
     layerFlags: 1
     layerType: 0
@@ -683,11 +885,11 @@ ScriptedImporter:
         y: 9
         width: 49
         height: 48
-      spriteId: 4818d81dbf765ea4eb4545d7dd05b621
+      spriteId: 9388659da4855d44eb0be13ad6488e1a
     linkedCells: []
-    parentIndex: 7
-  - layerIndex: 9
-    guid: -785214974
+    parentIndex: 13
+  - layerIndex: 15
+    guid: -785214972
     name: ButtonLaso
     layerFlags: 1
     layerType: 0
@@ -700,11 +902,11 @@ ScriptedImporter:
         y: 9
         width: 49
         height: 48
-      spriteId: de7346e7d79635d43a07bdc7ca389cb0
+      spriteId: 59739dc452a33ff4aba8e8e8041ee3e1
     linkedCells: []
-    parentIndex: 7
-  - layerIndex: 10
-    guid: 870784760
+    parentIndex: 13
+  - layerIndex: 16
+    guid: 870784738
     name: ButtonLoje
     layerFlags: 1
     layerType: 0
@@ -717,11 +919,11 @@ ScriptedImporter:
         y: 9
         width: 49
         height: 48
-      spriteId: 8046b866d2a9ed54bb0b88a7b2e4ca05
+      spriteId: 1bca0cdb5d9594b4d8ac5dc4c290cf80
     linkedCells: []
-    parentIndex: 7
-  - layerIndex: 11
-    guid: -1632264451
+    parentIndex: 13
+  - layerIndex: 17
+    guid: -1632264473
     name: ButtonPimeja
     layerFlags: 1
     layerType: 0
@@ -734,11 +936,11 @@ ScriptedImporter:
         y: 9
         width: 49
         height: 48
-      spriteId: ab231dd841a5c7f44b6063a13d0dee7b
+      spriteId: a73d157094235b04a837e544e45c3062
     linkedCells: []
-    parentIndex: 7
-  - layerIndex: 12
-    guid: -785251501
+    parentIndex: 13
+  - layerIndex: 18
+    guid: -785251507
     name: ButtonWalo
     layerFlags: 1
     layerType: 0
@@ -751,11 +953,11 @@ ScriptedImporter:
         y: 9
         width: 49
         height: 48
-      spriteId: d1a5f3ce1c67aff49a2fd6fc1552ae61
+      spriteId: 15d818db5e65f984a82cf3de9f092b9a
     linkedCells: []
-    parentIndex: 7
-  - layerIndex: 13
-    guid: -775959237
+    parentIndex: 13
+  - layerIndex: 19
+    guid: -775959259
     name: AnteButton
     layerFlags: 1
     layerType: 0
@@ -768,11 +970,11 @@ ScriptedImporter:
         y: 203
         width: 9
         height: 9
-      spriteId: d9b5366acfd433f4ea3f096d6e363ed2
+      spriteId: c4d90b5c809c19940b07a2869df2208a
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 14
-    guid: -1028568568
+  - layerIndex: 20
+    guid: -1028568558
     name: TextBack
     layerFlags: 1
     layerType: 0
@@ -785,11 +987,11 @@ ScriptedImporter:
         y: 3
         width: 80
         height: 111
-      spriteId: 06afce01bd4d0dc42990aedecb180588
+      spriteId: 770726f9944de1b488091695f184768c
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 15
-    guid: -1493419331
+  - layerIndex: 21
+    guid: -1493419353
     name: CamBack
     layerFlags: 1
     layerType: 0
@@ -802,11 +1004,11 @@ ScriptedImporter:
         y: 118
         width: 80
         height: 80
-      spriteId: 99971ca1cb325c044baa4d694549c01f
+      spriteId: a610b3ff7e5434743a660b844d9d2072
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 16
-    guid: -5445795
+  - layerIndex: 22
+    guid: -5445797
     name: Recording
     layerFlags: 1
     layerType: 0
@@ -819,11 +1021,11 @@ ScriptedImporter:
         y: 188
         width: 11
         height: 9
-      spriteId: 774860b6de1e8f14eb6129df16f2012a
+      spriteId: 1adbcf968318b8a41b9b105542b9c8ce
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 17
-    guid: -849823773
+  - layerIndex: 23
+    guid: -849823771
     name: QuitUi1
     layerFlags: 0
     layerType: 0
@@ -836,28 +1038,11 @@ ScriptedImporter:
         y: 86
         width: 92
         height: 52
-      spriteId: 651fa26aac4c6f84bbef134ea5aea24c
+      spriteId: 3adabd24e07eeac4898fcbf65b06283e
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 18
-    guid: 1415804431
-    name: DropOffSP
-    layerFlags: 1
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: DropOffSP
-      frameIndex: 0
-      cellRect:
-        x: 215
-        y: 117
-        width: 82
-        height: 81
-      spriteId: 9753a1a3d2dd13046b6645813d84d4f4
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 19
-    guid: -954842198
+  - layerIndex: 24
+    guid: -954842207
     name: KukoIcon
     layerFlags: 1
     layerType: 0
@@ -870,11 +1055,11 @@ ScriptedImporter:
         y: 104
         width: 6
         height: 9
-      spriteId: 5441bda7c33aef54b8b4598ea10325c9
+      spriteId: cf3fef040b9c1444c8e6dafa7ba71c7c
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 20
-    guid: -2119827083
+  - layerIndex: 25
+    guid: -2119827080
     name: WasoIcon
     layerFlags: 1
     layerType: 0
@@ -887,13 +1072,13 @@ ScriptedImporter:
         y: 104
         width: 6
         height: 9
-      spriteId: 5775ec737d9076a489f0f67762f3b390
+      spriteId: e8b7e3cefd501da4c87ee5126bfc8a25
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 21
-    guid: 611546031
+  - layerIndex: 26
+    guid: 611546016
     name: SoweliIcon
-    layerFlags: 3
+    layerFlags: 1
     layerType: 0
     blendMode: 0
     cells:
@@ -904,7 +1089,7 @@ ScriptedImporter:
         y: 104
         width: 6
         height: 9
-      spriteId: 7aedd37a77c68964db8af0270965cb6c
+      spriteId: d0176ea10420fd14fa7196a87d8a5858
     linkedCells: []
     parentIndex: -1
   platformSettings:

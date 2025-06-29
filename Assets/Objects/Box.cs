@@ -75,6 +75,10 @@ public class Box : MonoBehaviour
                         onSubmit.Invoke(nimi);
                     });
                 }
+                else
+                {
+                    held.GetSpriteRenderer().sortingOrder = 249;
+                }
 
                 held = null;
             }
