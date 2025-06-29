@@ -40,7 +40,7 @@ public class GameSettings : MonoBehaviour
         else
         {
             login.SetActive(true);
-            AudioManager.instance.PlaySound(startup, true);
+            startup.Play(true);
             initialised = true;
         }
     }
