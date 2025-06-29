@@ -12,16 +12,18 @@ public class SitelenPonaImage : MonoBehaviour
     void Start()
     {
         image = GetComponent<Image>();
+        TextManager.RegisterSitelenChange(UpdateImage);
     }
 
-    void Update()
+    void UpdateImage(bool useSitelenPona)
     {
-        image.sprite = TextManager.useSitelenPona ? pona : lasina;
+        image.sprite = useSitelenPona ? pona : lasina;
     }
 
     public void Set(Sprite lasina, Sprite pona)
     {
         this.lasina = lasina;
         this.pona = pona;
+        TextManager.RegisterSitelenChange(UpdateImage);
     }
 }

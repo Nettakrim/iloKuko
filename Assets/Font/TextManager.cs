@@ -2,11 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    public static bool useSitelenPona { get; private set; }
+    private static TextManager instance;
+
+    private static bool useSitelenPona;
+    private static readonly UnityEvent<bool> onSitelenChange = new UnityEvent<bool>();
 
     [SerializeField] private RectTransform messageParent;
     [SerializeField] private SitelenPona messagePrefab;
@@ -18,8 +22,6 @@ public class TextManager : MonoBehaviour
     private float height;
 
     private static bool refreshLayout;
-
-    private static TextManager instance;
 
     [SerializeField] private Creature[] creatures;
 
@@ -164,6 +166,7 @@ public class TextManager : MonoBehaviour
     public void ToggleSitelenPona()
     {
         useSitelenPona = !useSitelenPona;
+        onSitelenChange.Invoke(useSitelenPona);
         UpdateLayout();
     }
 
@@ -210,5 +213,11 @@ public class TextManager : MonoBehaviour
         instance.creatures[0].ChangeTarget(enter);
         instance.creatures[1].ChangeTarget(enter);
         instance.animationTime = 1f;
+    }
+
+    public static void RegisterSitelenChange(UnityAction<bool> action)
+    {
+        onSitelenChange.AddListener(action);
+        action.Invoke(useSitelenPona);
     }
 }

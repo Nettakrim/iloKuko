@@ -12,26 +12,23 @@ public class SitelenPona : MonoBehaviour
 
     void Start()
     {
-        if (text == null) {
+        if (text == null)
+        {
             text = GetComponent<TextMeshProUGUI>();
             lasina = text.text;
             pona = Global.instance.ConvertToSitelenPona(lasina);
         }
-    }
-
-    void Update()
-    {
-        UpdateText();
+        TextManager.RegisterSitelenChange(UpdateText);
     }
 
     public void SetMessage(string message, string start) {
         text = GetComponent<TextMeshProUGUI>();
         lasina = start + message;
         pona = start + Global.instance.ConvertToSitelenPona(message);
-        UpdateText();
+        TextManager.RegisterSitelenChange(UpdateText);
     }
 
-    private void UpdateText() {
-        text.text = TextManager.useSitelenPona ? pona : lasina;
+    private void UpdateText(bool useSitelenPona) {
+        text.text = useSitelenPona ? pona : lasina;
     }
 }

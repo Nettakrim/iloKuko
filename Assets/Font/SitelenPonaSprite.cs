@@ -11,10 +11,11 @@ public class SitelenPonaSprite : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        TextManager.RegisterSitelenChange(UpdateSprite);
     }
 
-    void Update()
+    void UpdateSprite(bool useSitelenPona)
     {
-        spriteRenderer.sprite = TextManager.useSitelenPona ? pona : lasina;
+        spriteRenderer.sprite = useSitelenPona ? pona : lasina;
     }
 }
