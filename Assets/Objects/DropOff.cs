@@ -10,12 +10,17 @@ public class DropOff : MonoBehaviour
     private Item item = null;
     private Box box = null;
 
-    private bool open;
+    private bool isOpen;
     private float current;
     [SerializeField] private float rounding;
     [SerializeField] private float target;
     private float inPos;
     [SerializeField] private float speed;
+
+    [SerializeField] private SoundGroup open;
+    [SerializeField] private SoundGroup close;
+    [SerializeField] private SoundGroup accept;
+    [SerializeField] private SoundGroup reject;
 
     void Start()
     {
@@ -28,15 +33,20 @@ public class DropOff : MonoBehaviour
 
     void Update()
     {
-        current = Mathf.MoveTowards(current, open ? target : 0, Time.deltaTime * speed);
+        current = Mathf.MoveTowards(current, isOpen ? target : 0, Time.deltaTime * speed);
         if (item)
         {
             if (current == 0)
             {
                 box.OnSubmit(item);
-                if (!open)
+                if (!isOpen)
                 {
                     Destroy(item.gameObject);
+                    accept.Play(true);
+                }
+                else
+                {
+                    reject.Play(true);
                 }
             }
             if (current == target)
@@ -54,12 +64,12 @@ public class DropOff : MonoBehaviour
         this.item = item;
         this.box = box;
         item.transform.parent = transform;
-        open = false;
+        isOpen = false;
     }
 
     public bool IsHovered(Vector2 mousePos)
     {
-        if (!open || item)
+        if (!isOpen || item)
         {
             return false;
         }
@@ -70,15 +80,17 @@ public class DropOff : MonoBehaviour
 
     public void SetOpen(bool to)
     {
-        if (item)
+        if (isOpen == to || item)
         {
             return;
         }
-        open = to;
+        isOpen = to;
+        (isOpen ? open : close).Play(false);
     }
 
     public void Reject()
     {
-        open = true;
+        isOpen = true;
+        open.Play(false);
     }
 }

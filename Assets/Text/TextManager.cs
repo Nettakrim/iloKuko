@@ -31,6 +31,7 @@ public class TextManager : MonoBehaviour
     [SerializeField] private float speakDuration;
 
     [SerializeField] private Sprite kuko;
+    [SerializeField] private SoundGroup kukoSearch;
 
     [Serializable]
     private class Creature
@@ -47,6 +48,8 @@ public class TextManager : MonoBehaviour
         private bool target;
         private float speakTime;
 
+        [SerializeField] private SoundGroup speak;
+
         public void Update(float time)
         {
             transform.anchoredPosition = new Vector2(Mathf.Lerp(target ? pos2 : pos1, target ? pos1 : pos2, time), speakTime > 0 ? speaking : silent);
@@ -59,6 +62,7 @@ public class TextManager : MonoBehaviour
         public void Speak(float duration)
         {
             speakTime = duration;
+            speak.Play(true);
         }
 
         public void ChangeTarget(bool to)
@@ -194,6 +198,7 @@ public class TextManager : MonoBehaviour
         if (name == "kuko")
         {
             sprite = instance.kuko;
+            instance.kukoSearch.Play(true);
         }
 
         SitelenPona sitelenPona = Instantiate(instance.messagePrefab, instance.messageParent);

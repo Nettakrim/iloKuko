@@ -828,6 +828,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!114 &33182893
@@ -3071,6 +3075,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.3529412, g: 0.43529415, b: 0.86274517, a: 1}
   press: {r: 0.24313727, g: 0.32156864, b: 0.6901961, a: 1}
 --- !u!114 &121115787
@@ -4372,6 +4380,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!114 &216654557
@@ -5280,6 +5292,8 @@ MonoBehaviour:
   boxBounds: {fileID: 481350330}
   rotateSpeed: 5
   dropOff: {fileID: 1674034268}
+  pickup: {fileID: 0}
+  drop: {fileID: 0}
   imageMaterial: {fileID: 2100000, guid: 9270c49d59a394542be9e0197397e284, type: 2}
   searchNimi: 
   generateMissingItems: 0
@@ -5772,6 +5786,7 @@ MonoBehaviour:
     pos2: -15
     silent: -6
     speaking: 0
+    speak: {fileID: 0}
   - name: soweli
     sprite: {fileID: -5237299004222658076, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
     transform: {fileID: 1224636681}
@@ -5779,10 +5794,12 @@ MonoBehaviour:
     pos2: 28
     silent: -3
     speaking: 0
+    speak: {fileID: 0}
   animationSpeed: 1
   animationSteps: 5
   speakDuration: 0.75
   kuko: {fileID: 729915664488536281, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
+  kukoSearch: {fileID: 0}
 --- !u!1 &309635208
 GameObject:
   m_ObjectHideFlags: 0
@@ -8923,6 +8940,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!114 &496587085
@@ -10571,6 +10592,8 @@ MonoBehaviour:
   boxBounds: {fileID: 481350330}
   rotateSpeed: 5
   dropOff: {fileID: 1674034268}
+  pickup: {fileID: 0}
+  drop: {fileID: 0}
   imageMaterial: {fileID: 2100000, guid: 9270c49d59a394542be9e0197397e284, type: 2}
   searchNimi: 
   generateMissingItems: 0
@@ -12851,6 +12874,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!1 &672271944
@@ -16305,6 +16332,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!114 &794537884
@@ -16440,6 +16471,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.3529412, g: 0.43529415, b: 0.86274517, a: 1}
   press: {r: 0.24313727, g: 0.32156864, b: 0.6901961, a: 1}
 --- !u!114 &831521347
@@ -16732,6 +16767,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.3529412, g: 0.43529415, b: 0.854902, a: 1}
   press: {r: 0.2509804, g: 0.3254902, b: 0.6862745, a: 1}
 --- !u!1 &858910641
@@ -20739,6 +20778,8 @@ MonoBehaviour:
   boxBounds: {fileID: 481350330}
   rotateSpeed: 5
   dropOff: {fileID: 1674034268}
+  pickup: {fileID: 0}
+  drop: {fileID: 0}
   imageMaterial: {fileID: 2100000, guid: 9270c49d59a394542be9e0197397e284, type: 2}
   searchNimi: 
   generateMissingItems: 0
@@ -27910,6 +27951,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.3529412, g: 0.43529415, b: 0.86274517, a: 1}
   press: {r: 0.24313727, g: 0.32156864, b: 0.6901961, a: 1}
 --- !u!114 &1332073182
@@ -28157,6 +28202,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!1 &1368208511
@@ -30240,6 +30289,9 @@ MonoBehaviour:
   untiltThreshold: 0.2
   tilt: 1
   button: {fileID: 1568379446}
+  cycleSound: {fileID: 0}
+  enterSound: {fileID: 0}
+  exitSound: {fileID: 0}
 --- !u!1 &1495016984
 GameObject:
   m_ObjectHideFlags: 0
@@ -33324,6 +33376,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
   pressDown: 2
@@ -34653,6 +34709,10 @@ MonoBehaviour:
   rounding: 10
   target: 76
   speed: 300
+  open: {fileID: 0}
+  close: {fileID: 0}
+  accept: {fileID: 0}
+  reject: {fileID: 0}
 --- !u!1 &1675381743
 GameObject:
   m_ObjectHideFlags: 0
@@ -35479,6 +35539,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.3529412, g: 0.43529415, b: 0.854902, a: 1}
   press: {r: 0.2509804, g: 0.3254902, b: 0.6862745, a: 1}
 --- !u!1 &1724851102
@@ -35930,6 +35994,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.3529412, g: 0.43529415, b: 0.86274517, a: 1}
   press: {r: 0.24313727, g: 0.32156864, b: 0.6901961, a: 1}
 --- !u!114 &1753801103
@@ -36713,6 +36781,8 @@ MonoBehaviour:
   boxBounds: {fileID: 481350330}
   rotateSpeed: 5
   dropOff: {fileID: 1674034268}
+  pickup: {fileID: 0}
+  drop: {fileID: 0}
   imageMaterial: {fileID: 2100000, guid: 9270c49d59a394542be9e0197397e284, type: 2}
   searchNimi: 
   generateMissingItems: 0
@@ -41065,6 +41135,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  hoverOn: {fileID: 0}
+  hoverOff: {fileID: 0}
+  clickDown: {fileID: 0}
+  clickUp: {fileID: 0}
   hover: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
   press: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
 --- !u!114 &2045813927
@@ -43229,6 +43303,8 @@ MonoBehaviour:
   boxBounds: {fileID: 481350330}
   rotateSpeed: 5
   dropOff: {fileID: 1674034268}
+  pickup: {fileID: 0}
+  drop: {fileID: 0}
   imageMaterial: {fileID: 2100000, guid: 9270c49d59a394542be9e0197397e284, type: 2}
   searchNimi: 
   generateMissingItems: 0

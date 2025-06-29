@@ -41,6 +41,10 @@ public class Cyberspace : MonoBehaviour
     [SerializeField] private SitelenPonaImage button;
     private bool lockInput;
 
+    [SerializeField] private SoundGroup cycleSound;
+    [SerializeField] private SoundGroup enterSound;
+    [SerializeField] private SoundGroup exitSound;
+    
     private void Start()
     {
         target = 17;
@@ -63,7 +67,7 @@ public class Cyberspace : MonoBehaviour
     {
         UpdateHover();
 
-        if (lockInput || Global.ignoreMask > 0)
+        if (lockInput || (Global.ignoreMask & 2) > 0)
         {
             return;
         }
@@ -174,12 +178,14 @@ public class Cyberspace : MonoBehaviour
             infos[(target + 1) % 5].SetActive(true, button);
             button.gameObject.SetActive(true);
             cam.enabled = false;
+            enterSound.Play(true);
         }
         else if (state == State.Box && inCyberspace)
         {
             state = State.Exiting;
             transitionedAt = Time.time;
             cam.enabled = true;
+            exitSound.Play(true);
         }
 
         if (state == State.Entering)
@@ -210,6 +216,7 @@ public class Cyberspace : MonoBehaviour
         {
             target += direction;
         }
+        cycleSound.Play(false);
     }
 
     public void SetCyberspace(bool to)

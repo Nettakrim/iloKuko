@@ -28,6 +28,9 @@ public class Box : MonoBehaviour
     public static System.Func<Nimi,bool> onSubmit;
     public static UnityAction onAccept;
 
+    [SerializeField] private SoundGroup pickup;
+    [SerializeField] private SoundGroup drop;    
+
     #if UNITY_EDITOR
     [SerializeField] private Material imageMaterial;
     [SerializeField] private string searchNimi;
@@ -64,6 +67,7 @@ public class Box : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
+                drop.Play(false);
                 Jostle(mousePos, Vector3.one);
 
                 Vector4 bounds = GetBounds(held.GetBounds());
@@ -93,6 +97,7 @@ public class Box : MonoBehaviour
 
             if (held)
             {
+                pickup.Play(false);
                 dragOffset = held.transform.localPosition - mousePos;
 
                 previousHolds.Remove(held);
