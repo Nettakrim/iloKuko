@@ -15,7 +15,6 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject cyberspace;
     [SerializeField] private GameObject tutorial;
-    [SerializeField] private GameObject startupSound;
 
     [SerializeField] private Image background;
     [SerializeField] private Sprite cyberBackground;
@@ -24,6 +23,8 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private GameObject recording;
 
     [SerializeField] private TokiInterpreter interpreter;
+
+    [SerializeField] private SoundGroup startup;
 
     private static bool initialised = false;
 
@@ -39,7 +40,7 @@ public class GameSettings : MonoBehaviour
         else
         {
             login.SetActive(true);
-            startupSound.SetActive(true);
+            AudioManager.instance.PlaySound(startup, true);
             initialised = true;
         }
     }
