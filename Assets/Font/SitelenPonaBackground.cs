@@ -16,4 +16,10 @@ public class SitelenPonaBackground : MonoBehaviour
     {
         (transform as RectTransform).sizeDelta = TextManager.useSitelenPona ? ponaSize : lasinaSize;
     }
+
+    public void Set(Vector2 lasinaSize, Vector2 ponaSize)
+    {
+        this.lasinaSize = lasinaSize;
+        this.ponaSize = ponaSize;
+    }
 }

@@ -180,7 +180,7 @@ public class Box : MonoBehaviour
         return new Vector4(min.x, min.y, max.x, max.y);
     }
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     private void OnValidate()
     {
         if (!generateMissingItems)

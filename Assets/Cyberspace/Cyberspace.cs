@@ -38,7 +38,7 @@ public class Cyberspace : MonoBehaviour
 
     private int mouseAction = -1;
 
-    [SerializeField] private Image button;
+    [SerializeField] private SitelenPonaImage button;
     private bool lockInput;
 
     private void Start()
@@ -263,20 +263,21 @@ public class Cyberspace : MonoBehaviour
         lockInput = locked;
     }
 
-    [System.Serializable]
+    [Serializable]
     private class Info
     {
         [SerializeField] private Sprite sprite;
         [SerializeField] private Color color;
         [SerializeField] private GameObject box;
-        [SerializeField] private Sprite button;
+        [SerializeField] private Sprite buttonLasina;
+        [SerializeField] private Sprite buttonPona;
 
-        public void SetActive(bool active, Image image)
+        public void SetActive(bool active, SitelenPonaImage image)
         {
             box.SetActive(active);
             if (active)
             {
-                image.sprite = button;
+                image.Set(buttonLasina, buttonPona);
             }
         }
 
@@ -291,7 +292,7 @@ public class Cyberspace : MonoBehaviour
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     private class Graphic
     {
         [SerializeField] private SpriteRenderer a;

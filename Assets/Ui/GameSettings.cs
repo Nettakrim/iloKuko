@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
-    [SerializeField] private Image fullscreen;
+    [SerializeField] private SitelenPonaImage fullscreen;
+    [SerializeField] private SitelenPonaBackground fullscreenSize;
     [SerializeField] private Sprite[] fullscreenSprites;
 
     [SerializeField] private GameObject mainMenu;
@@ -17,6 +18,7 @@ public class GameSettings : MonoBehaviour
     void Start()
     {
         mainMenu.SetActive(true);
+        UpdateFullscreenButtons(Screen.fullScreen);
     }
 
     public void ToggleFullscreen()
@@ -24,13 +26,26 @@ public class GameSettings : MonoBehaviour
         bool to = !Screen.fullScreen;
         if (to)
         {
-            fullscreen.sprite = fullscreenSprites[0];
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, FullScreenMode.FullScreenWindow);
         }
         else
         {
-            fullscreen.sprite = fullscreenSprites[1];
             Screen.SetResolution(384, 216, FullScreenMode.Windowed);
+        }
+        UpdateFullscreenButtons(to);
+    }
+
+    private void UpdateFullscreenButtons(bool to)
+    {
+        if (to)
+        {
+            fullscreen.Set(fullscreenSprites[1], fullscreenSprites[3]);
+            fullscreenSize.Set(new Vector2(15, 9), new Vector2(9, 9));
+        }
+        else
+        {
+            fullscreen.Set(fullscreenSprites[0], fullscreenSprites[2]);
+            fullscreenSize.Set(new Vector2(19, 9), new Vector2(9, 9));
         }
     }
 
