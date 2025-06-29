@@ -9845,7 +9845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &684352631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11786,6 +11786,11 @@ MonoBehaviour:
   mainMenu: {fileID: 1100820489}
   cyberspace: {fileID: 1462579856}
   tutorial: {fileID: 1612007324}
+  background: {fileID: 1368208513}
+  cyberBackground: {fileID: 8200833092627328703, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
+  waso: {fileID: 1073992078}
+  cyberWaso: {fileID: 684352630}
+  recording: {fileID: 721248372}
   interpreter: {fileID: 1198334350}
 --- !u!1 &794537879
 GameObject:
@@ -17063,7 +17068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1073992079
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17080,7 +17085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -15, y: -6}
+  m_AnchoredPosition: {x: 0, y: -6}
   m_SizeDelta: {x: 60.44922, y: 105.27344}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1073992080
@@ -21330,7 +21335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8200833092627328703, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
+  m_Sprite: {fileID: 514596372692528144, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
