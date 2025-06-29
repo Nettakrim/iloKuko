@@ -50,6 +50,11 @@ public class Global : MonoBehaviour
 
     public string ConvertToSitelenPona(string lasina)
     {
+        if (lasina.StartsWith("a!"))
+        {
+            lasina = "a" + lasina[2..];
+        }
+
         string replace = "?!.";
         foreach (char c in replace)
         {

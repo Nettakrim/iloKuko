@@ -1,3 +1,11 @@
 toki/ [kuko] mi wile e ijo!
+wait/ 1
 toki/ [waso] wawa a!
+wait/ 1
+stage/ enter
+wait/ 1.5
 toki/ [soweli] mu mu mu
+wait/ 1
+stage/ exit
+wait/ 1
+toki/ [waso] mu

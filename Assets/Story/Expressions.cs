@@ -25,6 +25,7 @@ public abstract class Expression
             "wait" => new WaitExpression(),
             "next" => new NextExpression(),
             "reject" => new RejectExpression(),
+            "stage" => new StageExpression(),
             _ => null
         };
 
@@ -301,5 +302,21 @@ public class RejectExpression : Expression
     protected override void ParseExpression(Reader reader, string args)
     {
 
+    }
+}
+
+[System.Serializable]
+public class StageExpression : Expression
+{
+    [SerializeField] private string direction;
+
+    public override void Run(Interpreter interpreter)
+    {
+        interpreter.Stage(direction);
+    }
+
+    protected override void ParseExpression(Reader reader, string args)
+    {
+        direction = args;
     }
 }

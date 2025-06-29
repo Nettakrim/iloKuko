@@ -25,7 +25,8 @@ public class TokiInterpreter : MonoBehaviour
                 current = new Interpreter(toki)
                 {
                     onMessage = OnMessage,
-                    onDestination = OnDestination
+                    onDestination = OnDestination,
+                    onStage = OnStage
                 };
                 break;
             }
@@ -52,6 +53,11 @@ public class TokiInterpreter : MonoBehaviour
     private void OnDestination(string destination)
     {
         SetInterpreter(destination);
+    }
+
+    private void OnStage(string direction)
+    {
+        TextManager.Stage(direction);
     }
 
     private bool OnSubmit(Nimi nimi)
@@ -98,6 +104,7 @@ public class Interpreter
 
     public UnityAction<string> onMessage;
     public UnityAction<string> onDestination;
+    public UnityAction<string> onStage;
 
     public bool rejected = false;
 
@@ -210,5 +217,10 @@ public class Interpreter
     public void Reject()
     {
         rejected = true;
+    }
+
+    public void Stage(string direction)
+    {
+        onStage.Invoke(direction);
     }
 }

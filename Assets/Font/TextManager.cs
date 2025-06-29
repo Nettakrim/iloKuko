@@ -23,11 +23,46 @@ public class TextManager : MonoBehaviour
 
     [SerializeField] private Creature[] creatures;
 
+    private float animationTime;
+    [SerializeField] private float animationSpeed;
+    [SerializeField] private float animationSteps;
+    [SerializeField] private float speakDuration;
+
+    [SerializeField] private Sprite kuko;
+
     [Serializable]
     private class Creature
     {
         public string name;
         public Sprite sprite;
+
+        [SerializeField] private RectTransform transform;
+        [SerializeField] private float pos1;
+        [SerializeField] private float pos2;
+        [SerializeField] private float silent;
+        [SerializeField] private float speaking;
+
+        private bool target;
+        private float speakTime;
+
+        public void Update(float time)
+        {
+            transform.anchoredPosition = new Vector2(Mathf.Lerp(target ? pos2 : pos1, target ? pos1 : pos2, time), speakTime > 0 ? speaking : silent);
+            if (speakTime > 0)
+            {
+                speakTime -= Time.deltaTime;
+            }
+        }
+
+        public void Speak(float duration)
+        {
+            speakTime = duration;
+        }
+
+        public void ChangeTarget(bool to)
+        {
+            target = to;
+        }
     }
 
     void Start()
@@ -42,6 +77,23 @@ public class TextManager : MonoBehaviour
         {
             ToggleSitelenPona();
         }
+
+        float t;
+        if (animationTime > 0)
+        {
+            animationTime -= Time.deltaTime * animationSpeed;
+            if (animationTime < 0)
+            {
+                animationTime = 0;
+            }
+            t = Mathf.Floor(animationTime * animationSteps) / animationSteps;
+        }
+        else
+        {
+            t = 0;
+        }
+        creatures[0].Update(t);
+        creatures[1].Update(t);
     }
 
     void LateUpdate()
@@ -136,8 +188,14 @@ public class TextManager : MonoBehaviour
             if (creature.name == name)
             {
                 sprite = creature.sprite;
+                creature.Speak(instance.speakDuration);
                 break;
             }
+        }
+
+        if (name == "kuko")
+        {
+            sprite = instance.kuko;
         }
 
         SitelenPona sitelenPona = Instantiate(instance.messagePrefab, instance.messageParent);
@@ -149,5 +207,13 @@ public class TextManager : MonoBehaviour
         {
             Debug.Log("Couldnt find character " + name);
         }
+    }
+
+    public static void Stage(string direction)
+    {
+        bool enter = direction == "enter";
+        instance.creatures[0].ChangeTarget(enter);
+        instance.creatures[1].ChangeTarget(enter);
+        instance.animationTime = 1f;
     }
 }
