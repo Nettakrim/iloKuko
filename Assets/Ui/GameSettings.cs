@@ -15,6 +15,7 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject cyberspace;
     [SerializeField] private GameObject tutorial;
+    [SerializeField] private GameObject startupSound;
 
     [SerializeField] private Image background;
     [SerializeField] private Sprite cyberBackground;
@@ -33,10 +34,12 @@ public class GameSettings : MonoBehaviour
         if (initialised)
         {
             Login();
+
         }
         else
         {
             login.SetActive(true);
+            startupSound.SetActive(true);
             initialised = true;
         }
     }
@@ -74,6 +77,7 @@ public class GameSettings : MonoBehaviour
         login.SetActive(false);
         buttons.SetActive(true);
         mainMenu.SetActive(true);
+        Destroy(login);
     }
 
     public void FullQuit()
@@ -99,7 +103,6 @@ public class GameSettings : MonoBehaviour
         recording.SetActive(false);
 
         Destroy(mainMenu);
-        Destroy(login);
     }
 
     public void LoadMain()
@@ -110,6 +113,5 @@ public class GameSettings : MonoBehaviour
 
         Destroy(tutorial);
         Destroy(mainMenu);
-        Destroy(login);
     }
 }

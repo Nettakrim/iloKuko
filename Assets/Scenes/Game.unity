@@ -979,6 +979,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1100820489}
   cyberspace: {fileID: 1462579856}
   tutorial: {fileID: 1612007324}
+  startupSound: {fileID: 2040025398}
   background: {fileID: 1368208513}
   cyberBackground: {fileID: 8200833092627328703, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
   waso: {fileID: 1073992078}
@@ -6582,7 +6583,6 @@ RectTransform:
   - {fileID: 33182891}
   - {fileID: 216654555}
   - {fileID: 400962232}
-  - {fileID: 2040025400}
   m_Father: {fileID: 59082257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -32565,7 +32565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &2040025399
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32675,7 +32675,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 429155067}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040964605
 GameObject:
@@ -34579,3 +34579,4 @@ SceneRoots:
   - {fileID: 1462579857}
   - {fileID: 481350329}
   - {fileID: 1198334351}
+  - {fileID: 2040025400}
