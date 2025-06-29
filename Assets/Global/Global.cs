@@ -97,6 +97,10 @@ public class Global : MonoBehaviour
         {
             return false;
         }
-        return mousePos.x >= rectTransform.position.x && mousePos.y >= rectTransform.position.y && mousePos.x <= rectTransform.position.x + rectTransform.sizeDelta.x && mousePos.y <= rectTransform.position.y + rectTransform.sizeDelta.y;
+
+        Vector2 pos = rectTransform.position;
+        Vector2 size = rectTransform.sizeDelta;
+        Vector2 pivot = rectTransform.pivot;
+        return mousePos.x >= pos.x - size.x*pivot.x && mousePos.y >= pos.y - size.y*pivot.y && mousePos.x <= pos.x + size.x*(1-pivot.x) && mousePos.y <= pos.y + size.y*(1-pivot.y);
     }
 }

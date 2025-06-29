@@ -8,6 +8,7 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private SitelenPonaImage fullscreen;
     [SerializeField] private SitelenPonaBackground fullscreenSize;
     [SerializeField] private Sprite[] fullscreenSprites;
+    [SerializeField] private GameObject quitPrompt;
 
     [SerializeField] private GameObject login;
     [SerializeField] private GameObject buttons;
@@ -80,9 +81,9 @@ public class GameSettings : MonoBehaviour
         Application.Quit();
     }
 
-    public void QuitGame()
+    public void ToggleQuitPrompt()
     {
-        //TODO: prompt
+        quitPrompt.SetActive(!quitPrompt.activeSelf);
     }
 
     public void LoadTutorial()
