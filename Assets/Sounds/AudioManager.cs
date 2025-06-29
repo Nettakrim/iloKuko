@@ -31,11 +31,6 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlaySound(SoundGroup soundGroup, bool force) {
-        if (soundGroup == null)
-        {
-            return;
-        }
-        
         AudioSource audioSource = GetAvailableAudioSource(force);
         
         if (audioSource != null) {
