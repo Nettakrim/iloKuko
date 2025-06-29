@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.IO;
 
 public class Reader
@@ -36,3 +37,4 @@ public class Reader
         return current;
     }
 }
+#endif

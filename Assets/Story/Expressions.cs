@@ -7,6 +7,7 @@ public abstract class Expression
 {
     public abstract void Run(Interpreter interpreter);
 
+    #if UNITY_EDITOR
     protected abstract void ParseExpression(Reader reader, string args);
 
     public static Expression ParseReader(Reader reader)
@@ -38,6 +39,7 @@ public abstract class Expression
         expression?.ParseExpression(reader, parts[1].TrimStart());
         return expression;
     }
+    #endif
 
     [System.Serializable]
     public class Wrapper
@@ -58,6 +60,7 @@ public abstract class Expression
 
 public abstract class MultiLineExpression : Expression
 {
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         ParseArgs(args);
@@ -77,6 +80,7 @@ public abstract class MultiLineExpression : Expression
     protected abstract void ParseArgs(string args);
 
     protected abstract void ParseLine(Reader reader);
+    #endif
 }
 
 [System.Serializable]
@@ -90,6 +94,7 @@ public class DefExpression : MultiLineExpression
         interpreter.DefineFunction(name, expressions);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseArgs(string args)
     {
         name = args;
@@ -99,6 +104,7 @@ public class DefExpression : MultiLineExpression
     {
         expressions.Add(ParseReader(reader));
     }
+    #endif
 }
 
 [System.Serializable]
@@ -111,10 +117,12 @@ public class CallExpression : Expression
         interpreter.CallFunction(function);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         function = args;
     }
+    #endif
 }
 
 [System.Serializable]
@@ -128,12 +136,14 @@ public class SetExpression : Expression
         interpreter.SetValue(group, value);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         int i = args.IndexOf(' ');
         value = float.Parse(args[..i], CultureInfo.InvariantCulture);
         group = args[i..].TrimStart();
     }
+    #endif
 }
 
 [System.Serializable]
@@ -153,6 +163,7 @@ public class TestExpression : MultiLineExpression
         }
     }
 
+    #if UNITY_EDITOR
     protected override void ParseArgs(string args)
     {
 
@@ -173,16 +184,19 @@ public class TestExpression : MultiLineExpression
 
         testDatas.Add(new TestData(amount, group, expression));
     }
+    #endif
 
     [System.Serializable]
     public class TestData
     {
+        #if UNITY_EDITOR
         public TestData(float amount, string group, Expression expression)
         {
             this.amount = amount;
             this.group = group;
             this.expression = expression;
         }
+        #endif
 
         [SerializeField] private float amount;
         [SerializeField] private string group;
@@ -210,10 +224,12 @@ public class TokiExpression : Expression
         interpreter.DisplayMessage(message);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         message = args;
     }
+    #endif
 }
 
 [System.Serializable]
@@ -228,6 +244,7 @@ public class WileExpression : Expression
         interpreter.AddWile(this);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         int i = args.IndexOf(' ');
@@ -239,6 +256,7 @@ public class WileExpression : Expression
 
         nimi = args[i..].TrimStart().Split(new char[] { ' ', ',' });
     }
+    #endif
 
     public (string, float) GetScore(Nimi nimi)
     {
@@ -254,7 +272,7 @@ public class WileExpression : Expression
                 }
             }
         }
-        
+
         return (group, total);
     }
 }
@@ -269,10 +287,12 @@ public class WaitExpression : Expression
         interpreter.Suspend(duration);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         duration = float.Parse(args, CultureInfo.InvariantCulture);
     }
+    #endif
 }
 
 [System.Serializable]
@@ -285,10 +305,12 @@ public class NextExpression : Expression
         interpreter.Next(destination);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         destination = args;
     }
+    #endif
 }
 
 [System.Serializable]
@@ -299,10 +321,12 @@ public class RejectExpression : Expression
         interpreter.Reject();
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
 
     }
+    #endif
 }
 
 [System.Serializable]
@@ -315,8 +339,10 @@ public class StageExpression : Expression
         interpreter.Stage(direction);
     }
 
+    #if UNITY_EDITOR
     protected override void ParseExpression(Reader reader, string args)
     {
         direction = args;
     }
+    #endif
 }

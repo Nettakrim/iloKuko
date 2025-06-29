@@ -6,9 +6,4 @@ using UnityEngine;
 public class Toki : ScriptableObject
 {
     public Expression.Wrapper[] expressions;
-
-    public void Run()
-    {
-
-    }
 }
