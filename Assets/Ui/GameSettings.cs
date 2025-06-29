@@ -9,6 +9,8 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private SitelenPonaBackground fullscreenSize;
     [SerializeField] private Sprite[] fullscreenSprites;
 
+    [SerializeField] private GameObject login;
+    [SerializeField] private GameObject buttons;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject cyberspace;
     [SerializeField] private GameObject tutorial;
@@ -21,10 +23,21 @@ public class GameSettings : MonoBehaviour
 
     [SerializeField] private TokiInterpreter interpreter;
 
+    private static bool initialised = false;
+
     void Start()
     {
-        mainMenu.SetActive(true);
         UpdateFullscreenButtons(Screen.fullScreen);
+
+        if (initialised)
+        {
+            Login();
+        }
+        else
+        {
+            login.SetActive(true);
+            initialised = true;
+        }
     }
 
     public void ToggleFullscreen()
@@ -55,9 +68,21 @@ public class GameSettings : MonoBehaviour
         }
     }
 
-    public void QuitGame()
+    public void Login()
+    {
+        login.SetActive(false);
+        buttons.SetActive(true);
+        mainMenu.SetActive(true);
+    }
+
+    public void FullQuit()
     {
         Application.Quit();
+    }
+
+    public void QuitGame()
+    {
+        //TODO: prompt
     }
 
     public void LoadTutorial()
@@ -71,6 +96,9 @@ public class GameSettings : MonoBehaviour
         waso.SetActive(false);
         cyberWaso.SetActive(true);
         recording.SetActive(false);
+
+        Destroy(mainMenu);
+        Destroy(login);
     }
 
     public void LoadMain()
@@ -80,5 +108,7 @@ public class GameSettings : MonoBehaviour
         interpreter.SetInterpreter("start");
 
         Destroy(tutorial);
+        Destroy(mainMenu);
+        Destroy(login);
     }
 }

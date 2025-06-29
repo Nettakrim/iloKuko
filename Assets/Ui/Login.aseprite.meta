@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: 13b6ea06821006d4cb70a38286dcdd04
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 1
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638868206028453678
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: GradientBack
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 384
+      height: 216
+    spriteID: 1f87d047e270c9b46a5e0a7bc50dbfd8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Netal
+    originalName: 
+    pivot: {x: -3.3142855, y: 3.34375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 131
+      width: 35
+      height: 32
+    spriteID: 9b1314c89bf5d354bb0ae89674d68374
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 131}
+  - name: MenuOutline
+    originalName: 
+    pivot: {x: 14.750001, y: 0.49999997}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 460
+      y: 67
+      width: 4
+      height: 110
+    spriteID: 9c68775580e2c4743b4fef60eb74241a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 460, y: 67}
+  - name: Kuko
+    originalName: 
+    pivot: {x: 1.9473683, y: 0.4909091}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 4
+      width: 76
+      height: 55
+    spriteID: 3279089c8bfbc0548a499536b2f3027c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 4}
+  - name: Profile
+    originalName: 
+    pivot: {x: 0.75, y: 0.50000006}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 67
+      width: 56
+      height: 56
+    spriteID: 01ce65cf59c7d3a48941ae73c4b7c2be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 67}
+  - name: Open
+    originalName: 
+    pivot: {x: -0.38000014, y: 1.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 171
+      width: 50
+      height: 16
+    spriteID: 6e3ca4f7f04c37f4dbc280bb9115ff34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 171}
+  - name: Power
+    originalName: 
+    pivot: {x: 3.8684208, y: 7.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 195
+      width: 38
+      height: 14
+    spriteID: 46699f2773271f5459db44c3ff105e29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 195}
+  - name: Borders
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 228
+      width: 384
+      height: 216
+    spriteID: 7053a374afeca1b44a9b84cd3eb25832
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 228}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -2082473719
+    name: GradientBack
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: GradientBack
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 384
+        height: 216
+      spriteId: 1f87d047e270c9b46a5e0a7bc50dbfd8
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 1671909018
+    name: Netal
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Netal
+      frameIndex: 0
+      cellRect:
+        x: 308
+        y: 1
+        width: 35
+        height: 32
+      spriteId: 9b1314c89bf5d354bb0ae89674d68374
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: -585902564
+    name: MenuOutline
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MenuOutline
+      frameIndex: 0
+      cellRect:
+        x: 133
+        y: 53
+        width: 4
+        height: 110
+      spriteId: 9c68775580e2c4743b4fef60eb74241a
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 1919739044
+    name: Kuko
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Kuko
+      frameIndex: 0
+      cellRect:
+        x: 44
+        y: 81
+        width: 76
+        height: 55
+      spriteId: 3279089c8bfbc0548a499536b2f3027c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: 1921965470
+    name: Profile
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Profile
+      frameIndex: 0
+      cellRect:
+        x: 150
+        y: 80
+        width: 56
+        height: 56
+      spriteId: 01ce65cf59c7d3a48941ae73c4b7c2be
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: 1195105144
+    name: Open
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Open
+      frameIndex: 0
+      cellRect:
+        x: 211
+        y: 81
+        width: 50
+        height: 16
+      spriteId: 6e3ca4f7f04c37f4dbc280bb9115ff34
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: 279548632
+    name: Power
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Power
+      frameIndex: 0
+      cellRect:
+        x: 45
+        y: 3
+        width: 38
+        height: 14
+      spriteId: 46699f2773271f5459db44c3ff105e29
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -175950398
+    name: Borders
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Borders
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 384
+        height: 216
+      spriteId: 7053a374afeca1b44a9b84cd3eb25832
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 384, y: 216}
