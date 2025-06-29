@@ -61,7 +61,7 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _NoiseScale: {r: 8.66, g: 0.1, b: 0, a: 0}
+    - _NoiseScale: {r: 0.15, g: 0.0003, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1854940170948155075

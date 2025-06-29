@@ -101,7 +101,7 @@ public class Cyberspace : MonoBehaviour
         if (tilted)
         {
             cam.transform.localRotation = Quaternion.Euler(0, viewPort > 0 ? tilt : -tilt, 0);
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 Cycle(viewPort > 0 ? 1 : -1);
             }
@@ -109,7 +109,7 @@ public class Cyberspace : MonoBehaviour
         else
         {
             cam.transform.localRotation = Quaternion.identity;
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 SetCyberspace(!inCyberspace);
             }
