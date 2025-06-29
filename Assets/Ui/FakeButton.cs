@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FakeButton : PonaButton
+public class FakeButton : GameButton
 {
     private Graphic graphic;
 

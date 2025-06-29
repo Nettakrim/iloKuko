@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class PonaButton : MonoBehaviour
+public abstract class GameButton : MonoBehaviour
 {
     [SerializeField] private bool hideWebgl;
     [SerializeField] private int ignoreMask = 3;
 
-    public UnityEvent onPress;
+    [SerializeField] private UnityEvent onPress;
 
     private bool pressed;
+    private bool lastHover;
+
+    [SerializeField] private SoundGroup hoverOn;
+    [SerializeField] private SoundGroup hoverOff;
+    [SerializeField] private SoundGroup clickDown;
+    [SerializeField] private SoundGroup clickUp;
 
     #if UNITY_WEBGL
     void Start()
@@ -25,17 +31,20 @@ public abstract class PonaButton : MonoBehaviour
     void Update()
     {
         bool up = Input.GetKeyUp(KeyCode.Mouse0);
+        bool hover = IsMouseOver();
 
-        if (IsMouseOver())
+        if (hover)
         {
             UpdateButton((pressed && Input.GetKey(KeyCode.Mouse0)) ? 2 : 1);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 pressed = true;
+                AudioManager.instance.PlaySound(clickDown, false);
             }
             if (up && pressed)
             {
                 onPress.Invoke();
+                AudioManager.instance.PlaySound(clickUp, false);
             }
         }
         else
@@ -46,6 +55,12 @@ public abstract class PonaButton : MonoBehaviour
         if (up)
         {
             pressed = false;
+        }
+
+        if (hover != lastHover)
+        {
+            AudioManager.instance.PlaySound(hover ? hoverOn : hoverOff, false);
+            lastHover = hover;
         }
     }
 
