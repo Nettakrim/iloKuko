@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
+  m_Name: KukoSearch
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 23bcb6b254463014ab4383f012ca8e01, type: 3}
+  - {fileID: 8300000, guid: 19627ae3ee01d4746ab2e77152fe3a19, type: 3}
+  - {fileID: 8300000, guid: 260b4dc7ed5b7d9419a0d30b34edbdec, type: 3}
+  - {fileID: 8300000, guid: 646949d49cf1615448cabce1e34d627a, type: 3}
+  - {fileID: 8300000, guid: 61fb88b5e656e214da5d349e76672630, type: 3}
+  - {fileID: 8300000, guid: 2ee79e70103111842a0d634728aba3f2, type: 3}
+  octaveRange: 0.1
+  volume: 1

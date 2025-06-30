@@ -1,0 +1,55 @@
+tokiwait/ 2.5
+
+toki/ [soweli] poki li lon tawa ni: ijo li awen lon tomo mama sina
+toki/ [soweli] o pana e len lili tawa ona
+tokiwait/ 1
+toki/ [waso] O PINI!
+toki/ [waso] SEME LA IJO NI
+toki/ [waso] LI LON INSA POKI NI
+tokiwait/ 2.5
+toki/ [waso] ... mi olin a e soweli len ni
+toki/ [waso] ona o kama tawa tomo sin!
+toki/ [soweli] ona li pakala mute!
+toki/ [soweli] ... li suli sama kala suli lon
+toki/ [soweli] li ken ala lon sina tomo tawa
+toki/ [waso] o weka e ona, ona li awen lon esun
+toki/ [waso] mi ken esun e ona sin lon tomo sina
+
+wile/ 1 a kala
+set/ 0 pass
+
+def/ fail1
+    reject/
+    set/ 1 pass
+    toki/ [waso] ala a, mi o sin e alasa
+    toki/ [waso] mi pilin wawa e ni: ona li awen lon esun
+    toki/ [kuko] kala
+end/
+
+def/ fail2
+    reject/
+    toki/ [waso] n, mi ken ala lukin e ona
+    toki/ [soweli] o kama! mi lukin e poki sin!
+    next/ 2-2
+end/
+
+def/ pass
+    toki/ [waso] a a a! mi pana e nimi "kala" taso
+    toki/ [waso] ni li ona ala. taso sama la ni li suwi
+    next/ 2-2
+end/
+
+def/ #item
+    test/
+        1 pass test/
+            0.5 a call/ pass
+            0   a call/ fail2
+        end/
+        0 pass test/
+            0.5 a call/ pass
+            0   a call/ fail1
+        end/
+    end/
+end/
+
+toki/ [kuko] kala

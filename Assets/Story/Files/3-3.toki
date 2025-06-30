@@ -1,0 +1,57 @@
+tokiwait/ 2.5
+
+toki/ [soweli] a! ilo ni li pona
+toki/ [soweli] taso ona li pakala mute
+toki/ [waso] ni li seme a??
+toki/ [soweli] o alasa e nimi "ilo loje". ona li ni
+
+wile/ 1 a ilo
+wile/ 1 b loje
+wile/ 1 c uta
+
+def/ fail
+    reject/
+    toki/ [waso] seme la ona li ni?
+    toki/ [soweli] ona li ni ala a a a, li ante mute
+    next/ 3-4
+end/
+
+def/ passuta
+    toki/ [waso] a! ilo ni! ona li wawa
+    toki/ [soweli] mi tu o esun e ona sin lon tomo mi
+end/
+
+def/ passala
+    tokiwait/ 1
+    toki/ [soweli] ni li sama
+    tokiwait/ 2.5
+    toki/ [soweli] taso ilo pakala li ante lon tenpo pona ona
+    toki/ [waso] sina sona la sina ken esun e ona sin
+end/
+
+def/ pass
+    test/
+        0.5 uta call/ passuta
+        0 uta call/ passala
+    end/
+    next/ 3-4
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] ilo loje
+toki/ [waso] anu pakala loje a a a
+toki/ [soweli] a! pini la uta li lon ona. o alasa e ni
+toki/ [waso] seme la sina sona e ni?
+toki/ [waso] ona li pakala mute
+toki/ [soweli] mi lili la, mi jo e ona sama
+toki/ [waso] taso ona li sike ala, li jelo ala
+toki/ [soweli] a a a sina musi e mi

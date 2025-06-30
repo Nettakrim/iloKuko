@@ -1,0 +1,35 @@
+tokiwait/ 2.5
+
+toki/ [soweli] ken la ni li weka ala e pilin lape
+toki/ [soweli] taso ona li pona
+toki/ [waso] lon, tawa li suli a
+
+wile/ 1 a moku
+wile/ 1 b suwi
+
+def/ fail
+    reject/
+    toki/ [soweli] seme la sina ken moku e ni!
+    toki/ [waso] ... mi ken. mi wawa
+    toki/ [soweli] a a a
+    next/ 3-5
+end/
+
+def/ pass
+    toki/ [waso] a! ni li ken weka wawa e lape
+    toki/ [soweli] lon, mi o poki e ona mute
+    toki/ [waso] pona
+    next/ 3-5
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] moku suwi

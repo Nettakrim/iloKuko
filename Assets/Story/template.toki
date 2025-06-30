@@ -1,0 +1,32 @@
+tokiwait/ 2.5
+
+toki/ [waso] mu
+toki/ [soweli] mu
+
+wile/ 1 a ijo
+wile/ 1 b ijo
+
+def/ fail
+    reject/
+    call/ after
+end/
+
+def/ pass
+    call/ after
+end/
+
+def/ after
+    next/ 
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] ijo

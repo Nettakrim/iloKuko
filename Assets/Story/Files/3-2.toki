@@ -1,0 +1,52 @@
+tokiwait/ 2.5
+
+toki/ [soweli] mi kama jo e poki ilo
+toki/ [waso] pona
+toki/ [soweli] sina wile ala wile e ijo ni?
+toki/ [waso] ona li ken pona e ijo pi kasi kiwen
+
+wile/ 1 a kasi
+wile/ 1 b kiwen
+
+def/ fail
+    reject/
+
+    test/
+        1 fail call/ fail2
+        0 fail call/ fail1
+    end/
+end/
+
+def/ fail1
+    set/ 1 fail
+    toki/ [waso] a! mi o pana e nimi "kasi kiwen" tawa ilo a a a
+    toki/ [kuko] kasi kiwen
+end/
+
+def/ fail2
+    toki/ [waso] n, ilo li ken ala pona e ni
+    toki/ [soweli] lon. ona li ken awen lon tomo ni
+    toki/ [waso] lon
+    next/ 3-3
+end/
+
+def/ pass
+    toki/ [waso] o lukin e ni!
+    toki/ [waso] ona li ken pona e pakala ni
+    toki/ [soweli] ni li pakala lon tenpo mute anu seme?
+    toki/ [waso] ala... taso ona li ni la nasin pona o lon
+    toki/ [soweli] sina wile la sina ken tawa e ona lon tenpo ante
+    next/ 3-3
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] kasi

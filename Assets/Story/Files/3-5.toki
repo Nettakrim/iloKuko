@@ -1,0 +1,36 @@
+tokiwait/ 2.5
+
+toki/ [soweli] sama la telo li suli
+toki/ [waso] a! lon
+toki/ [waso] taso mi wile moku e telo seme?
+
+wile/ 1 a telo
+wile/ 1 b moku
+
+def/ fail
+    reject/
+    toki/ [waso] mi ken ala moku e ni...
+    toki/ [soweli] esun li lon nasin tawa
+    toki/ [soweli] mi tu li ken kama jo e telo pona
+    next/ 3-6
+end/
+
+def/ pass
+    toki/ [waso] a! ni li pona
+    toki/ [soweli] esun poka la telo ni li lon
+    toki/ [soweli] mi tu li ken kama jo e ona lon tawa
+    toki/ [waso] pona!
+    next/ 3-6
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] telo

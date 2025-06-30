@@ -2,7 +2,7 @@ tokiwait/ 2.5
 
 toki/ [soweli] sina seme a?
 toki/ [soweli] mi tu o poki e ijo sina
-toki/ [waso] mi lukin e sitelen musi
+toki/ [waso] mi alasa Kuko e sitelen musi
 toki/ [waso] mi ken pana e ona pona tawa sina!
 toki/ [soweli] ni li suli ala, wile poki li lon
 toki/ [waso] sona, sona, mi weka lili taso tan ona
@@ -25,14 +25,17 @@ def/ fail
 end/
 
 def/ pass
-    toki/ [waso] a! ni li pona mute li wile e mani lili taso!
+    test/
+        1.5 lenseli toki/ [waso] a! ni li pona mute, li wile e mani lili taso!
+        0   lenseli toki/ [waso] a! o lukin, ni li pona!
+    end/
     toki/ [soweli] o poki e len sina taso
     toki/ [soweli] tomo mi la sina ken esun e ona
     call/ after
 end/
 
 def/ after
-    toki/ [waso] len ni mute li lili tawa mi
+    toki/ [waso] len mi mute li lili tawa mi
     toki/ [waso] mi o weka e ona...
     toki/ [soweli] a pona! ni la poki li ken lili
     next/ 2-1

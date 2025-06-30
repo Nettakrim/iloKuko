@@ -1,0 +1,40 @@
+tokiwait/ 2.5
+
+toki/ [waso] ... taso len suwi ante li lon?
+toki/ [soweli] ni li wile e tenpo seme...
+
+wile/ 1 a soweli
+wile/ 1 b len
+wile/ 1 suwi suwi
+
+def/ fail
+    reject/
+    toki/ [waso] n. ni len li nasa
+
+    next/ 2-3
+end/
+
+def/ pass
+    test/
+        1   suwi toki/ [waso] a! ni li SUWI A!
+        0.5 suwi toki/ [waso] a! ni li suwi a!
+        0   suwi toki/ [waso] a! ni li suwi!
+    end/
+    tokiwait/ 0.8
+    toki/ [soweli] lon
+    toki/ [soweli] ... taso mi tu o poki e ijo sina!
+    wait/ 2.5
+    next/ 2-3
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] ijo

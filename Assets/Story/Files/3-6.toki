@@ -1,0 +1,80 @@
+tokiwait/ 2.5
+
+toki/ [soweli] taso mi ken ala esun lon tenpo ni:
+toki/ [soweli] poki kon li awen lon
+toki/ [soweli] sina wile ala weka lon tenpo suno ni anu seme?
+toki/ [soweli] mi ken awen lon tenpo
+toki/ [waso] mi wile a
+toki/ [waso] mi tu o poki e ijo
+toki/ [soweli] ni li toki mi!
+
+wait/ 1
+
+toki/ [soweli] poki ni li ijo monsuta majuna mute
+toki/ [waso] a! mi wile e ijo tan poki ni!
+tokiwait/ 1
+toki/ [soweli] ijo seme?
+tokiwait/ 2.5
+toki/ [waso] mi ken pana e sitelen
+
+wile/ 1 a monsuta
+wile/ 1 b jan
+
+def/ fail
+    reject/
+    call/ after
+    next/ 3-7
+end/
+
+def/ pass1
+    tokiwait/ 1.5
+    toki/ [waso] ni a!
+    tokiwait/ 2.5
+    toki/ [waso] o alasa e ona lon poki
+    tokiwait/ 1.5
+    toki/ [soweli] mi lukin!
+    toki/ [waso] wawa!
+    tokiwait/ 2
+    toki/ [soweli] lawa ona li weka...
+    toki/ [waso] wawa ala a!
+    tokiwait/ 2.5
+    toki/ [waso] ... ona li ken kama ala lon tawa
+    next/ 3-7
+end/
+
+def/ pass2
+    tokiwait/ 2
+    toki/ [waso] ni li ona ala
+    toki/ [waso] taso mi jo e ni
+    toki/ [waso] ... lon supa seme...
+    toki/ [waso] soweli o lukin!
+    tokiwait/ 2.5
+    toki/ [soweli] sina wile tawa e ona anu seme?
+    toki/ [waso] wile
+    toki/ [soweli] o pana e ona tawa poki ni
+    next/ 3-7
+end/
+
+
+def/ #item
+    tokiwait/ 2.5
+    test/
+        0.5 a test/
+            0.5 b call/ pass1
+            0   b call/ pass2
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] monsuta
+toki/ [soweli] ona li seme tawa lukin?
+toki/ [waso] ona li jo e... sijelo, e sinpin
+toki/ [waso] taso lawa ona li weka tan sijelo lon tenpo mute
+tokiwait/ 1.3
+toki/ [soweli] ike a!
+toki/ [waso] ona li wile suno
+tokiwait/ 2.5
+toki/ [waso] taso ni li pakala lon tenpo pini mute a
+toki/ [soweli] ona li pakala la ona o lon ala lon tawa?
+toki/ [waso] lon
