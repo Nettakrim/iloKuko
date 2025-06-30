@@ -3457,7 +3457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideWebgl: 0
-  ignoreMask: 3
+  ignoreMask: 0
   onPress:
     m_PersistentCalls:
       m_Calls:
@@ -17281,7 +17281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideWebgl: 0
-  ignoreMask: 3
+  ignoreMask: 0
   onPress:
     m_PersistentCalls:
       m_Calls:
@@ -29282,7 +29282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideWebgl: 0
-  ignoreMask: 3
+  ignoreMask: 0
   onPress:
     m_PersistentCalls:
       m_Calls:
@@ -37365,7 +37365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideWebgl: 0
-  ignoreMask: 3
+  ignoreMask: 0
   onPress:
     m_PersistentCalls:
       m_Calls:
