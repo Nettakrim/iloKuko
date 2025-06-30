@@ -33,12 +33,14 @@ public class TextManager : MonoBehaviour
 
     [SerializeField] private Sprite kuko;
     [SerializeField] private SoundGroup kukoSearch;
+    [SerializeField] private Color kukoColor;
 
     [Serializable]
     private class Creature
     {
         public string name;
         public Sprite sprite;
+        public Color color;
 
         [SerializeField] private RectTransform transform;
         [SerializeField] private float[] positions;
@@ -205,6 +207,7 @@ public class TextManager : MonoBehaviour
         int i = message.IndexOf(']');
         string name = message[1..i];
         Sprite sprite = null;
+        Color color = Color.black;
 
         foreach (Creature creature in instance.creatures)
         {
@@ -212,6 +215,7 @@ public class TextManager : MonoBehaviour
             {
                 sprite = creature.sprite;
                 creature.Speak(instance.speakDuration);
+                color = creature.color;
                 break;
             }
         }
@@ -220,11 +224,19 @@ public class TextManager : MonoBehaviour
         {
             sprite = instance.kuko;
             instance.kukoSearch.Play(true);
+            color = instance.kukoColor;
         }
 
         SitelenPona sitelenPona = Instantiate(instance.messagePrefab, instance.messageParent);
         sitelenPona.SetMessage(message[(i + 2)..], " ");
-        sitelenPona.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        sitelenPona.GetText().color = color;
+
+        Image image = sitelenPona.transform.GetChild(0).GetComponent<Image>();
+        image.sprite = sprite;
+        if (name != "kuko")
+        {
+            image.color = color;
+        }
         UpdateLayout();
 
         if (sprite == null)

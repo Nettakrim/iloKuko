@@ -27,6 +27,7 @@ public abstract class Expression
             "next" => new NextExpression(),
             "reject" => new RejectExpression(),
             "stage" => new StageExpression(),
+            "tokiwait" => new TokiWaitExpression(),
             _ => null
         };
 
@@ -343,6 +344,24 @@ public class StageExpression : Expression
     protected override void ParseExpression(Reader reader, string args)
     {
         direction = args;
+    }
+    #endif
+}
+
+[System.Serializable]
+public class TokiWaitExpression : Expression
+{
+    [SerializeField] private float duration;
+
+    public override void Run(Interpreter interpreter)
+    {
+        interpreter.SetDefaultSuspension(duration);
+    }
+
+    #if UNITY_EDITOR
+    protected override void ParseExpression(Reader reader, string args)
+    {
+        duration = float.Parse(args, CultureInfo.InvariantCulture);
     }
     #endif
 }

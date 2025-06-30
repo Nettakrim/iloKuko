@@ -1,0 +1,28 @@
+tokiwait/ 2.5
+wile/ 1 musi musi,soweli
+
+def/ fail
+    reject/
+    toki/ [waso] ... ni li musi ala, mi o poki e ijo mi
+    next/ 1-4
+end/
+
+def/ pass1
+    toki/ [waso] a a a! soweli o! o lukin e ni! ona li musi a!
+    next/ 1-4
+end/
+
+def/ pass2
+    toki/ [waso] a a a! soweli o! o lukin e ni!
+    next/ 1-4
+end/
+
+def/ #item
+    test/
+        1.5 musi call/ pass2
+        0.5 musi call/ pass1
+        0 musi call/ fail
+    end/
+end/
+
+toki/ [kuko] soweli musi

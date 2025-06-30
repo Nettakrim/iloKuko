@@ -137,7 +137,7 @@ public class GameSettings : MonoBehaviour
     {
         mainMenu.SetActive(false);
         cyberspace.SetActive(true);
-        interpreter.SetInterpreter("start");
+        interpreter.SetInterpreter("1-1");
 
         Destroy(tutorial);
         Destroy(mainMenu);

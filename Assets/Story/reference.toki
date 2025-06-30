@@ -1,3 +1,28 @@
+toki/ [kuko] mi wile e ijo!
+wait/ 1
+toki/ [waso] wawa a!
+wait/ 1
+stage/ soweli -> 1
+stage/ waso -> 1
+wait/ 1.5
+toki/ [soweli] mu mu mu
+wait/ 1
+stage/ soweli -> 0
+stage/ waso -> 0
+wait/ 1.5
+stage/ soweli -> 1
+stage/ waso -> 2
+wait/ 1.5
+stage/ waso -> 1
+wait/ 1.5
+stage/ waso -> 2
+stage/ soweli -> 2
+toki/ [waso] mu
+
+
+
+
+
 def/ win
 toki/ [waso] wawa!
 end/

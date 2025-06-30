@@ -76,6 +76,7 @@ public class TokiInterpreter : MonoBehaviour
         {
             return true;
         }
+        current.submissionDisabled = true;
 
         Interpreter previous = current;
 
@@ -92,11 +93,6 @@ public class TokiInterpreter : MonoBehaviour
 
         // undo value change
         current.SetValueFromWile(nimi, -1);
-
-        if (!current.rejected)
-        {
-            current.submissionDisabled = true;
-        }
 
         return current.rejected;
     }
@@ -124,6 +120,8 @@ public class Interpreter
     public bool submissionDisabled = true;
 
     private float resumeAt = -1;
+
+    private float defaultSuspension;
 
     public Interpreter(Toki toki)
     {
@@ -216,6 +214,7 @@ public class Interpreter
     public void DisplayMessage(string message)
     {
         onMessage.Invoke(message);
+        Suspend(defaultSuspension);
     }
 
     public void Next(string destination)
@@ -227,6 +226,11 @@ public class Interpreter
     public void Suspend(float duration)
     {
         resumeAt = Time.time + duration;
+    }
+
+    public void SetDefaultSuspension(float duration)
+    {
+        defaultSuspension = duration;
     }
 
     public void Reject()

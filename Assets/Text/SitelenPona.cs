@@ -21,14 +21,21 @@ public class SitelenPona : MonoBehaviour
         TextManager.RegisterSitelenChange(UpdateText);
     }
 
-    public void SetMessage(string message, string start) {
+    public void SetMessage(string message, string start)
+    {
         text = GetComponent<TextMeshProUGUI>();
         lasina = start + message;
         pona = start + Global.instance.ConvertToSitelenPona(message);
         TextManager.RegisterSitelenChange(UpdateText);
     }
 
-    private void UpdateText(bool useSitelenPona) {
+    private void UpdateText(bool useSitelenPona)
+    {
         text.text = useSitelenPona ? pona : lasina;
+    }
+
+    public TextMeshProUGUI GetText()
+    {
+        return text;
     }
 }

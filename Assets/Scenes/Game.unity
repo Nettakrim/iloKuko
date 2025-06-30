@@ -6330,6 +6330,7 @@ MonoBehaviour:
   creatures:
   - name: waso
     sprite: {fileID: 2620087549707649856, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
+    color: {r: 0, g: 0.49411765, b: 0.16470589, a: 1}
     transform: {fileID: 1073992079}
     positions:
     - 0
@@ -6341,6 +6342,7 @@ MonoBehaviour:
     speak: {fileID: 11400000, guid: 341a73d2bacb31a43a3c6ea6fe2871dc, type: 2}
   - name: soweli
     sprite: {fileID: -5237299004222658076, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
+    color: {r: 0.49019608, g: 0.03137255, b: 0, a: 1}
     transform: {fileID: 1224636681}
     positions:
     - 68
@@ -6354,6 +6356,7 @@ MonoBehaviour:
   speakDuration: 0.75
   kuko: {fileID: 729915664488536281, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
   kukoSearch: {fileID: 11400000, guid: 6d565859903ae024ca178aa46ac01e47, type: 2}
+  kukoColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &309635208
 GameObject:
   m_ObjectHideFlags: 0
@@ -26086,6 +26089,9 @@ MonoBehaviour:
   searches:
   - {fileID: -5475051401550479605, guid: 35ef139640855ab47a43678f6b82ce7f, type: 3}
   - {fileID: -5475051401550479605, guid: 07f6526caaee2184197b5d34defed30b, type: 3}
+  - {fileID: -5475051401550479605, guid: 326ce6dd9a1a32d4faa2ccf2397980b1, type: 3}
+  - {fileID: -5475051401550479605, guid: e56cd2abfbbd8d644b0b56438e837a85, type: 3}
+  - {fileID: -5475051401550479605, guid: bda603f6cad463c4ab5faa7cdb955d72, type: 3}
 --- !u!4 &1198334351
 Transform:
   m_ObjectHideFlags: 0

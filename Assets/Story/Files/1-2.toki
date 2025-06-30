@@ -1,0 +1,23 @@
+tokiwait/ 2.5
+wile/ 1 musi musi
+
+def/ fail
+    reject/
+    toki/ [waso] seme la ni li musi?
+    toki/ [waso] ken la ilo Kuko li pakala, mi o sin
+    toki/ [kuko] musi
+end/
+
+def/ accept
+    toki/ [waso] a a a! sin!
+    next/ 1-3
+end/
+
+def/ #item
+    test/
+        0.5 musi call/ accept
+        0 musi call/ fail
+    end/
+end/
+
+toki/ [kuko] musi

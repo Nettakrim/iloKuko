@@ -1,0 +1,47 @@
+tokiwait/ 2.5
+
+toki/ [soweli] sina seme a?
+toki/ [soweli] mi tu o poki e ijo sina
+toki/ [waso] mi lukin e sitelen musi, mi ken pana e ona pona tawa sina!
+toki/ [soweli] ni li suli ala, wile poki li lon
+toki/ [waso] sona, sona, mi weka lili taso tan ona
+toki/ [soweli] weka ni li weka ala lon nasin ni: sina poki ala e ijo
+toki/ [waso] a a a, ni li lon.
+toki/ [waso] mi wile a lon tomo sina, mi o open lon poki seme?
+toki/ [soweli] mi poki e len sina, sina ken ni lon tenpo sama
+toki/ [waso] a!
+toki/ [soweli] seme a?
+toki/ [waso] tomo sina li lon ma lete, ni la mi o esun e len sin
+
+wile/ 1 lenseli len,seli
+
+def/ fail
+    reject/
+    toki/ [soweli] ken la ni li pona? ni li nasa
+    toki/ [waso] ken ala. mi tu o poki e len
+    toki/ [soweli] ni a
+    call/ after
+end/
+
+def/ pass
+    toki/ [waso] a! ni li pona mute li wile e mani lili taso!
+    toki/ [soweli] o poki e len sina taso
+    toki/ [soweli] tomo mi la sina ken esun e ona
+    call/ after
+end/
+
+def/ after
+    toki/ [waso] len ni mute li lili tawa mi
+    toki/ [waso] mi o weka e ona...
+    toki/ [soweli] a pona! ni la poki li ken lili
+    next/ 2-1
+end/
+
+def/ #item
+    test/
+        0.5 lenseli call/ pass
+        0 lenseli call/ fail
+    end/
+end/
+
+toki/ [kuko] len seli
