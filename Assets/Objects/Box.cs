@@ -117,14 +117,29 @@ public class Box : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = item.GetSpriteRenderer();
             item.GetSpriteRenderer().material.SetColor("_OutlineColor", Color.white);
-            
+
             if (!string.IsNullOrWhiteSpace(searchNimi))
             {
+                List<string> parts;
+                bool isAnd;
+                if (searchNimi.Contains("|"))
+                {
+                    isAnd = false;
+                    parts = searchNimi.Split("|").ToList();
+                }
+                else
+                {
+                    isAnd = true;
+                    parts = searchNimi.Split(",").ToList();
+                }
+                int startCount = parts.Count;
+
                 item.GetSpriteRenderer().material.SetColor("_OutlineColor", Color.black);
                 Color color = Color.green;
                 foreach (Nimi.Layer layer in item.GetNimi().words)
                 {
-                    if (layer.Contains(searchNimi))
+                    parts.RemoveAll((word) => layer.Contains(word));
+                    if (parts.Count == 0 || (!isAnd && parts.Count != startCount))
                     {
                         item.GetSpriteRenderer().material.SetColor("_OutlineColor", color);
                         break;

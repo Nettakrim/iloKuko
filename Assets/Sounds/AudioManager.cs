@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
         audioSources = new List<AudioSource>(sourceCount);
         for (int i = 0; i < sourceCount; i++)
         {
-            audioSources[i] = Instantiate(audioSourcePrefab, transform);
+            audioSources.Add(Instantiate(audioSourcePrefab, transform));
         }
     }
 
