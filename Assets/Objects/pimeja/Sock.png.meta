@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: af36c849e65f1584c82f968de6ee5fa5
+guid: b11929528402e134192f6f9481b8616f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1647104593762560702
-    second: BrownOak_0
+      213: -8995742995062308606
+    second: Sock_0
+  - first:
+      213: 3136973795266789938
+    second: Sock_1
+  - first:
+      213: -6253839164397344232
+    second: Sock_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -122,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BrownOak_0
+      name: Sock_0
       rect:
         serializedVersion: 2
-        x: 304
-        y: 221
-        width: 1465
-        height: 870
+        x: 288
+        y: 208
+        width: 1530
+        height: 958
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +142,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebaa12bb6e0bbd610800000000000000
-      internalID: 1647104593762560702
+      spriteID: 2014a905863b82380800000000000000
+      internalID: -8995742995062308606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sock_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2320690eb05c88b20800000000000000
+      internalID: 3136973795266789938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sock_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81aabab0a66e539a0800000000000000
+      internalID: -6253839164397344232
       vertices: []
       indices: 
       edges: []
@@ -153,7 +201,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BrownOak_0: 1647104593762560702
+      Harmonica_0: 4444884355618386437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
