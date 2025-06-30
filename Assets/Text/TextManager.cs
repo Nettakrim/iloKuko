@@ -75,6 +75,11 @@ public class TextManager : MonoBehaviour
     {
         instance = this;
         height = (messageParent.parent as RectTransform).sizeDelta.y;
+
+        if (!useSitelenPona && PlayerPrefs.GetInt("useSitelenPona") > 0)
+        {
+            ToggleSitelenPona();
+        }
     }
 
     void Update()
@@ -172,6 +177,7 @@ public class TextManager : MonoBehaviour
         useSitelenPona = !useSitelenPona;
         onSitelenChange.Invoke(useSitelenPona);
         UpdateLayout();
+        PlayerPrefs.SetInt("useSitelenPona", useSitelenPona ? 1 : 0);
     }
 
     public static void UpdateLayout()

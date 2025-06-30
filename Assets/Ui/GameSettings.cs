@@ -9,6 +9,8 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private SitelenPonaBackground fullscreenSize;
     [SerializeField] private Sprite[] fullscreenSprites;
     [SerializeField] private GameObject quitPrompt;
+    [SerializeField] private GameSlider sfxVolume;
+    [SerializeField] private GameSlider musicVolume;
 
     [SerializeField] private GameObject login;
     [SerializeField] private GameObject buttons;
@@ -35,13 +37,15 @@ public class GameSettings : MonoBehaviour
         if (initialised)
         {
             Login();
-
         }
         else
         {
             login.SetActive(true);
             startup.Play(true);
             initialised = true;
+
+            sfxVolume.SetValue(PlayerPrefs.GetFloat("SFX", 0.6666f));
+            musicVolume.SetValue(PlayerPrefs.GetFloat("Music", 0.6666f));
         }
     }
 
@@ -71,6 +75,18 @@ public class GameSettings : MonoBehaviour
             fullscreen.Set(fullscreenSprites[0], fullscreenSprites[2]);
             fullscreenSize.Set(new Vector2(19, 9), new Vector2(9, 9));
         }
+    }
+
+    public void SetSFXVolume(float to)
+    {
+        AudioManager.instance.SetVolume("SFX", to);
+        PlayerPrefs.SetFloat("SFX", to);
+    }
+
+    public void SetMusicVolume(float to)
+    {
+        AudioManager.instance.SetVolume("Music", to);
+        PlayerPrefs.SetFloat("Music", to);
     }
 
     public void Login()

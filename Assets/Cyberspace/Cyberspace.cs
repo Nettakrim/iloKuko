@@ -129,7 +129,7 @@ public class Cyberspace : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) || lockInput || Global.ignoreMask > 0)
+        if (Input.GetKeyUp(KeyCode.Mouse0) || lockInput || (Global.ignoreMask & 2) > 0)
         {
             mouseAction = -1;
         }
