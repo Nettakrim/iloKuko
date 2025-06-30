@@ -35,7 +35,7 @@ def/ fail
     wait/ 1
     toki/ [soweli] taso ni li monsuta e mi
     toki/ [waso] tan seme?
-    toki/ [soweli] ... mi sona ala
+    toki/ [soweli] ...mi sona ala
     stage/ waso -> 2
     stage/ soweli -> 0
     toki/ [soweli] taso mi la ona li ike mute
@@ -56,7 +56,7 @@ def/ pass1
     toki/ [soweli] lawa ona li weka...
     toki/ [waso] wawa ala a!
     tokiwait/ 2.5
-    toki/ [waso] ... ona li ken kama ala lon tawa
+    toki/ [waso] ...ona li ken kama ala lon tawa
     next/ 3-7
 end/
 
@@ -65,7 +65,7 @@ def/ pass2
     toki/ [waso] ni li ona ala
     toki/ [waso] taso mi jo e ni
     stage/ waso -> 2
-    toki/ [waso] ... lon supa seme...
+    toki/ [waso] ...lon supa seme...
     toki/ [waso] soweli o lukin!
     tokiwait/ 2.5
     toki/ [soweli] sina wile tawa e ona anu seme?
@@ -88,7 +88,7 @@ end/
 
 toki/ [kuko] monsuta
 toki/ [soweli] ona li seme tawa lukin?
-toki/ [waso] ona li jo e... sijelo, e sinpin
+toki/ [waso] ona li jo e...sijelo, e sinpin
 toki/ [waso] taso lawa ona li weka tan sijelo lon tenpo mute
 tokiwait/ 1.3
 toki/ [soweli] ike a!

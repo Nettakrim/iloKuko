@@ -33,7 +33,7 @@ def/ fail2
     stage/ waso -> 1
     wait/ 1
     tokiwait/ 2.5
-    toki/ [soweli] lon... la ona li ken ala ken awen lon tomo ni?
+    toki/ [soweli] lon...la ona li ken ala ken awen lon tomo ni?
     stage/ soweli -> 0
     toki/ [waso] ken
     stage/ waso -> 2
@@ -46,7 +46,7 @@ def/ pass
     stage/ waso -> 1
     toki/ [waso] ona li ken pona e pakala ni
     toki/ [soweli] ijo ni li pakala lon tenpo mute anu seme?
-    toki/ [waso] ala... taso ona li ni la nasin pona o lon
+    toki/ [waso] ala...taso ona li ni la nasin pona o lon
     stage/ soweli -> 0
     toki/ [soweli] sina wile la sina ken tawa e ona lon tenpo ante
     stage/ waso -> 2

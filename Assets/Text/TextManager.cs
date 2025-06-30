@@ -194,6 +194,21 @@ public class TextManager : MonoBehaviour
         useSitelenPona = !useSitelenPona;
         onSitelenChange.Invoke(useSitelenPona);
         UpdateLayout();
+
+        scroll = -1;
+        if (messageParent.sizeDelta.y - height < 0)
+        {
+            SetLayoutAnchor(1f);
+            messageParent.anchoredPosition = new Vector2(0, 0);
+            scrollEnabled = false;
+        }
+        else
+        {
+            SetLayoutAnchor(0f);
+            messageParent.anchoredPosition = new Vector2(0, 0);
+            scrollEnabled = true;
+        }
+
         PlayerPrefs.SetInt("useSitelenPona", useSitelenPona ? 1 : 0);
     }
 

@@ -25,7 +25,7 @@ end/
 
 def/ pass
     toki/ [waso] ni li lon ala lon kulupu sike pi sina lili?
-    toki/ [soweli] sama... lili taso
+    toki/ [soweli] sama...lili taso
     stage/ soweli -> 0
     stage/ waso -> 0
     next/ 2-4

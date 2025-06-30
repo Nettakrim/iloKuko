@@ -25,11 +25,11 @@ public class SitelenPona : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         lasina = start + message;
-        pona = start + Global.instance.ConvertToSitelenPona(message);
+        pona = Global.instance.ConvertToSitelenPona(message);
         TextManager.RegisterSitelenChange(UpdateText);
     }
 
-    private void UpdateText(bool useSitelenPona)
+    protected virtual void UpdateText(bool useSitelenPona)
     {
         text.text = useSitelenPona ? pona : lasina;
     }

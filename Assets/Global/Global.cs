@@ -50,6 +50,7 @@ public class Global : MonoBehaviour
 
     public string ConvertToSitelenPona(string lasina)
     {
+        lasina = lasina.ToLowerInvariant();
         if (lasina.StartsWith("a!"))
         {
             lasina = "a" + lasina[2..];
@@ -61,10 +62,10 @@ public class Global : MonoBehaviour
             lasina = lasina.Replace(c + " ", " \n ").Replace(c + "", "");
         }
 
-        lasina = lasina.Replace(", li ", " li ").Replace(", e ", " e ").Replace(", ", " 󱦜 ").Replace("~","");
+        lasina = lasina.Replace(", li ", " li ").Replace(", e ", " e ").Replace(", ", " 󱦜 ").Replace("~","").Replace("nnn","n n n").Replace(": ", " : ");
 
         string s = "";
-        foreach (string word in lasina.Split(' '))
+        foreach (string word in lasina.Split(' ', StringSplitOptions.RemoveEmptyEntries))
         {
             if (map.ContainsKey(word))
             {

@@ -1,6 +1,6 @@
 tokiwait/ 2.5
 
-toki/ [waso] ... taso len suwi ante li lon?
+toki/ [waso] ...taso len suwi ante li lon?
 stage/ soweli -> 1
 stage/ waso -> 1
 toki/ [soweli] ni li wile e tenpo seme...
@@ -28,7 +28,7 @@ def/ pass
     end/
     tokiwait/ 0.8
     toki/ [soweli] lon
-    toki/ [soweli] ... taso mi tu o poki e ijo sina!
+    toki/ [soweli] ...taso mi tu o poki e ijo sina!
     stage/ soweli -> 0
     wait/ 1.25
     stage/ waso -> 2
