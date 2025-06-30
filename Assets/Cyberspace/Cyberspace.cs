@@ -44,6 +44,8 @@ public class Cyberspace : MonoBehaviour
     [SerializeField] private SoundGroup cycleSound;
     [SerializeField] private SoundGroup enterSound;
     [SerializeField] private SoundGroup exitSound;
+    [SerializeField] private SoundGroup tiltSound;
+    [SerializeField] private SoundGroup untiltSound;
     
     private void Start()
     {
@@ -94,10 +96,12 @@ public class Cyberspace : MonoBehaviour
         if (!tilted && Mathf.Abs(viewPort) > tiltThreshold)
         {
             tilted = true;
+            tiltSound.Play(false);
         }
         else if (tilted && Mathf.Abs(viewPort) < untiltThreshold)
         {
             tilted = false;
+            untiltSound.Play(false);
         }
 
         if (tilted)

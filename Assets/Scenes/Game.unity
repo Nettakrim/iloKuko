@@ -30292,6 +30292,8 @@ MonoBehaviour:
   cycleSound: {fileID: 11400000, guid: 7e18753b95c0f414480bcf2c7b1f69d0, type: 2}
   enterSound: {fileID: 11400000, guid: bbb880de87f7b8749a9b5b115eaa0324, type: 2}
   exitSound: {fileID: 11400000, guid: 76afb53507995d94384ea59d5c2ec21e, type: 2}
+  tiltSound: {fileID: 11400000, guid: a38d92d2f32553b4fb21692ef7d4422b, type: 2}
+  untiltSound: {fileID: 11400000, guid: 1654b0c0e5a976f409e48af2c59dd107, type: 2}
 --- !u!1 &1495016984
 GameObject:
   m_ObjectHideFlags: 0
