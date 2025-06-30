@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ItemRejected
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 97add46f9a9504a4c9e7ad5a608ca6be, type: 3}
   octaveRange: 0
   volume: 1

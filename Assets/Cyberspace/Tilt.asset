@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tilt
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 11b04e9e1617fdb42a9930d50a05ea10, type: 3}
   octaveRange: 0
   volume: 1

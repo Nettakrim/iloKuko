@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Exit
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 85cf5aebcfd1a4140ae7106342455f97, type: 3}
   octaveRange: 0
   volume: 1
