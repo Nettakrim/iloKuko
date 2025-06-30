@@ -10,13 +10,12 @@ public class FakeButton : GameButton
     [SerializeField] private Color hover;
     [SerializeField] private Color press;
 
-    void Start()
-    {
-        graphic = GetComponent<Graphic>();
-    }
-
     protected override void UpdateButton(int state)
     {
+        if (graphic == null)
+        {
+            graphic = GetComponent<Graphic>();
+        }
         graphic.color = state == 0 ? Color.white : (state == 1 ? hover : press);
     }
 }

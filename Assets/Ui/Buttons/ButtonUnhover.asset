@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
-  m_Name: ExitButtonUnhover
+  m_Name: ButtonUnhover
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
-  octaveRange: 0
+  - {fileID: 8300000, guid: 8a2bce346becb694eadeb576cb38c6e4, type: 3}
+  - {fileID: 8300000, guid: 1445369ecd79551489c96e283ecd1489, type: 3}
+  - {fileID: 8300000, guid: 58b9649b437d170428918e43c1ccf2b7, type: 3}
+  octaveRange: 0.2
   volume: 1

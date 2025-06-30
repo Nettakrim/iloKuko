@@ -53,6 +53,17 @@ public class Box : MonoBehaviour
         Vector3 mousePos = Global.GetMousePos();
         mousePos = new Vector3(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y), 0);
 
+        Item hoveringItem = held;
+        if (!hoveringItem && boxBounds.bounds.Contains(mousePos))
+        {
+            hoveringItem = RaycastItems(mousePos, 0);
+
+            if (!hoveringItem)
+            {
+                hoveringItem = RaycastItems(mousePos, forgivenessRadius);
+            }
+        }
+
         if (held)
         {
             float scroll = Input.mouseScrollDelta.y;
@@ -88,15 +99,10 @@ public class Box : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && (Global.ignoreMask & 2) == 0)
         {
-            held = RaycastItems(mousePos, 0);
-
-            if (!held)
+            if (hoveringItem)
             {
-                held = RaycastItems(mousePos, forgivenessRadius);
-            }
+                held = hoveringItem;
 
-            if (held)
-            {
                 pickup.Play(false);
                 dragOffset = held.transform.localPosition - mousePos;
 
@@ -109,7 +115,7 @@ public class Box : MonoBehaviour
             }
         }
 
-        Global.ignoreMask = (Global.ignoreMask & (~1)) | (held ? 1 : 0);
+        Global.ignoreMask = (Global.ignoreMask & (~5)) | (held ? 1 : 0) | (hoveringItem ? 4 : 0);
         dropOff.SetOpen(held);
 
         #if UNITY_EDITOR
@@ -217,6 +223,7 @@ public class Box : MonoBehaviour
     private void OnDisable()
     {
         held = null;
+        Global.ignoreMask &= ~5;
     }
 
     private Vector4 GetBounds(Bounds bounds) {

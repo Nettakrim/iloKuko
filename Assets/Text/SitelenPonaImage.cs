@@ -9,7 +9,7 @@ public class SitelenPonaImage : MonoBehaviour
     [SerializeField] private Sprite lasina;
     [SerializeField] private Sprite pona;
 
-    void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
         TextManager.RegisterSitelenChange(UpdateImage);
