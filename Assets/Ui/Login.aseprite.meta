@@ -239,26 +239,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 396, y: 171}
-  - name: Power
-    originalName: 
-    pivot: {x: 3.8684208, y: 7.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 396
-      y: 195
-      width: 38
-      height: 14
-    spriteID: 46699f2773271f5459db44c3ff105e29
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 396, y: 195}
   - name: Borders
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -279,6 +259,66 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 228}
+  - name: OpenSP
+    originalName: 
+    pivot: {x: -1.1176475, y: 1.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 4
+      width: 17
+      height: 16
+    spriteID: afedef91c7b538d4aa8452b06bd94857
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 480, y: 4}
+  - name: Power
+    originalName: 
+    pivot: {x: 3.8684208, y: 7.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 195
+      width: 38
+      height: 14
+    spriteID: c295c3505e1ff8841be5edaf93a5d3c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 396, y: 195}
+  - name: PowerSP
+    originalName: 
+    pivot: {x: 10.5, y: 7.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 28
+      width: 14
+      height: 14
+    spriteID: 853d01aaae7df3943aee6b7c51eba63b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 480, y: 28}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -383,23 +423,6 @@ ScriptedImporter:
       spriteId: 6e3ca4f7f04c37f4dbc280bb9115ff34
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 7
-    guid: 279548632
-    name: Power
-    layerFlags: 1
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Power
-      frameIndex: 0
-      cellRect:
-        x: 45
-        y: 3
-        width: 38
-        height: 14
-      spriteId: 46699f2773271f5459db44c3ff105e29
-    linkedCells: []
-    parentIndex: -1
   - layerIndex: 1
     guid: -175950398
     name: Borders
@@ -415,6 +438,57 @@ ScriptedImporter:
         width: 384
         height: 216
       spriteId: 7053a374afeca1b44a9b84cd3eb25832
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: 1974083664
+    name: OpenSP
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: OpenSP
+      frameIndex: 0
+      cellRect:
+        x: 211
+        y: 81
+        width: 17
+        height: 16
+      spriteId: afedef91c7b538d4aa8452b06bd94857
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: 279548631
+    name: Power
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Power
+      frameIndex: 0
+      cellRect:
+        x: 45
+        y: 3
+        width: 38
+        height: 14
+      spriteId: c295c3505e1ff8841be5edaf93a5d3c7
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 1877131669
+    name: PowerSP
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: PowerSP
+      frameIndex: 0
+      cellRect:
+        x: 45
+        y: 3
+        width: 14
+        height: 14
+      spriteId: 853d01aaae7df3943aee6b7c51eba63b
     linkedCells: []
     parentIndex: -1
   platformSettings:
