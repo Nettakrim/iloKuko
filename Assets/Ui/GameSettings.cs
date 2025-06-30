@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
@@ -99,6 +100,9 @@ public class GameSettings : MonoBehaviour
 
     public void FullQuit()
     {
+        #if UNITY_EDITOR
+        SceneManager.LoadScene(0);
+        #endif
         Application.Quit();
     }
 

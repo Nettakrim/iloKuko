@@ -47,6 +47,10 @@ public class TokiInterpreter : MonoBehaviour
 
     private void OnMessage(string message)
     {
+        if (message.StartsWith("[kuko]"))
+        {
+            current.submissionDisabled = false;
+        }
         TextManager.CreateMessage(message);
     }
 
@@ -65,7 +69,12 @@ public class TokiInterpreter : MonoBehaviour
         if (current == null)
         {
             Debug.LogWarning("Item submitted but no .toki is running");
-            return false;
+            return true;
+        }
+
+        if (current.submissionDisabled)
+        {
+            return true;
         }
 
         Interpreter previous = current;
@@ -83,6 +92,11 @@ public class TokiInterpreter : MonoBehaviour
 
         // undo value change
         current.SetValueFromWile(nimi, -1);
+
+        if (!current.rejected)
+        {
+            current.submissionDisabled = true;
+        }
 
         return current.rejected;
     }
@@ -107,6 +121,7 @@ public class Interpreter
     public UnityAction<string> onStage;
 
     public bool rejected = false;
+    public bool submissionDisabled = true;
 
     private float resumeAt = -1;
 

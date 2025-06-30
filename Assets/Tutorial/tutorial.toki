@@ -15,17 +15,12 @@ def/ #3
     set/ -1 allow
 end/
 
-def/ accept
-    toki/ [waso] a! ni li wawa!
-    set/ 0 allow
-end/
-
 def/ #item
     test/
         0 allow reject/
         -1 allow test/
             1 color test/
-                1 creature call/ accept
+                1 creature call/ [waso] a! ni li wawa!
                 0 creature reject/
                 end/
             0 color reject/
