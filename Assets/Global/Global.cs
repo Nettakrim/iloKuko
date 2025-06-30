@@ -70,7 +70,7 @@ public class Global : MonoBehaviour
             {
                 s += map[word];
             }
-            else if (word == "\n" || word == ">" || word == "󱦜")
+            else if (word == "\n" || word == ">" || word == "󱦜" || word[0] == ':')
             {
                 s += word;
             }

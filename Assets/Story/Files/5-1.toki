@@ -1,0 +1,37 @@
+tokiwait/ 2.5
+
+toki/ [soweli] kiwen suno li pona tawa mi
+toki/ [soweli] ona li pona tawa lukin
+toki/ [waso] lon...
+
+wile/ 1 a kiwen
+wile/ 1 b suno
+
+def/ fail
+    reject/
+    test/
+        0.5 a toki/ [waso] ni li suno ala
+        0.5 b toki/ [waso] ni li kiwen ala
+        0 a toki/ [waso] ni li kiwen suno ala a!
+    end/
+    toki/ [soweli] ...lili taso la ona li ken ni
+    next/ 5-2
+end/
+
+def/ pass
+    toki/ [waso] suno a!
+    toki/ [soweli] a!
+    next/ 5-2
+end/
+
+def/ #item
+    test/
+        0.5 a test/
+            0.5 b call/ pass
+            0   b call/ fail
+        end/
+        0   a call/ fail
+    end/
+end/
+
+toki/ [kuko] kiwen suno

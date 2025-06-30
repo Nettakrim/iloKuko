@@ -1,0 +1,38 @@
+tokiwait/ 2.5
+
+toki/ [waso] mi tu li ken alasa Kuko e mi tu
+toki/ [soweli] a! mi ken open
+
+wile/ 1 a soweli
+wile/ 1 b waso
+
+def/ fail
+    reject/
+    toki/ [waso] a! ni li lukin sama sina!
+    toki/ [waso] a a a
+    toki/ [soweli] o toki ala a a a!
+end/
+
+def/ waso
+    reject/
+    toki/ [soweli] ni li lukin sama sina!
+    toki/ [waso] taso mi wawa mute
+    toki/ [soweli] a a a
+end/
+
+def/ soweli
+    toki/ [soweli] a ni li mi a!
+    toki/ [waso] taso sina la ona li suwi ala :>
+    toki/ [soweli] o toki ala a a a!
+end/
+
+def/ #item
+    test/
+        0.5 b call/ waso
+        0.5 a call/ soweli
+        0   a call/ ante
+    end/
+    next/ 5-4
+end/
+
+toki/ [kuko] soweli

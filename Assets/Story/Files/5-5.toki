@@ -1,0 +1,24 @@
+tokiwait/ 2.5
+
+toki/ [soweli] a musi
+toki/ [soweli] taso tenpo lape li kama
+toki/ [soweli] lape ala la ijo mute li wile e mi tu
+toki/ [waso] sina pona ala pona tawa kama?
+toki/ [soweli] pona, taso sina ni anu seme?
+toki/ [waso] ken...
+toki/ [waso] mi ni
+toki/ [soweli] o lape pona, mi olin suli e sina
+toki/ [waso] olin mi li sama
+
+wait/ 1
+
+stage/ pimeja
+stage/ waso -> 3
+stage/ soweli -> 2
+
+wait/ 2
+
+stage/ waso -> 0
+toki/ [waso] PAKALA A! MI JO ALA E ILO MI
+
+stage/ pini

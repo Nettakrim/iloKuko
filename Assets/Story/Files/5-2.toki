@@ -1,0 +1,42 @@
+tokiwait/ 2.5
+
+toki/ [soweli] tomo sin mi li wile e mani la
+toki/ [soweli] mi tu o lukin e ijo mani
+toki/ [waso] mi sona ala e tan ni taso mi ken
+
+wile/ 1 a mani
+# accept only the coin
+wile/ 1 b mani,kiwen,suno,walo,sike,lawa,sitelen,nanpa,esun
+
+def/ fail
+    reject/
+    test/
+        0.5 a toki/ [waso] ni li suno ala
+        0.5 b toki/ [waso] ni li kiwen ala
+        0 a toki/ [waso] ni li kiwen suno ala a!
+    end/
+    toki/ [soweli] ...lili taso la ona li ken ni
+end/
+
+def/ passcoin
+    toki/ [waso] a a a ni li mani a!
+    toki/ [soweli] mi wile a e ni mute!
+end/
+
+def/ passante
+    toki/ [waso] ... lon la ni li pona
+    toki/ [soweli] mi o kama jo e ona lon tenpo kama ken
+end/
+
+def/ #item
+    test/
+        0.5 a call/ test/
+            9 b call passcoin
+            0 b call passante
+        end/
+        0   a call/ fail
+    end/
+    next/ 5-3
+end/
+
+toki/ [kuko] mani

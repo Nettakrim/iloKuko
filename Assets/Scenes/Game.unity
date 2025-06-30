@@ -6335,8 +6335,8 @@ MonoBehaviour:
     positions:
     - 0
     - -15
-    - -113
     - -65
+    - -113
     silent: -6
     speaking: 0
     speak: {fileID: 11400000, guid: 341a73d2bacb31a43a3c6ea6fe2871dc, type: 2}
@@ -26104,6 +26104,12 @@ MonoBehaviour:
   - {fileID: -5475051401550479605, guid: e33216faece88ce43b86afaa3bafdb2d, type: 3}
   - {fileID: -5475051401550479605, guid: 4383fb3e8eb80064386ffc2c5f1399e0, type: 3}
   - {fileID: -5475051401550479605, guid: fc18d473dff75484f86fc819e9d19c20, type: 3}
+  - {fileID: -5475051401550479605, guid: e13154d1d8ea2e34b80008c9759d32e2, type: 3}
+  - {fileID: -5475051401550479605, guid: e0a07362fbf0e5e4a97382dac91405d8, type: 3}
+  - {fileID: -5475051401550479605, guid: 38eb855387d9da94ea501e2e91889f43, type: 3}
+  - {fileID: -5475051401550479605, guid: ed3e43a9989da6e4e8713ce9e67058b7, type: 3}
+  - {fileID: -5475051401550479605, guid: d60f533fe63e4bf40976fcb6c51239b8, type: 3}
+  - {fileID: -5475051401550479605, guid: 7032e59408dcc8341891b90aa07c4e4e, type: 3}
 --- !u!4 &1198334351
 Transform:
   m_ObjectHideFlags: 0
