@@ -8,6 +8,10 @@ public class TokiInterpreter : MonoBehaviour
 {
     [SerializeField] private Toki[] searches;
 
+    #if UNITY_EDITOR
+    public string skip;
+    #endif
+
     void Start()
     {
         Box.onSubmit = OnSubmit;
@@ -42,6 +46,17 @@ public class TokiInterpreter : MonoBehaviour
 
     private void Update()
     {
+        #if UNITY_EDITOR
+        if (!string.IsNullOrWhiteSpace(skip))
+        {
+            SetInterpreter(skip);
+            if (current != null)
+            {
+                skip = null;
+            }
+        }
+        #endif
+
         current?.Run();
     }
 

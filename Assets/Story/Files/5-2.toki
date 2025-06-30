@@ -30,9 +30,9 @@ end/
 
 def/ #item
     test/
-        0.5 a call/ test/
-            9 b call passcoin
-            0 b call passante
+        0.5 a test/
+            9 b call/ passcoin
+            0 b call/ passante
         end/
         0   a call/ fail
     end/

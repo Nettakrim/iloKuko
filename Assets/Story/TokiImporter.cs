@@ -19,7 +19,7 @@ public class TokiImporter : ScriptedImporter
             Expression expression = Expression.ParseReader(reader);
             if (expression == null)
             {
-                Debug.LogWarning("Couldnt pass expression for .toki \"" + ctx.assetPath);
+                Debug.LogWarning("Couldnt parse expression for .toki \"" + ctx.assetPath);
             }
             else
             {
