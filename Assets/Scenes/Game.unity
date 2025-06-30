@@ -6049,6 +6049,7 @@ MonoBehaviour:
     - 0
     - -15
     - -113
+    - -65
     silent: -6
     speaking: 0
     speak: {fileID: 11400000, guid: 341a73d2bacb31a43a3c6ea6fe2871dc, type: 2}
