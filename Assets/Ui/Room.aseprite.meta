@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 1
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -72,30 +72,30 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
-    generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateModelPrefab: 0
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638869268573641977
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,9 +119,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Room
+  - name: Fuzz
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 4
       width: 80
       height: 80
-    spriteID: 2e6ee6bbc2df8c74a87043442146d681
+    spriteID: 5b5a4b1799e1011489f23fe279a51728
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,26 +139,144 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Bright
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 92
+      width: 80
+      height: 80
+    spriteID: 78efce28da4cff84faaee49d0c144773
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 92}
+  - name: Dark
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 92
+      y: 4
+      width: 80
+      height: 80
+    spriteID: 4add1a8f974dc6349b07a746ad8bdbcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1495310817
-    name: Room
-    layerFlags: 0
+    guid: -2116621745
+    name: Fuzz
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Room
+    - name: Fuzz
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
-      spriteId: 2e6ee6bbc2df8c74a87043442146d681
+      spriteId: 5b5a4b1799e1011489f23fe279a51728
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  - layerIndex: 1
+    guid: -2124878221
+    name: Bright
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Bright
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      spriteId: 78efce28da4cff84faaee49d0c144773
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -718885660
+    name: Dark
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Dark
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      spriteId: 4add1a8f974dc6349b07a746ad8bdbcd
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 80, y: 80}

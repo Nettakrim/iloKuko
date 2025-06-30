@@ -35,6 +35,11 @@ public class TextManager : MonoBehaviour
     [SerializeField] private SoundGroup kukoSearch;
     [SerializeField] private Color kukoColor;
 
+    [SerializeField] private Image background;
+    [SerializeField] private Sprite[] backgroundSprites;
+
+    [SerializeField] private GameObject[] pini;
+
     [Serializable]
     private class Creature
     {
@@ -264,6 +269,18 @@ public class TextManager : MonoBehaviour
     {
         string[] parts = direction.Split(" -> ");
         int target = int.Parse(parts[1], CultureInfo.InvariantCulture);
+
+        if (parts[0] == "background")
+        {
+            instance.background.sprite = instance.backgroundSprites[target];
+            if (target == 2)
+            {
+                instance.pini[0].SetActive(false);
+                instance.pini[1].SetActive(true);
+            }
+            return;
+        }
+
         foreach (Creature creature in instance.creatures)
         {
             if (creature.name == parts[0])

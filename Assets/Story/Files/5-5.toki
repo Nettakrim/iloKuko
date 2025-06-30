@@ -15,7 +15,7 @@ toki/ [waso] olin mi li sama
 
 wait/ 1
 
-stage/ pimeja
+stage/ background -> 1
 stage/ waso -> 3
 stage/ soweli -> 2
 
@@ -25,4 +25,4 @@ stage/ waso -> 0
 toki/ [waso] PAKALA A! MI JO ALA E ILO MI
 wait/ 1
 
-stage/ pini
+stage/ background -> 2

@@ -19,11 +19,8 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private GameObject cyberspace;
     [SerializeField] private GameObject tutorial;
 
-    [SerializeField] private Image background;
-    [SerializeField] private Sprite cyberBackground;
     [SerializeField] private GameObject waso;
     [SerializeField] private GameObject cyberWaso;
-    [SerializeField] private GameObject recording;
 
     [SerializeField] private TokiInterpreter interpreter;
 
@@ -125,10 +122,8 @@ public class GameSettings : MonoBehaviour
         interpreter.SetInterpreter("tutorial");
 
         tutorial.SetActive(true);
-        background.sprite = cyberBackground;
         waso.SetActive(false);
         cyberWaso.SetActive(true);
-        recording.SetActive(false);
 
         Destroy(mainMenu);
     }
