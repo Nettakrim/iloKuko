@@ -4,11 +4,15 @@ wait/ 1
 
 toki/ [soweli] suwi a! tomo sina la sitelen ni li lon:
 toki/ [soweli] mi en sina li kama lon poka
+stage/ waso -> 2
 toki/ [waso] a! mi wile lukin!
 toki/ [soweli] mi sona e sina lon tenpo mute a
 toki/ [soweli] mi pilin pona tan ni: sina kama lon poka
-toki/ [waso] soweli o
-toki/ [waso] mi wile tawa tomo sina
+
+wait/ 1
+
+toki/ [waso] ...soweli o
+toki/ [waso] mi wile tawa tomo sin sina
 toki/ [waso] taso ni li monsuta suli e mi
 toki/ [waso] ijo li ike la, mi o seme?
 toki/ [waso] tomo mi li...
@@ -30,8 +34,15 @@ toki/ [waso] suno ni li weka
 toki/ [soweli] ken a
 toki/ [soweli] ...
 toki/ [soweli] waso o
+
+tokiwait/ 0.5
 toki/ [waso] seme?
+stage/ soweli -> 1
+wait/ 2
+tokiwait/ 2.5
 toki/ [soweli] mi tu o alasa e ijo musi lon ilo Kuko :3
-toki/ [waso] ni a! :>
+
+stage/ waso -> 1
+toki/ [waso] NI A! :>
 
 next/ 5-1

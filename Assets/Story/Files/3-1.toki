@@ -9,6 +9,7 @@ wait/ 1
 tokiwait/ 1
 toki/ [waso] a!
 tokiwait/ 2.5
+stage/ waso -> 0
 toki/ [waso] mi wile esun e ilo pimeja
 toki/ [waso] taso ken ona li seme?
 
@@ -28,8 +29,14 @@ def/ lukin
     toki/ [waso] la ona li ken awen e sona
     toki/ [soweli] sina toki e seme a?
     toki/ [waso] kama la o toki e ni tawa mi:
+    tokiwait/ 1
     toki/ [waso] mi wile e ilo ni
+    wait/ 1.5
+    stage/ soweli -> 1
+    stage/ waso -> 1
     toki/ [soweli] mi ken ni
+    stage/ soweli -> 0
+    stage/ waso -> 0
     toki/ [waso] <3
 end/
 
@@ -57,6 +64,7 @@ def/ #item
 end/
 
 toki/ [kuko] ilo pimeja
-toki/ [waso] seme a...
+toki/ [waso] ona li ilo pimeja seme a...
+wait/ 1
 toki/ [soweli] a! mi lukin e poki ilo!
-toki/ [waso] a! ona li ilo lukin!
+toki/ [waso] a, ona li ilo lukin

@@ -1,25 +1,31 @@
 tokiwait/ 2.5
 
+stage/ waso -> 2
+stage/ soweli -> 0
+wait/ 2.5
+
 toki/ [soweli] seme la ilo moku li lon insa poki ni?
 tokiwait/ 0.8
 toki/ [waso] ona li ilo-
-toki/ [soweli] taso
+toki/ [soweli] taso...
 tokiwait/ 1.8
 toki/ [soweli] suli ala
 tokiwait/ 2.5
-toki/ [waso] a! ni la mi sona sin e wile
-toki/ [soweli] ni li poki anu seme...
+toki/ [waso] a! ni la mi sona sin e wile mi
+toki/ [soweli] wile ni li poki anu seme...
 toki/ [waso] tawa la mi tu o jo e moku
-toki/ [soweli] a ni li sona pona!
+toki/ [soweli] a! ni li wile pona!
 toki/ [soweli] sama la tomo mi la moku lili li lon
 toki/ [soweli] sina wile e moku seme lon tawa?
 toki/ [waso] nnn
+stage/ waso -> 0
 
 wile/ 1 a moku
 wile/ 1 b suwi
 
 def/ fail
     reject/
+    wait/ 1
     toki/ [soweli] mi ken ala moku e ni...
     toki/ [waso] lon, ona li pona ala tawa moku
     toki/ [soweli] sina moku ala moku e ona lon tenpo pini?
@@ -35,6 +41,8 @@ def/ pass
 end/
 
 def/ #item
+    stage/ waso -> 1
+    stage/ soweli -> 1
     test/
         0.5 a test/
             0.5 b call/ pass

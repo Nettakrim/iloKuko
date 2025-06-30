@@ -2,8 +2,11 @@ tokiwait/ 2.5
 
 toki/ [soweli] mi kama jo e poki ilo
 toki/ [waso] pona
+stage/ waso -> 2
 toki/ [soweli] sina wile ala wile e ijo ni?
 toki/ [waso] ona li ken pona e ijo pi kasi kiwen
+stage/ waso -> 0
+wait/ 1
 
 wile/ 1 a kasi
 wile/ 1 b kiwen
@@ -24,18 +27,29 @@ def/ fail1
 end/
 
 def/ fail2
+    tokiwait/ 1.5
     toki/ [waso] n, ilo li ken ala pona e ni
-    toki/ [soweli] lon. ona li ken awen lon tomo ni
-    toki/ [waso] lon
+    stage/ soweli -> 1
+    stage/ waso -> 1
+    wait/ 1
+    tokiwait/ 2.5
+    toki/ [soweli] lon... la ona li ken ala ken awen lon tomo ni?
+    stage/ soweli -> 0
+    toki/ [waso] ken
+    stage/ waso -> 2
     next/ 3-3
 end/
 
 def/ pass
     toki/ [waso] o lukin e ni!
+    stage/ soweli -> 1
+    stage/ waso -> 1
     toki/ [waso] ona li ken pona e pakala ni
-    toki/ [soweli] ni li pakala lon tenpo mute anu seme?
+    toki/ [soweli] ijo ni li pakala lon tenpo mute anu seme?
     toki/ [waso] ala... taso ona li ni la nasin pona o lon
+    stage/ soweli -> 0
     toki/ [soweli] sina wile la sina ken tawa e ona lon tenpo ante
+    stage/ waso -> 2
     next/ 3-3
 end/
 

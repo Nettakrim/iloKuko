@@ -1,6 +1,8 @@
 tokiwait/ 2.5
 
 toki/ [waso] ... taso len suwi ante li lon?
+stage/ soweli -> 1
+stage/ waso -> 1
 toki/ [soweli] ni li wile e tenpo seme...
 
 wile/ 1 a soweli
@@ -9,8 +11,12 @@ wile/ 1 suwi suwi
 
 def/ fail
     reject/
-    toki/ [waso] n. ni len li nasa
-
+    toki/ [waso] n. ni li nasa
+    toki/ [soweli] o kama! mi lukin e poki sin!
+    stage/ soweli -> 0
+    wait/ 1.25
+    stage/ waso -> 2
+    wait/ 1.25
     next/ 2-3
 end/
 
@@ -23,7 +29,10 @@ def/ pass
     tokiwait/ 0.8
     toki/ [soweli] lon
     toki/ [soweli] ... taso mi tu o poki e ijo sina!
-    wait/ 2.5
+    stage/ soweli -> 0
+    wait/ 1.25
+    stage/ waso -> 2
+    wait/ 1.25
     next/ 2-3
 end/
 
@@ -37,4 +46,4 @@ def/ #item
     end/
 end/
 
-toki/ [kuko] ijo
+toki/ [kuko] soweli len

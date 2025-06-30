@@ -3,7 +3,11 @@ tokiwait/ 2.5
 toki/ [soweli] a! ilo ni li pona
 toki/ [soweli] taso ona li pakala mute
 toki/ [waso] ni li seme a??
+tokiwait/ 1.5
 toki/ [soweli] o alasa e nimi "ilo loje". ona li ni
+stage/ waso -> 0
+tokiwait/ 2.5
+wait/ 1
 
 wile/ 1 a ilo
 wile/ 1 b loje
@@ -11,6 +15,7 @@ wile/ 1 c uta
 
 def/ fail
     reject/
+    wait/1
     toki/ [waso] seme la ona li ni?
     toki/ [soweli] ona li ni ala a a a, li ante mute
     next/ 3-4
@@ -30,6 +35,7 @@ def/ passala
 end/
 
 def/ pass
+    wait/1
     test/
         0.5 uta call/ passuta
         0 uta call/ passala
@@ -38,6 +44,8 @@ def/ pass
 end/
 
 def/ #item
+    stage/ waso -> 1
+    stage/ soweli -> 1
     test/
         0.5 a test/
             0.5 b call/ pass
@@ -54,4 +62,4 @@ toki/ [waso] seme la sina sona e ni?
 toki/ [waso] ona li pakala mute
 toki/ [soweli] mi lili la, mi jo e ona sama
 toki/ [waso] taso ona li sike ala, li jelo ala
-toki/ [soweli] a a a sina musi e mi
+toki/ [soweli] a a a waso olin o! sina musi e mi

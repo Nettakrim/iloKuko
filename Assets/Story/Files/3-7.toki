@@ -7,6 +7,7 @@ toki/ [waso] soweli ante pi kasi kiwen li lon insa
 toki/ [soweli] lon taso ni li suli ala
 toki/ [soweli] seme la sina jo e ona mute!
 toki/ [waso] ...mi jo ala e ona ale
+stage/ waso -> 0
 toki/ [waso] mi awen wile e ona tonsi
 
 wile/ 1 a akesi
@@ -15,23 +16,37 @@ wile/ 1 c tonsi
 
 def/ fail
     reject/
+    wait/ 1
     toki/ [soweli] seme la ni li alasa sina?
+    tokiwait/ 1.5
     toki/ [waso] ona li ni ala. ilo Kuko li pakala
+    stage/ waso -> 0
+    stage/ soweli -> 0
+    wait/ 1
     next/ 4-1
 end/
 
 def/ passtonsi
+    wait/ 1
     toki/ [soweli] a! kule pona a!
     toki/ [waso] lon a...
     toki/ [soweli] sina toki lon a
     toki/ [soweli] sina o kama jo e ni
     toki/ [waso] ni la mi o tawa e ona ale
+    stage/ waso -> 0
+    stage/ soweli -> 0
     toki/ [soweli] mi alasa ken poki e ona
 end/
 
 def/ passala
+    wait/ 1
+    tokiwait/ 1.5
     toki/ [soweli] sina jo e ona ni
-    toki/ [soweli] ona li sewi nanpa wan lon poki
+    stage/ waso -> 0
+    stage/ soweli -> 0
+    wait/ 1
+    tokiwait/ 2.5
+    toki/ [soweli] ona li sewi nanpa wan lon poki ona
     toki/ [waso] lon, mi alasa e ona ante
     toki/ [waso] taso mi ken ala lukin e ona
 end/
@@ -45,6 +60,8 @@ def/ pass
 end/
 
 def/ #item
+    stage/ waso -> 1
+    stage/ soweli -> 1
     test/
         0.5 a test/
             0.5 b call/ pass

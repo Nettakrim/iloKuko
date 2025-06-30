@@ -1,6 +1,6 @@
 tokiwait/ 2.5
 
-toki/ [soweli] poki li lon tawa ni: ijo li awen lon tomo mama sina
+toki/ [soweli] poki ni li lon tawa ni: ijo li awen lon tomo mama sina
 toki/ [soweli] o pana e len lili tawa ona
 tokiwait/ 1
 toki/ [waso] O PINI!
@@ -13,6 +13,7 @@ toki/ [soweli] ona li pakala mute!
 toki/ [soweli] ... li suli sama kala suli lon
 toki/ [soweli] li ken ala lon sina tomo tawa
 toki/ [waso] o weka e ona, ona li awen lon esun
+stage/ waso -> 0
 toki/ [waso] mi ken esun e ona sin lon tomo sina
 
 wile/ 1 a kala

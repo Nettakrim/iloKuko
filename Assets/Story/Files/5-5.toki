@@ -1,13 +1,16 @@
 tokiwait/ 2.5
 
-toki/ [soweli] a musi
+toki/ [soweli] a musi mute a!
 toki/ [soweli] taso tenpo lape li kama
-toki/ [soweli] lape ala la ijo mute li wile e mi tu
+toki/ [soweli] lape li pini la ijo mute li wile e mi tu
 toki/ [waso] sina pona ala pona tawa kama?
 toki/ [soweli] pona, taso sina ni anu seme?
 toki/ [waso] ken...
+wait/ 1
 toki/ [waso] mi ni
-toki/ [soweli] o lape pona, mi olin suli e sina
+wait/ 1
+toki/ [soweli] o lape pona
+toki/ [soweli] mi olin suli e sina
 toki/ [waso] olin mi li sama
 
 wait/ 1
@@ -20,5 +23,6 @@ wait/ 2
 
 stage/ waso -> 0
 toki/ [waso] PAKALA A! MI JO ALA E ILO MI
+wait/ 1
 
 stage/ pini

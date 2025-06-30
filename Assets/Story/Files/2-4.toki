@@ -5,7 +5,7 @@ toki/ [waso] mi o poki e lipu kalama mi seme?
 toki/ [soweli] ona pona taso, kalama nasa a li ike tawa mi
 toki/ [waso] a a a, sina sona ala e kalama ni: mi pana e ona lon tawa
 toki/ [soweli] ike a!
-toki/ [soweli] mi o kama jo e ona pona tawa pona tawa
+toki/ [soweli] mi o kama jo e ona pona a a a
 
 wile/ 1 a sike
 wile/ 1 b kalama
@@ -22,13 +22,21 @@ def/ pass
 end/
 
 def/ after
-    toki/ [waso] mi lukin Kuko e ni tan seme?
+    toki/ [waso] mi lukin Kuko e ni tan seme?..
+    wait/ 0.5
+
+    stage/ soweli -> 1
+    stage/ waso -> 1
+    wait/ 0.5
+
     toki/ [soweli] mi sona ala e ni: sina jo e sike kalama ni!
     toki/ [waso] a! jan Usawi!
     toki/ [waso] ona li pona mute
     toki/ [soweli] mi tu o kute a e ni lon tawa
     toki/ [soweli] taso mi tu o poki a e ijo! suno li kama weka
-    toki/ [waso] sona, kute ni li pona
+    stage/ soweli -> 0
+    stage/ waso -> 2
+    toki/ [waso] sona, kute ni li pona, poki ni li... pona
     next/ 3-1
 end/
 

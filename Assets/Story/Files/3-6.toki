@@ -2,27 +2,44 @@ tokiwait/ 2.5
 
 toki/ [soweli] taso mi ken ala esun lon tenpo ni:
 toki/ [soweli] poki kon li awen lon
+stage/ soweli -> 0
 toki/ [soweli] sina wile ala weka lon tenpo suno ni anu seme?
 toki/ [soweli] mi ken awen lon tenpo
+tokiwait/ 1.5
 toki/ [waso] mi wile a
+toki/ [waso] mi ken poki e ijo
 toki/ [waso] mi tu o poki e ijo
+stage/ waso -> 2
+tokiwait/ 2.5
 toki/ [soweli] ni li toki mi!
 
 wait/ 1
 
-toki/ [soweli] poki ni li ijo monsuta majuna mute
+toki/ [soweli] poki ni li jo e ijo monsuta majuna mute
 toki/ [waso] a! mi wile e ijo tan poki ni!
 tokiwait/ 1
 toki/ [soweli] ijo seme?
-tokiwait/ 2.5
+stage/ waso -> 0
+wait/ 1.5
 toki/ [waso] mi ken pana e sitelen
+tokiwait/ 2.5
 
 wile/ 1 a monsuta
 wile/ 1 b jan
 
 def/ fail
     reject/
-    call/ after
+    toki/ [waso] ni li ona ala
+    stage/ soweli -> 1
+    stage/ waso -> 1
+    wait/ 1
+    toki/ [soweli] taso ni li monsuta e mi
+    toki/ [waso] tan seme?
+    toki/ [soweli] ... mi sona ala
+    stage/ waso -> 2
+    stage/ soweli -> 0
+    toki/ [soweli] taso mi la ona li ike mute
+    toki/ [waso] a a a
     next/ 3-7
 end/
 
@@ -34,6 +51,7 @@ def/ pass1
     tokiwait/ 1.5
     toki/ [soweli] mi lukin!
     toki/ [waso] wawa!
+    stage/ waso -> 2
     tokiwait/ 2
     toki/ [soweli] lawa ona li weka...
     toki/ [waso] wawa ala a!
@@ -46,6 +64,7 @@ def/ pass2
     tokiwait/ 2
     toki/ [waso] ni li ona ala
     toki/ [waso] taso mi jo e ni
+    stage/ waso -> 2
     toki/ [waso] ... lon supa seme...
     toki/ [waso] soweli o lukin!
     tokiwait/ 2.5

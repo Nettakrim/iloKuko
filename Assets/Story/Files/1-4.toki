@@ -1,5 +1,8 @@
 tokiwait/ 2.5
 
+stage/ soweli -> 1
+stage/ waso -> 1
+wait/ 1
 toki/ [soweli] sina seme a?
 toki/ [soweli] mi tu o poki e ijo sina
 toki/ [waso] mi alasa Kuko e sitelen musi
@@ -7,8 +10,10 @@ toki/ [waso] mi ken pana e ona pona tawa sina!
 toki/ [soweli] ni li suli ala, wile poki li lon
 toki/ [waso] sona, sona, mi weka lili taso tan ona
 toki/ [soweli] weka ni li weka ala lon nasin ni: sina poki ala e ijo
+wait/ 0.5
 toki/ [waso] a a a, ni li lon.
-toki/ [waso] mi wile a lon tomo sin sina, mi o open lon poki seme?
+toki/ [waso] mi wile a lon tomo sin sina
+toki/ [waso] mi o open lon poki seme?
 toki/ [soweli] mi poki e len sina, sina ken ni lon tenpo sama
 toki/ [waso] a!
 toki/ [soweli] seme a?
@@ -19,8 +24,11 @@ wile/ 1 lenseli len,seli
 def/ fail
     reject/
     toki/ [soweli] ken la ni li pona? ni li nasa
-    toki/ [waso] ken ala. mi tu o poki e len
-    toki/ [soweli] ni a
+    toki/ [waso] ken ala. ni li ike
+    toki/ [soweli] mi tu o poki e len lon
+    stage/ soweli -> 0
+    stage/ waso -> 2
+    toki/ [soweli] o lukin ala e ilo
     call/ after
 end/
 
@@ -30,6 +38,8 @@ def/ pass
         0   lenseli toki/ [waso] a! o lukin, ni li pona!
     end/
     toki/ [soweli] o poki e len sina taso
+    stage/ soweli -> 0
+    stage/ waso -> 2
     toki/ [soweli] tomo mi la sina ken esun e ona
     call/ after
 end/
