@@ -33,6 +33,7 @@ public class Box : MonoBehaviour
 
     #if UNITY_EDITOR
     [SerializeField] private Material imageMaterial;
+    [SerializeField] private bool disableSubmission;
     [SerializeField] private string searchNimi;
     [SerializeField] private bool generateMissingItems;
     #endif
@@ -116,9 +117,14 @@ public class Box : MonoBehaviour
         }
 
         Global.ignoreMask = (Global.ignoreMask & (~5)) | (held ? 1 : 0) | (hoveringItem ? 4 : 0);
-        dropOff.SetOpen(held);
 
         #if UNITY_EDITOR
+        if (!disableSubmission) {
+        #endif
+            dropOff.SetOpen(held);
+        #if UNITY_EDITOR
+        }
+        
         foreach (Item item in previousHolds)
         {
             SpriteRenderer spriteRenderer = item.GetSpriteRenderer();
@@ -150,7 +156,7 @@ public class Box : MonoBehaviour
                         item.GetSpriteRenderer().material.SetColor("_OutlineColor", color);
                         break;
                     }
-                    color = color*0.5f + new Color(color.g, color.b, color.r, color.a);
+                    color = color * 0.5f + new Color(color.g, color.b, color.r, color.a);
                 }
             }
         }
