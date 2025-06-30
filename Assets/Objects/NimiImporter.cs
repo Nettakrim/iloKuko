@@ -42,6 +42,7 @@ public class NimiImporter : ScriptedImporter
             string line = reader.ReadLine();
             words.Add(new Nimi.Layer(line.Split(',', StringSplitOptions.RemoveEmptyEntries)));
         }
+        reader.Close();
 
         Nimi nimi = ScriptableObject.CreateInstance<Nimi>();
         nimi.sprite = sprite;

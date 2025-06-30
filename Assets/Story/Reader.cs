@@ -23,6 +23,7 @@ public class Reader
                 return true;
             }
         }
+        reader.Close();
         current = null;
         return false;
     }

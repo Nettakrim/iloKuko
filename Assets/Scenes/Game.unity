@@ -6045,16 +6045,20 @@ MonoBehaviour:
   - name: waso
     sprite: {fileID: 2620087549707649856, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
     transform: {fileID: 1073992079}
-    pos1: 0
-    pos2: -15
+    positions:
+    - 0
+    - -15
+    - -113
     silent: -6
     speaking: 0
     speak: {fileID: 11400000, guid: 341a73d2bacb31a43a3c6ea6fe2871dc, type: 2}
   - name: soweli
     sprite: {fileID: -5237299004222658076, guid: ca635e5796a7f834290694f537ad0aad, type: 3}
     transform: {fileID: 1224636681}
-    pos1: 68
-    pos2: 28
+    positions:
+    - 68
+    - 28
+    - -70
     silent: -3
     speaking: 0
     speak: {fileID: 11400000, guid: f165c62fff4e6aa458233b721cc445f5, type: 2}

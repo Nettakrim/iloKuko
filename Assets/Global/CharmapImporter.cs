@@ -20,6 +20,7 @@ public class CharmapImporter : ScriptedImporter
             string line = reader.ReadLine();
             charmap.map.Add(new() {key = line[..^2], value = line[^2..]});
         }
+        reader.Close();
 
         ctx.AddObjectToAsset("MainAsset", charmap);
         ctx.SetMainObject(charmap);

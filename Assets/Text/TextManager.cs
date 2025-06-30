@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -40,19 +41,24 @@ public class TextManager : MonoBehaviour
         public Sprite sprite;
 
         [SerializeField] private RectTransform transform;
-        [SerializeField] private float pos1;
-        [SerializeField] private float pos2;
+        [SerializeField] private float[] positions;
         [SerializeField] private float silent;
         [SerializeField] private float speaking;
 
-        private bool target;
+        private float previousPosition;
+        private int targetPosition;
         private float speakTime;
 
         [SerializeField] private SoundGroup speak;
 
         public void Update(float time)
         {
-            transform.anchoredPosition = new Vector2(Mathf.Lerp(target ? pos2 : pos1, target ? pos1 : pos2, time), speakTime > 0 ? speaking : silent);
+            transform.anchoredPosition = new Vector2(Mathf.Lerp(positions[targetPosition], previousPosition, time), speakTime > 0 ? speaking : silent);
+            if (time == 0)
+            {
+                previousPosition = transform.anchoredPosition.x;
+            }
+            
             if (speakTime > 0)
             {
                 speakTime -= Time.deltaTime;
@@ -65,9 +71,10 @@ public class TextManager : MonoBehaviour
             speak.Play(true);
         }
 
-        public void ChangeTarget(bool to)
+        public void ChangeTarget(int to)
         {
-            target = to;
+            targetPosition = to;
+            previousPosition = transform.anchoredPosition.x;
         }
     }
 
@@ -79,6 +86,11 @@ public class TextManager : MonoBehaviour
         if (!useSitelenPona && PlayerPrefs.GetInt("useSitelenPona") > 0)
         {
             ToggleSitelenPona();
+        }
+
+        for (int i = 0; i < creatures.Length; i++)
+        {
+            creatures[i].ChangeTarget(0);
         }
     }
 
@@ -98,8 +110,11 @@ public class TextManager : MonoBehaviour
         {
             t = 0;
         }
-        creatures[0].Update(t);
-        creatures[1].Update(t);
+
+        for (int i = 0; i < creatures.Length; i++)
+        {
+            creatures[i].Update(t);
+        }
     }
 
     void LateUpdate()
@@ -220,9 +235,15 @@ public class TextManager : MonoBehaviour
 
     public static void Stage(string direction)
     {
-        bool enter = direction == "enter";
-        instance.creatures[0].ChangeTarget(enter);
-        instance.creatures[1].ChangeTarget(enter);
+        string[] parts = direction.Split(" -> ");
+        int target = int.Parse(parts[1], CultureInfo.InvariantCulture);
+        foreach (Creature creature in instance.creatures)
+        {
+            if (creature.name == parts[0])
+            {
+                creature.ChangeTarget(target);
+            }
+        }
         instance.animationTime = 1f;
     }
 
