@@ -1,3 +1,14 @@
+#soweli -> 0 : exit stage right
+#soweli -> 1 : enter from stage right
+
+#waso -> 0 : alone
+#waso -> 1 : with soweli
+#waso -> 2 : exit stage left
+
+#waso -> 3 : exit stage left in sync with soweli
+#soweli -> 2 : exit stage left
+
+
 toki/ [kuko] mi wile e ijo!
 wait/ 1
 toki/ [waso] wawa a!
