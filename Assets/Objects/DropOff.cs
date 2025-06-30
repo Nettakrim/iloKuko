@@ -80,7 +80,7 @@ public class DropOff : MonoBehaviour
 
     public void SetOpen(bool to)
     {
-        if (isOpen == to || item)
+        if (isOpen == to || item || Global.submissionDisabled)
         {
             return;
         }

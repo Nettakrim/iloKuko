@@ -56,6 +56,8 @@ public class TokiInterpreter : MonoBehaviour
             }
         }
         #endif
+        
+        Global.submissionDisabled = current == null || current.submissionDisabled;
 
         current?.Run();
     }

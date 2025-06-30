@@ -14,6 +14,8 @@ public class Global : MonoBehaviour
 
     public static int ignoreMask;
 
+    public static bool submissionDisabled;
+
     void Awake()
     {
         if (instance)
