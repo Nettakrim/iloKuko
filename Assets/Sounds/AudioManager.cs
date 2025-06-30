@@ -11,12 +11,14 @@ public class AudioManager : MonoBehaviour
 
     public int sourceCount;
 
-    private AudioSource[] audioSources;
+    private List<AudioSource> audioSources;
 
     public AudioMixer audioMixer;
 
-    void Start() {
-        if (instance != null) {
+    void Start()
+    {
+        if (instance != null)
+        {
             Destroy(gameObject);
             return;
         }
@@ -24,28 +26,34 @@ public class AudioManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
 
-        audioSources = new AudioSource[sourceCount];
-        for (int i = 0; i < sourceCount; i++) {
+        audioSources = new List<AudioSource>(sourceCount);
+        for (int i = 0; i < sourceCount; i++)
+        {
             audioSources[i] = Instantiate(audioSourcePrefab, transform);
         }
     }
 
-    public void PlaySound(SoundGroup soundGroup, bool force) {
+    public void PlaySound(SoundGroup soundGroup, bool force)
+    {
         AudioSource audioSource = GetAvailableAudioSource(force);
-        
-        if (audioSource != null) {
+
+        if (audioSource != null)
+        {
             audioSource.clip = soundGroup.GetAudioClip();
             audioSource.pitch = soundGroup.GetPitch();
             audioSource.volume = soundGroup.GetVolume();
-            
+
             audioSource.Play();
         }
     }
 
-    private AudioSource GetAvailableAudioSource(bool force) {
-        for (int i = 0; i < sourceCount; i++) {
+    private AudioSource GetAvailableAudioSource(bool force)
+    {
+        for (int i = 0; i < audioSources.Count; i++)
+        {
             AudioSource audioSource = audioSources[i];
-            if (!audioSource.isPlaying) {
+            if (!audioSource.isPlaying)
+            {
                 return audioSource;
             }
         }
@@ -54,12 +62,14 @@ public class AudioManager : MonoBehaviour
         if (!force) return null;
 
         AudioSource currentSource = audioSources[0];
-        float currentPercent = currentSource.timeSamples/(float)currentSource.clip.samples;
+        float currentPercent = currentSource.timeSamples / (float)currentSource.clip.samples;
 
-        for (int i = 1; i < sourceCount; i++) {
+        for (int i = 1; i < audioSources.Count; i++)
+        {
             AudioSource audioSource = audioSources[i];
-            float percent = audioSource.timeSamples/(float)audioSource.clip.samples;
-            if (percent > currentPercent) {
+            float percent = audioSource.timeSamples / (float)audioSource.clip.samples;
+            if (percent > currentPercent)
+            {
                 currentSource = audioSource;
                 currentPercent = percent;
             }
@@ -68,8 +78,21 @@ public class AudioManager : MonoBehaviour
         return currentSource;
     }
 
-    public void SetVolume(string name, float volume) {
+    public void SetVolume(string name, float volume)
+    {
         float db = Mathf.Log(Mathf.Max(volume, 0.001f)) * 20;
         audioMixer.SetFloat(name, db);
+    }
+
+    public AudioSource DedicatedClaim()
+    {
+        AudioSource audioSource = GetAvailableAudioSource(true);
+        audioSources.Remove(audioSource);
+        return audioSource;
+    }
+    
+    public void DedicatedRelease(AudioSource audioSource)
+    {
+        audioSources.Add(audioSource);
     }
 }
