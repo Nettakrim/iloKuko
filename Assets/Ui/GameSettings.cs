@@ -98,11 +98,16 @@ public class GameSettings : MonoBehaviour
         Destroy(login);
     }
 
+    public void Quit()
+    {
+        initialised = false;
+        Global.ignoreMask = 0;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
     public void FullQuit()
     {
-        #if UNITY_EDITOR
-        SceneManager.LoadScene(0);
-        #endif
         Application.Quit();
     }
 

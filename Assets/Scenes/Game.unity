@@ -29514,7 +29514,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 59082258}
         m_TargetAssemblyTypeName: GameSettings, iloKuko.Ui
-        m_MethodName: FullQuit
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
