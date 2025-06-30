@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
+  m_Name: SoweliSpeak
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: c6a03b5c158e53d4885e4823ed396ea3, type: 3}
+  - {fileID: 8300000, guid: fbfb5325b38298244a6bf8067e0f21f2, type: 3}
+  - {fileID: 8300000, guid: 7b78341e372e5384795085ab29814bf7, type: 3}
+  - {fileID: 8300000, guid: 3714d2db167068144ad4d09bb0e88225, type: 3}
+  - {fileID: 8300000, guid: aa7c635d2f059dc459c8cff3aa91c903, type: 3}
+  - {fileID: 8300000, guid: c2dd82c98b45f06419881b765c27a021, type: 3}
+  octaveRange: 0.3
+  volume: 1
