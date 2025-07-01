@@ -3,7 +3,7 @@ wile/ 1 musi musi,soweli
 
 def/ fail
     reject/
-    toki/ [waso] ...ni li musi ala, mi o poki e ijo mi
+    toki/ [waso] ...ni li musi ala
     next/ 1-4
 end/
 
@@ -19,8 +19,8 @@ end/
 
 def/ #item
     test/
-        1.5 musi call/ pass2
-        0.5 musi call/ pass1
+        1.5 musi call/ pass1
+        0.5 musi call/ pass2
         0 musi call/ fail
     end/
 end/

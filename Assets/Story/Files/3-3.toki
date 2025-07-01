@@ -1,8 +1,10 @@
 tokiwait/ 2.5
 
-toki/ [soweli] a! ilo ni li pona
+wait/ 1
+toki/ [waso] a! ilo ni li seme a??
+toki/ [soweli] ilo ni li pona
 toki/ [soweli] taso ona li pakala mute
-toki/ [waso] ni li seme a??
+toki/ [waso] mi sona ala a e ona!
 tokiwait/ 1.5
 toki/ [soweli] o alasa e nimi "ilo loje". ona li ni
 stage/ waso -> 0
@@ -37,8 +39,8 @@ end/
 def/ pass
     wait/1
     test/
-        0.5 uta call/ passuta
-        0 uta call/ passala
+        0.5 c call/ passuta
+        0   c call/ passala
     end/
     next/ 3-4
 end/

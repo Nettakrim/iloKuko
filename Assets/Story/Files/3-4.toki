@@ -8,7 +8,7 @@ toki/ [soweli] seme la ilo moku li lon insa poki ni?
 tokiwait/ 0.8
 toki/ [waso] ona li ilo-
 toki/ [soweli] taso...
-tokiwait/ 1.8
+tokiwait/ 2.2
 toki/ [soweli] suli ala
 tokiwait/ 2.5
 toki/ [waso] a! ni la mi sona sin e wile mi
@@ -37,7 +37,7 @@ end/
 def/ pass
     toki/ [waso] a! ni li pona lukin a!
     toki/ [soweli] lon, o poki e ona mute
-    toki/ [soweli] tenpo tawa li suli la, moku ante o lon?
+    toki/ [soweli] tenpo tawa li suli la, moku ante seme o lon?..
     next/ 3-5
 end/
 

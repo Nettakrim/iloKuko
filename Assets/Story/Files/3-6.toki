@@ -3,7 +3,9 @@ tokiwait/ 2.5
 toki/ [soweli] taso mi ken ala esun lon tenpo ni:
 toki/ [soweli] poki kon li awen lon
 stage/ soweli -> 0
+wait/ 0.5
 toki/ [soweli] sina wile ala weka lon tenpo suno ni anu seme?
+wait/ 0.5
 toki/ [soweli] mi ken awen lon tenpo
 tokiwait/ 1.5
 toki/ [waso] mi wile a
@@ -88,7 +90,7 @@ end/
 
 toki/ [kuko] monsuta
 toki/ [soweli] ona li seme tawa lukin?
-toki/ [waso] ona li jo e...sijelo, e sinpin
+toki/ [waso] ona li jo e... sijelo, e sinpin
 toki/ [waso] taso lawa ona li weka tan sijelo lon tenpo mute
 tokiwait/ 1.3
 toki/ [soweli] ike a!

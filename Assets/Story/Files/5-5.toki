@@ -24,8 +24,12 @@ stage/ background -> 1
 
 wait/ 4
 
-stage/ waso -> 0
+tokiwait/ 1.5
 toki/ [waso] PAKALA A! MI JO ALA E ILO MI
+
+stage/ waso -> 0
+
+wait/ 2
 
 stage/ background -> 2
 

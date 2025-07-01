@@ -54,11 +54,13 @@ public class Global : MonoBehaviour
 
     public string ConvertToSitelenPona(string lasina)
     {
-        lasina = lasina.ToLowerInvariant();
+        lasina = lasina.ToLowerInvariant()+" ";
         if (lasina.StartsWith("a!"))
         {
             lasina = "a" + lasina[2..];
         }
+
+        lasina = lasina.Replace("...", " # ").Replace(" \"", " 「 ").Replace("\" ", " 」 ");
 
         string replace = "?!.";
         foreach (char c in replace)
@@ -75,7 +77,11 @@ public class Global : MonoBehaviour
             {
                 s += map[word];
             }
-            else if (word == "\n" || word == ">" || word == "󱦜" || word.StartsWith(":"))
+            else if (word == "#")
+            {
+                s += "...";
+            }
+            else if (word == "\n" || word == ">" || word == "󱦜" || word == "「" || word == "」" || word.StartsWith(":"))
             {
                 s += word;
             }

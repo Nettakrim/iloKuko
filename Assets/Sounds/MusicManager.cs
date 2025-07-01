@@ -57,7 +57,7 @@ public class MusicManager : MonoBehaviour
             AudioSource other = musicSource ? musicA : musicB;
             musicFade.volume -= Time.deltaTime * (other.clip == null ? 5 : musicFadeSpeed);
 
-            other.volume = 1 - musicFade.volume;
+            other.volume = Mathf.Sqrt(1 - musicFade.volume);
             if (other.volume == 1)
             {
                 musicFade.Stop();

@@ -28,28 +28,30 @@ def/ lukin
     toki/ [waso] a ni a!
     toki/ [waso] mi o toki e ona tawa soweli
     toki/ [waso] la ona li ken awen e sona
-    toki/ [soweli] sina toki e seme a?
-    toki/ [waso] kama la o toki e ni tawa mi:
     tokiwait/ 1
-    toki/ [waso] mi wile e ilo ni
-    wait/ 1.5
+    toki/ [soweli] sina toki e seme a?
     stage/ soweli -> 1
     stage/ waso -> 1
+    wait/ 1.5
+    tokiwait/ 2.5
+    toki/ [waso] kama la o toki e ni tawa mi:
+    toki/ [waso] mi wile e ilo ni
     toki/ [soweli] mi ken ni
     stage/ soweli -> 0
     stage/ waso -> 0
+    wait/ 0.5
     toki/ [waso] <3
 end/
 
 def/ lukinala
-    toki/ [waso] a mi wile sama e ni
+    toki/ [waso] a mi wile kin e ni
     toki/ [waso] taso ni li wile pini mi ala
 end/
 
 def/ pass
     test/
-        0.5 lukin call/ lukin
-        0   lukin call/ lukinala
+        0.5 c call/ lukin
+        0   c call/ lukinala
     end/
     next/ 3-2
 end/

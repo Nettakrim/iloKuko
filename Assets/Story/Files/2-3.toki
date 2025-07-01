@@ -4,9 +4,7 @@ stage/ music -> 2
 toki/ [soweli] waso o! poki ni li jo e seme?
 toki/ [waso] a! mi lili la mi kama jo e jan musi ni mute!
 toki/ [waso] lili sina li jo ala jo mute e ijo?
-tokiwait/ 1
 toki/ [soweli] jo ala
-tokiwait/ 2.5
 toki/ [soweli] n, mi lili mute la mi awen e ijo sike
 stage/ waso -> 0
 toki/ [waso] ona seme li pona nanpa wan?
@@ -20,15 +18,17 @@ def/ fail
     toki/ [waso] a ni li ken ala lon kulupu sike pi soweli lili...
     toki/ [soweli] lon, taso jan pi mama mi li jo e ni mute a!
     stage/ soweli -> 0
-    stage/ waso -> 0
+    stage/ waso -> 2
+    wait/ 1
     next/ 2-4
 end/
 
 def/ pass
     toki/ [waso] ni li lon ala lon kulupu sike pi sina lili?
-    toki/ [soweli] sama...lili taso
+    toki/ [soweli] sama... lili taso
     stage/ soweli -> 0
-    stage/ waso -> 0
+    stage/ waso -> 2
+    wait/ 1
     next/ 2-4
 end/
 

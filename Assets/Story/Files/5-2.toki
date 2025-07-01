@@ -2,7 +2,7 @@ tokiwait/ 2.5
 
 toki/ [soweli] tomo sin mi li wile e mani la
 toki/ [soweli] mi tu o lukin e ijo mani
-toki/ [waso] mi sona ala e tan ni taso mi ken
+toki/ [waso] mi sona ala e tan pi pilin ni taso mi ken
 
 wile/ 1 a mani
 # accept only the coin
@@ -10,12 +10,8 @@ wile/ 1 b mani,kiwen,suno,walo,sike,lawa,sitelen,nanpa,esun
 
 def/ fail
     reject/
-    test/
-        0.5 a toki/ [waso] ni li suno ala
-        0.5 b toki/ [waso] ni li kiwen ala
-        0 a toki/ [waso] ni li kiwen suno ala a!
-    end/
-    toki/ [soweli] ...lili taso la ona li ken ni
+    toki/ [soweli] ni li mani ala a!
+    toki/ [waso] li wile e mani ala a!
 end/
 
 def/ passcoin
@@ -24,7 +20,7 @@ def/ passcoin
 end/
 
 def/ passante
-    toki/ [waso] ...lon la ni li pona
+    toki/ [waso] ...lon la lukin ni li pona e mi
     toki/ [soweli] mi o kama jo e ona lon tenpo kama ken
 end/
 
