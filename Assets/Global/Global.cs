@@ -16,6 +16,8 @@ public class Global : MonoBehaviour
 
     public static bool submissionDisabled;
 
+    public static float dialogueSpeed;
+
     void Awake()
     {
         if (instance)

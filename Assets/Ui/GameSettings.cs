@@ -11,9 +11,10 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private GameObject quitPrompt;
     [SerializeField] private GameSlider sfxVolume;
     [SerializeField] private GameSlider musicVolume;
+    [SerializeField] private GameSlider dialogueSpeed;
 
     [SerializeField] private GameObject login;
-    [SerializeField] private GameObject buttons;
+    [SerializeField] private GameObject[] buttons;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject cyberspace;
     [SerializeField] private GameObject tutorial;
@@ -47,6 +48,12 @@ public class GameSettings : MonoBehaviour
 
             sfxVolume.SetValue(PlayerPrefs.GetFloat("SFX", 0.6666f));
             musicVolume.SetValue(PlayerPrefs.GetFloat("Music", 0.6666f));
+            dialogueSpeed.SetValue(PlayerPrefs.GetFloat("Dialogue", 1.0f));
+
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].SetActive(false);
+            }
         }
     }
 
@@ -90,12 +97,22 @@ public class GameSettings : MonoBehaviour
         PlayerPrefs.SetFloat("Music", to);
     }
 
+    public void SetDialogueSpeed(float to)
+    {
+        Global.dialogueSpeed = Mathf.Lerp(4f, 1f, to);
+        PlayerPrefs.SetFloat("Dialogue", to);
+    }
+
     public void Login()
     {
         login.SetActive(false);
-        buttons.SetActive(true);
         mainMenu.SetActive(true);
         Destroy(login);
+
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(true);
+        }
 
         MusicManager.instance.PlayMusic(baseMusic);
     }

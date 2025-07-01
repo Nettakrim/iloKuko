@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 8255e6f22022677458efb03eb0fde7bc, type: 3}
-  octaveRange: 0
+  octaveRange: 0.1
   volume: 1

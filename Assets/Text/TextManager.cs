@@ -42,6 +42,8 @@ public class TextManager : MonoBehaviour
 
     [SerializeField] private AudioClip[] music;
 
+    [SerializeField] private GameObject[] buttons;
+
     [Serializable]
     private class Creature
     {
@@ -214,6 +216,11 @@ public class TextManager : MonoBehaviour
             SetLayoutAnchor(0f);
             messageParent.anchoredPosition = new Vector2(0, 0);
             scrollEnabled = true;
+        }
+
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(buttons[i].transform as RectTransform);
         }
 
         PlayerPrefs.SetInt("useSitelenPona", useSitelenPona ? 1 : 0);

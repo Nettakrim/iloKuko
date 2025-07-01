@@ -260,7 +260,7 @@ public class Interpreter
 
     public void Suspend(float duration)
     {
-        resumeAt = Time.time + duration;
+        resumeAt = Time.time + duration * Global.dialogueSpeed;
     }
 
     public void SetDefaultSuspension(float duration)
