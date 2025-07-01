@@ -17,15 +17,21 @@ def/ #3
     set/ -1 allow
 end/
 
+def/ reject
+    reject/
+    wait/ 0.1
+    toki/ [kuko] hidden
+end/
+
 def/ #item
     test/
         0 allow reject/
         -1 allow test/
             1 color test/
-                1 creature call/ [waso] a! ni li wawa!
-                0 creature reject/
+                1 creature toki/ [waso] a! ni li wawa!
+                0 creature call/ reject
                 end/
-            0 color reject/
+            0 color call/ reject
         end/
     end/
 end/
