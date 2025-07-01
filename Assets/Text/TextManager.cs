@@ -40,6 +40,8 @@ public class TextManager : MonoBehaviour
 
     [SerializeField] private GameObject[] pini;
 
+    [SerializeField] private AudioClip[] music;
+
     [Serializable]
     private class Creature
     {
@@ -240,7 +242,7 @@ public class TextManager : MonoBehaviour
             }
         }
 
-        if (name == "kuko")
+        if (name.StartsWith("kuko"))
         {
             sprite = instance.kuko;
             instance.kukoSearch.Play(true);
@@ -253,7 +255,7 @@ public class TextManager : MonoBehaviour
 
         Image image = sitelenPona.transform.GetChild(0).GetComponent<Image>();
         image.sprite = sprite;
-        if (name != "kuko")
+        if (!name.StartsWith("kuko"))
         {
             image.color = color;
         }
@@ -278,6 +280,12 @@ public class TextManager : MonoBehaviour
                 instance.pini[0].SetActive(false);
                 instance.pini[1].SetActive(true);
             }
+            return;
+        }
+
+        if (parts[0] == "music")
+        {
+            MusicManager.instance.PlayMusic(instance.music[target]);
             return;
         }
 

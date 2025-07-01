@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
@@ -26,6 +25,8 @@ public class GameSettings : MonoBehaviour
 
     [SerializeField] private SoundGroup startup;
 
+    [SerializeField] private AudioClip baseMusic;
+
     private static bool initialised = false;
 
     void Start()
@@ -38,6 +39,8 @@ public class GameSettings : MonoBehaviour
         }
         else
         {
+            MusicManager.instance.PlayMusic(null);
+
             login.SetActive(true);
             startup.Play(true);
             initialised = true;
@@ -93,6 +96,8 @@ public class GameSettings : MonoBehaviour
         buttons.SetActive(true);
         mainMenu.SetActive(true);
         Destroy(login);
+
+        MusicManager.instance.PlayMusic(baseMusic);
     }
 
     public void Quit()

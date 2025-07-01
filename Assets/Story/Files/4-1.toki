@@ -9,6 +9,7 @@ toki/ [waso] a! mi wile lukin!
 toki/ [soweli] mi sona e sina lon tenpo mute a
 toki/ [soweli] mi pilin pona tan ni: sina kama lon poka
 
+stage/ music -> 0
 wait/ 1
 
 toki/ [waso] ...soweli o
@@ -20,6 +21,7 @@ toki/ [waso] tomo mi
 toki/ [waso] mi wile ala weka tan ni
 toki/ [soweli] ...
 tokiwait/ 3
+stage/ music -> 1
 toki/ [soweli] mi sona e ni: sina wile ala weka
 toki/ [soweli] la mi pilin e ni: ni li pona e sina:
 toki/ [soweli] mi lawa. mi poki lon poka sina
@@ -27,6 +29,7 @@ tokiwait/ 2.5
 toki/ [waso] ni li pona ala e mi!
 toki/ [waso] mi wile suli lon tomo sina
 toki/ [waso] ...taso ale li suli lon ni
+stage/ music -> 2
 toki/ [soweli] sona. sina wile ala wile weka wawa tan wile poki
 toki/ [waso] wile
 toki/ [waso] mi tu li ken tawa lon tenpo suno kama
@@ -40,6 +43,7 @@ toki/ [waso] seme?
 stage/ soweli -> 1
 wait/ 2
 tokiwait/ 2.5
+stage/ music -> 5
 toki/ [soweli] mi tu o alasa e ijo musi lon ilo Kuko :3
 
 stage/ waso -> 1
