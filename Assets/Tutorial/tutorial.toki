@@ -25,7 +25,7 @@ end/
 
 def/ #item
     test/
-        0 allow reject/
+        0 allow call/ reject
         -1 allow test/
             1 color test/
                 1 creature toki/ [waso] a! ni li wawa!
