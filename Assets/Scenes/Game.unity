@@ -32145,7 +32145,9 @@ MonoBehaviour:
   untiltThreshold: 0.2
   tilt: 1
   button: {fileID: 1568379446}
-  cycleSound: {fileID: 11400000, guid: 7e18753b95c0f414480bcf2c7b1f69d0, type: 2}
+  cycleSound:
+  - {fileID: 11400000, guid: 42375bd1be01b6a4e9e37df2bdbb429d, type: 2}
+  - {fileID: 11400000, guid: 7e18753b95c0f414480bcf2c7b1f69d0, type: 2}
   enterSound: {fileID: 11400000, guid: bbb880de87f7b8749a9b5b115eaa0324, type: 2}
   exitSound: {fileID: 11400000, guid: 76afb53507995d94384ea59d5c2ec21e, type: 2}
   tiltSound: {fileID: 11400000, guid: a38d92d2f32553b4fb21692ef7d4422b, type: 2}
@@ -36141,7 +36143,7 @@ MonoBehaviour:
   bounds: {fileID: 1674034266}
   rounding: 10
   target: 76
-  speed: 300
+  speed: 80
   open: {fileID: 11400000, guid: d67b216b03288214090bf69587e9e37c, type: 2}
   close: {fileID: 11400000, guid: e4ab86cedea18724494dddedf4bb373e, type: 2}
   accept: {fileID: 11400000, guid: c2d0341aed4114448829c0318756f9b5, type: 2}

@@ -41,7 +41,7 @@ public class Cyberspace : MonoBehaviour
     [SerializeField] private SitelenPonaImage button;
     private bool lockInput;
 
-    [SerializeField] private SoundGroup cycleSound;
+    [SerializeField] private SoundGroup[] cycleSound;
     [SerializeField] private SoundGroup enterSound;
     [SerializeField] private SoundGroup exitSound;
     [SerializeField] private SoundGroup tiltSound;
@@ -220,7 +220,7 @@ public class Cyberspace : MonoBehaviour
         {
             target += direction;
         }
-        cycleSound.Play(false);
+        cycleSound[direction > 0 ? 0 : 1].Play(false);
     }
 
     public void SetCyberspace(bool to)

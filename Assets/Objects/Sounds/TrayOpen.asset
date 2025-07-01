@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
-  m_Name: Drop
+  m_Name: TrayOpen
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
-  octaveRange: 0
+  - {fileID: 8300000, guid: 06885dbbce49a034380c2ef7849a44b9, type: 3}
+  - {fileID: 8300000, guid: 99b645dc1def94a4bae5eff343970f00, type: 3}
+  - {fileID: 8300000, guid: f4afced4bcaf000418b050ca9714930f, type: 3}
+  - {fileID: 8300000, guid: 9749bbeeda8b2f04fba308288f243f5b, type: 3}
+  - {fileID: 8300000, guid: bfda677ab8aafb844b3f87ce658591e6, type: 3}
+  octaveRange: 0.3
   volume: 1

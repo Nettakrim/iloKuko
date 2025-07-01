@@ -22,6 +22,8 @@ public class DropOff : MonoBehaviour
     [SerializeField] private SoundGroup accept;
     [SerializeField] private SoundGroup reject;
 
+    private AudioSource sound;
+
     void Start()
     {
         inPos = transform.position.x;
@@ -29,6 +31,16 @@ public class DropOff : MonoBehaviour
         float offset = target % rounding;
         target += offset + rounding;
         inPos += offset;
+
+        sound = AudioManager.instance.DedicatedClaim();
+    }
+
+    void OnDestroy()
+    {
+        if (sound)
+        {
+            AudioManager.instance.DedicatedRelease(sound);
+        }
     }
 
     void Update()
@@ -69,7 +81,7 @@ public class DropOff : MonoBehaviour
 
     public bool IsHovered(Vector2 mousePos)
     {
-        if (!isOpen || item)
+        if (!isOpen || item || Global.submissionDisabled)
         {
             return false;
         }
@@ -80,12 +92,30 @@ public class DropOff : MonoBehaviour
 
     public void SetOpen(bool to)
     {
-        if (isOpen == to || item || Global.submissionDisabled)
+        if (isOpen == to || item)
         {
             return;
         }
+        if (Global.submissionDisabled)
+        {
+            isOpen = false;
+            return;
+        }
         isOpen = to;
-        (isOpen ? open : close).Play(false);
+
+        float t = 0;
+        if (sound.isPlaying)
+        {
+            t = Mathf.Clamp(0.7f - sound.time, 0, 0.55f);
+            sound.Stop();
+        }
+
+        SoundGroup soundGroup = isOpen ? open : close;
+        sound.clip = soundGroup.GetAudioClip();
+        sound.pitch = soundGroup.GetPitch();
+        sound.volume = soundGroup.GetVolume();
+        sound.time = t;
+        sound.Play();
     }
 
     public void Reject()

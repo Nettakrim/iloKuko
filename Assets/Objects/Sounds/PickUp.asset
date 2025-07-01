@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
-  m_Name: TrayOpen
+  m_Name: PickUp
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
-  octaveRange: 0
+  - {fileID: 8300000, guid: f5bebae3db8645a418af912d05ce79df, type: 3}
+  - {fileID: 8300000, guid: 9e5e9aa6726e7924c906a51a5c71a0d1, type: 3}
+  - {fileID: 8300000, guid: b8ddc073eb8f4ad45b1594c3f672a4d0, type: 3}
+  - {fileID: 8300000, guid: adff28900c761c24c9a96544f04e14a9, type: 3}
+  octaveRange: 0.3
   volume: 1

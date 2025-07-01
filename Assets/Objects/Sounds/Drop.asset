@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
-  m_Name: PickUp
+  m_Name: Drop
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
-  octaveRange: 0
+  - {fileID: 8300000, guid: 61ae7df293969d547beda2fb4f55849e, type: 3}
+  - {fileID: 8300000, guid: 0e45a96f48861c2468a72b7601160e9a, type: 3}
+  - {fileID: 8300000, guid: bab2711269ba9f542a2aa0ee8f5a344e, type: 3}
+  - {fileID: 8300000, guid: 5c0cec22d19846544b9886d02702e7f5, type: 3}
+  octaveRange: 0.3
   volume: 1

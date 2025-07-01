@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb856365bc0c73246814c895bdba6e15, type: 3}
-  m_Name: TrayClose
+  m_Name: Left
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 8255e6f22022677458efb03eb0fde7bc, type: 3}
   octaveRange: 0
   volume: 1
