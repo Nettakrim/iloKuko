@@ -16,4 +16,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dbd99149da4770a4a9c6319e2f53c14b, type: 3}
   - {fileID: 8300000, guid: 35959390d27bccc48bfd39051a67ac59, type: 3}
   octaveRange: 0.2
-  volume: 1
+  volume: 0.8

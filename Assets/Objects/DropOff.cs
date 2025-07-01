@@ -77,6 +77,7 @@ public class DropOff : MonoBehaviour
         this.box = box;
         item.transform.parent = transform;
         isOpen = false;
+        PlayTraySound();
     }
 
     public bool IsHovered(Vector2 mousePos)
@@ -98,11 +99,19 @@ public class DropOff : MonoBehaviour
         }
         if (Global.submissionDisabled)
         {
-            isOpen = false;
+            if (isOpen)
+            {
+                isOpen = false;
+                PlayTraySound();
+            }
             return;
         }
         isOpen = to;
+        PlayTraySound();
+    }
 
+    private void PlayTraySound()
+    {
         float t = 0;
         if (sound.isPlaying)
         {
@@ -121,6 +130,6 @@ public class DropOff : MonoBehaviour
     public void Reject()
     {
         isOpen = true;
-        open.Play(false);
+        PlayTraySound();
     }
 }

@@ -15,4 +15,4 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: aab98aa23ea66fd489add1c287d489c6, type: 3}
   octaveRange: 0
-  volume: 1
+  volume: 0.75
