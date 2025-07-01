@@ -6,7 +6,7 @@ toki/ [soweli] a! mi ken open
 wile/ 1 a soweli
 wile/ 1 b waso
 
-def/ fail
+def/ ante
     reject/
     toki/ [waso] a! ni li lukin sama sina!
     toki/ [waso] a a a

@@ -12,6 +12,8 @@ public class TokiInterpreter : MonoBehaviour
     public string skip;
     #endif
 
+    private float totalScore;
+
     void Start()
     {
         Box.onSubmit = OnSubmit;
@@ -21,6 +23,11 @@ public class TokiInterpreter : MonoBehaviour
 
     public void SetInterpreter(string name)
     {
+        if (current != null)
+        {
+            totalScore += current.totalScore;    
+        }
+
         current = null;
         foreach (Toki toki in searches)
         {
@@ -68,6 +75,10 @@ public class TokiInterpreter : MonoBehaviour
         {
             current.submissionDisabled = false;
         }
+        if (message == "[kuko end] <score>")
+        {
+            message = "[kuko end] " + Mathf.RoundToInt(totalScore * 100);
+        }
         TextManager.CreateMessage(message);
     }
 
@@ -108,8 +119,11 @@ public class TokiInterpreter : MonoBehaviour
             return false;
         }
 
-        // undo value change
-        current.SetValueFromWile(nimi, -1);
+        // undo value change in case of repeat in the same file
+        if (current.rejected)
+        {
+            current.SetValueFromWile(nimi, -1);
+        }
 
         return current.rejected;
     }
@@ -139,6 +153,8 @@ public class Interpreter
     private float resumeAt = -1;
 
     private float defaultSuspension;
+
+    public float totalScore { get; private set; }
 
     public Interpreter(Toki toki)
     {
@@ -194,6 +210,8 @@ public class Interpreter
         {
             (string group, float value) = wileExpression.GetScore(nimi);
             SetValue(group, GetValue(group) + (multiplier * value));
+
+            totalScore += value;
         }
     }
 

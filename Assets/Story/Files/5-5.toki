@@ -16,14 +16,24 @@ toki/ [waso] olin mi li sama
 
 wait/ 1
 
-stage/ background -> 1
 stage/ waso -> 3
 stage/ soweli -> 2
 
 wait/ 2
+stage/ background -> 1
+
+wait/ 4
 
 stage/ waso -> 0
 toki/ [waso] PAKALA A! MI JO ALA E ILO MI
-wait/ 1
 
 stage/ background -> 2
+
+wait/ 1
+tokiwait/ 1
+toki/ [kuko end] musi li pini!
+toki/ [kuko end] sina pana e pona
+toki/ [kuko end] <score>
+toki/ [kuko end] ni li pona anu seme?
+toki/ [kuko end] mi sona ala
+toki/ [kuko end] o awen pona!
