@@ -4944,7 +4944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69643aad8b386f4d84e7cd5ea6bd448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideWebgl: 0
+  hideWebgl: 1
   ignoreMask: 3
   onPress:
     m_PersistentCalls:
@@ -32739,7 +32739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69643aad8b386f4d84e7cd5ea6bd448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideWebgl: 1
+  hideWebgl: 0
   ignoreMask: 1
   onPress:
     m_PersistentCalls:
