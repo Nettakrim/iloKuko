@@ -29,7 +29,7 @@ end/
 def/ #item
     test/
         0.5 b call/ waso
-        0.5 a call/ soweli
+        1   a call/ soweli
         0   a call/ ante
     end/
     next/ 5-4

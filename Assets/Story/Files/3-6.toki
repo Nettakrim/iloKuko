@@ -1,7 +1,7 @@
 tokiwait/ 2.5
 
 toki/ [soweli] taso mi ken ala esun lon tenpo ni:
-toki/ [soweli] poki kon li awen lon
+toki/ [soweli] poki kon li awen lon! a a a
 stage/ soweli -> 0
 wait/ 0.5
 toki/ [soweli] sina wile ala weka lon tenpo suno ni anu seme?
@@ -28,14 +28,44 @@ tokiwait/ 2.5
 
 wile/ 1 a monsuta
 wile/ 1 b jan
+wile/ 1 waso waso
+wile/ 1 soweli soweli
 
-def/ fail
+def/ failall
     reject/
     toki/ [waso] ni li ona ala
     stage/ soweli -> 1
     stage/ waso -> 1
     wait/ 1
-    toki/ [soweli] taso ni li monsuta e mi
+    toki/ [soweli] taso ona li monsuta e mi
+end/
+
+def/ failwaso
+    call/ failall
+    tokiwait/ 1.5
+    toki/ [waso] ...
+    toki/ [waso] seme a!
+    tokiwait/ 2.5
+    toki/ [waso] ni li waso!
+    toki/ [soweli] a a a!
+    stage/ waso -> 2
+    stage/ soweli -> 0
+    toki/ [waso] ...
+    next/ 3-7
+end/
+
+def/ failsoweli
+    call/ failall
+    toki/ [waso] taso ona li soweli
+    toki/ [soweli] lon... mi monsuta mute
+    stage/ waso -> 2
+    stage/ soweli -> 0
+    toki/ [waso] a a a! sina suwi taso tawa mi
+    next/ 3-7
+end/
+
+def/ faildefault
+    call/ failall
     toki/ [waso] tan seme?
     toki/ [soweli] ...mi sona ala
     stage/ waso -> 2
@@ -43,6 +73,14 @@ def/ fail
     toki/ [soweli] taso mi la ona li ike mute
     toki/ [waso] a a a
     next/ 3-7
+end/
+
+def/ fail
+    test/
+        1 waso call/ failwaso
+        1 soweli call/ failsoweli
+        0 waso call/ faildefault
+    end/
 end/
 
 def/ pass1
