@@ -6,7 +6,7 @@ toki/ [waso] mi sona ala e tan pi pilin ni taso mi ken
 
 wile/ 1 a mani
 # accept only the coin
-wile/ 1 b mani,kiwen,suno,walo,sike,lawa,sitelen,nanpa,esun
+wile/ 0.125 b kiwen,suno,walo,sike,lawa,sitelen,nanpa,esun
 
 def/ fail
     reject/
@@ -27,7 +27,7 @@ end/
 def/ #item
     test/
         0.5 a test/
-            9 b call/ passcoin
+            1 b call/ passcoin
             0 b call/ passante
         end/
         0   a call/ fail
