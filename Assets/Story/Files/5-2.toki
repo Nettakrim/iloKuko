@@ -12,6 +12,7 @@ def/ fail
     reject/
     toki/ [soweli] ni li mani ala a!
     toki/ [waso] li wile e mani ala a!
+    toki/ [soweli] ilo Kuko li pakala anu seme?
 end/
 
 def/ passcoin
@@ -20,8 +21,8 @@ def/ passcoin
 end/
 
 def/ passante
-    toki/ [waso] ...lon la lukin ni li pona e mi
-    toki/ [soweli] mi o kama jo e ona lon tenpo kama ken
+    toki/ [waso] ...a pilin sina li lon, ni li pona
+    toki/ [soweli] ken la mi o kama jo e ona lon tenpo kama
 end/
 
 def/ #item
@@ -35,4 +36,4 @@ def/ #item
     next/ 5-3
 end/
 
-toki/ [kuko] mani
+toki/ [kuko] ijo mani

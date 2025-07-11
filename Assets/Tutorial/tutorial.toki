@@ -14,13 +14,13 @@ def/ #2
 end/
 
 def/ #3
-    toki/ [kuko] hidden
+    toki/ [kuko] <hidden>
 end/
 
 def/ reject
     reject/
     wait/ 0.1
-    toki/ [kuko] hidden
+    toki/ [kuko] <hidden>
 end/
 
 def/ #item

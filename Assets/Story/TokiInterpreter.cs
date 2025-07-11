@@ -74,7 +74,7 @@ public class TokiInterpreter : MonoBehaviour
         if (message.StartsWith("[kuko]"))
         {
             current.submissionDisabled = false;
-            if (message == "[kuko] hidden")
+            if (message == "[kuko] <hidden>")
             {
                 return;
             }

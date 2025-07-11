@@ -34,10 +34,10 @@ wait/ 2
 stage/ background -> 2
 
 wait/ 1
-tokiwait/ 1
+tokiwait/ 1.25
 toki/ [kuko end] musi li pini!
-toki/ [kuko end] sina pana e pona
+toki/ [kuko end] sina pana e pona pi mute ni:
 toki/ [kuko end] <score>
 toki/ [kuko end] ni li pona anu seme?
-toki/ [kuko end] mi sona ala
-toki/ [kuko end] o awen pona!
+toki/ [kuko end] mi sona ala, mi ilo taso
+toki/ [kuko end] taso musi li pona e sina la ale li pona!
