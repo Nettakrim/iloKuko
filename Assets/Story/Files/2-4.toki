@@ -30,6 +30,7 @@ def/ after
     stage/ waso -> 1
     wait/ 0.5
 
+    toki/ [soweli] waso o!
     toki/ [soweli] mi sona ala e ni: sina jo e sike kalama ni!
     toki/ [waso] a! jan Usawi!
     toki/ [waso] ona li pona mute
@@ -37,7 +38,7 @@ def/ after
     toki/ [soweli] taso mi tu o poki a e ijo! suno li kama weka
     stage/ soweli -> 0
     stage/ waso -> 2
-    toki/ [waso] sona, kute ni li pona, poki ni li... pona
+    toki/ [waso] sona, mi wile kute, mi... wile poki
     next/ 3-1
 end/
 

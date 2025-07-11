@@ -3,7 +3,7 @@ tokiwait/ 2.5
 wait/ 0.5
 toki/ [soweli] waso o
 toki/ [waso] sina lukin e seme?
-toki/ [soweli] seme la poki ni li jo e akesi pi kiwen kasi mute
+toki/ [soweli] seme la poki ni li jo e akesi mute pi kiwen kasi
 toki/ [waso] soweli ante pi kiwen kasi li lon insa
 toki/ [soweli] lon taso ni li suli ala
 toki/ [soweli] seme la sina jo e ona mute!
@@ -21,6 +21,7 @@ def/ fail
     toki/ [soweli] seme la ni li alasa sina?
     tokiwait/ 1.5
     toki/ [waso] ona li ni ala. ilo Kuko li pakala
+    toki/ [soweli] ike a! mi wile lukin e akesi tonsi
     stage/ waso -> 2
     stage/ soweli -> 0
     wait/ 1
@@ -53,6 +54,7 @@ def/ passala
     toki/ [waso] lon, mi alasa e ona ante
     toki/ [waso] taso mi ken ala lukin e ona
     toki/ [waso] ken ike la esun li weka e ona
+    toki/ [soweli] ken a, ijo mute li weka e tonsi
 end/
 
 def/ pass

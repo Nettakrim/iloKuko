@@ -6,6 +6,7 @@ toki/ [waso] lon...
 
 wile/ 1 a kiwen
 wile/ 1 b suno
+wile/ 1 c kule
 
 def/ fail
     reject/
@@ -14,7 +15,7 @@ def/ fail
         0.5 b toki/ [waso] ni li kiwen ala
         0 a toki/ [waso] ni li kiwen suno ala a!
     end/
-    toki/ [soweli] ...lili taso la ona li ken ni
+    toki/ [soweli] ...lili la ona li ni
     next/ 5-2
 end/
 
@@ -24,10 +25,18 @@ def/ pass
     next/ 5-2
 end/
 
+def/ passkule
+    toki/ [waso] kule a!
+    toki/ [soweli] a!
+    next/ 5-2
+end/
+
 def/ #item
+    tokiwait/ 2.5
     test/
         0.5 a test/
             0.5 b call/ pass
+            0.5 c call/ passkule
             0   b call/ fail
         end/
         0   a call/ fail
@@ -35,3 +44,10 @@ def/ #item
 end/
 
 toki/ [kuko] kiwen suno
+wait/ 1
+toki/ [waso] taso, nasin seme li nanpa wan?
+tokiwait/ 1.5
+toki/ [waso] ona li pana e kule mute
+tokiwait/ 2.5
+toki/ [waso] ona li pana sin e suno kama
+toki/ [soweli] ni tu! suno li ken kama kule mute!
