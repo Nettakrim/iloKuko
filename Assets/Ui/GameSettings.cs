@@ -30,6 +30,19 @@ public class GameSettings : MonoBehaviour
 
     private static bool initialised = false;
 
+    #if UNITY_EDITOR
+    [SerializeField] private bool resetPlayerPrefs;
+
+    void OnValidate()
+    {
+        if (resetPlayerPrefs)
+        {
+            PlayerPrefs.DeleteAll();
+            resetPlayerPrefs = false;
+        }
+    }
+    #endif
+
     void Start()
     {
         UpdateFullscreenButtons(Screen.fullScreen);
@@ -48,7 +61,7 @@ public class GameSettings : MonoBehaviour
 
             sfxVolume.SetValue(PlayerPrefs.GetFloat("SFX", 0.6666f));
             musicVolume.SetValue(PlayerPrefs.GetFloat("Music", 0.6666f));
-            dialogueSpeed.SetValue(PlayerPrefs.GetFloat("DialogueSpeed", 0.9f));
+            dialogueSpeed.SetValue(PlayerPrefs.GetFloat("DialogueSpeed", 0.81f));
 
             for (int i = 0; i < buttons.Length; i++)
             {
@@ -99,7 +112,7 @@ public class GameSettings : MonoBehaviour
 
     public void SetDialogueSpeed(float to)
     {
-        Global.dialogueSpeed = Mathf.Lerp(4f, 1f, to);
+        Global.dialogueSpeed = Mathf.Lerp(4f, 1f, Mathf.Sqrt(to));
         PlayerPrefs.SetFloat("DialogueSpeed", to);
     }
 
