@@ -48,7 +48,7 @@ public class GameSettings : MonoBehaviour
 
             sfxVolume.SetValue(PlayerPrefs.GetFloat("SFX", 0.6666f));
             musicVolume.SetValue(PlayerPrefs.GetFloat("Music", 0.6666f));
-            dialogueSpeed.SetValue(PlayerPrefs.GetFloat("Dialogue", 1.0f));
+            dialogueSpeed.SetValue(PlayerPrefs.GetFloat("DialogueSpeed", 0.9f));
 
             for (int i = 0; i < buttons.Length; i++)
             {
@@ -100,7 +100,7 @@ public class GameSettings : MonoBehaviour
     public void SetDialogueSpeed(float to)
     {
         Global.dialogueSpeed = Mathf.Lerp(4f, 1f, to);
-        PlayerPrefs.SetFloat("Dialogue", to);
+        PlayerPrefs.SetFloat("DialogueSpeed", to);
     }
 
     public void Login()
